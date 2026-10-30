@@ -1,15 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "versionCode": 2026103209,
-  "versionName": "1.0.36",
+  "versionCode": 2026103246,
+  "versionName": "1.0.37",
   "minSdk": 26,
-  "tag": "hongguotv-v1.0.36",
+  "tag": "hongguotv-v1.0.37",
   "apk": {
-    "name": "HongguoTV-1.0.36.apk",
-    "size": 1590445,
-    "sha256": "98aa171fdf066b022dc1ebe801783c99a7fd360c293e922701978424b89a823e",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.36/HongguoTV-1.0.36.apk"
+    "name": "HongguoTV-1.0.37.apk",
+    "size": 1601281,
+    "sha256": "598b518ff32085ee69c3c473517774f0ee5980a0d3018a9c5dab0a072fecac51",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.37/HongguoTV-1.0.37.apk"
   },
-  "notes": "- 其他功能优化（详情见本次版本提交记录）\n- 发布说明改为中文并保留 AppDownload 多应用首页\n- 修正中文更新说明脚本的转义格式\n- 将红果TV APK 发布到 AppDownload 独立 Release\n- 支持从 AppDownload Release 下载更新包\n- 修正 Release 资源上传顺序与 URL 编码"
+  "notes": "- 其他功能优化（详情见本次版本提交记录）\n- 发布说明改为中文并保留 AppDownload 多应用首页\n- 修正中文更新说明脚本的转义格式\n- 将红果TV APK 发布到 AppDownload 独立 Release\n- 支持从 AppDownload Release 下载更新包\n- 修正 Release 资源上传顺序与 URL 编码\n- 发布当前 custom 版本"
 }
+
