@@ -1,8 +1,8 @@
 # 红果 TV 分发目录
 
-当前版本：**1.0.39**
+当前版本：**1.0.40**
 
-- APK 安装包：[下载 HongguoTV-1.0.39.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.39/HongguoTV-1.0.39.apk)
+- APK 安装包：[下载 HongguoTV-1.0.40.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.40/HongguoTV-1.0.40.apk)
 - 应用内更新清单：[latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 
 ## 本次更新说明
