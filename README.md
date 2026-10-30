@@ -7,9 +7,9 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**1.0.43**
+当前版本：**1.0.44**
 
-- [下载最新版 HongguoTV-1.0.43.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.43/HongguoTV-1.0.43.apk)
+- [下载最新版 HongguoTV-1.0.44.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.44/HongguoTV-1.0.44.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
@@ -20,6 +20,7 @@
 - 搜索热搜推荐改为短剧与漫剧混合展示，不再清一色 AI 剧。
 - 修复清除所有数据：停止后台任务、等待写入完成，再清空本机设置与记录后重启。
 - 修复播放评论分页：加载更多后从新增评论继续向下浏览，浏览到底部再加载下一页。
+- 优化检查更新弹窗：状态提示固定醒目展示，更新说明可滚动查看。
 <!-- END APP: hongguoTV -->
 
 ## 应用目录
