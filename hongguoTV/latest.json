@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "de5185420ffd3a25da83e8138447d5859e80b40b",
-  "versionCode": 2026103370,
-  "versionName": "1.0.41",
+  "sourceCommit": "546016cef708599a8f76f89178e88709a817d5bc",
+  "versionCode": 2026103374,
+  "versionName": "1.0.42",
   "minSdk": 26,
-  "tag": "hongguotv-v1.0.41",
+  "tag": "hongguotv-v1.0.42",
   "apk": {
-    "name": "HongguoTV-1.0.41.apk",
-    "size": 1597343,
-    "sha256": "b3993a290333b64eb9938c741f7ad2bedde55278c65dea897c1696f9cd061664",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.41/HongguoTV-1.0.41.apk"
+    "name": "HongguoTV-1.0.42.apk",
+    "size": 1598179,
+    "sha256": "ee356eb27fc3e8211d0db3e9049ed05206080518961d1ca43789b93ded1ff670",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.42/HongguoTV-1.0.42.apk"
   },
-  "notes": "- 清除所有数据完成后立即重新打开应用，取消原有闹钟等待重启流程。\n- 调整清除数据后的重启兼容处理，最终采用直接启动全新首页的方式。\n- Media3 播放器依赖统一升级至 1.11.1，涵盖 ExoPlayer、HLS 与 UI 模块。\n- 优化手机扫码登录二维码尺寸，短屏设备弹窗显示更适配。\n- 关于页面补充当前版本号显示，并优化版本信息展示。\n- 优化备份恢复选项文案，默认题材切换为短剧。"
+  "notes": "- 题材选择记住手动切换的短剧、漫剧和 AI 剧，冷启动仍默认短剧。\n- 题材类型标签按屏幕宽度自适应分配空间与间距。\n- 搜索热搜推荐改为短剧与漫剧混合展示，不再清一色 AI 剧。\n- 修复清除所有数据：停止后台任务、等待写入完成，再清空本机设置与记录后重启。"
 }
 
