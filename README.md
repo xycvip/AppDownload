@@ -7,24 +7,20 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**1.0.40**
+当前版本：**1.0.41**
 
-- [下载最新版 HongguoTV-1.0.40.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.40/HongguoTV-1.0.40.apk)
+- [下载最新版 HongguoTV-1.0.41.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.41/HongguoTV-1.0.41.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
 **本次更新说明**
 
-- 优化开机推荐等待逻辑：8 秒仅限制内容开始播放前，开始播放后不再超时中断，返回键始终有效。
-- 修复红果账户页面返回行为，账户内按返回键保持在红果账户标签。
-- 统一全应用弹窗样式，覆盖多层弹窗、扫码登录、备份确认及选集面板。
-- 手机端轻触播放画面即可唤起完整播放菜单。
-- 排行榜首次打开默认显示短剧榜。
-- 设置页默认聚焦启动推荐开关，并清晰显示开启或关闭状态。
-- 清除所有数据后自动重新启动应用。
-- 调整遥控器默认按键：上键上一集、下键下一集、确认键播放或暂停、菜单键打开播放菜单。
-- 备份与恢复覆盖遥控器自定义、弹幕屏蔽词、按剧弹幕记忆及片头片尾跳过等播放偏好。
-- 备份恢复新增重置播放偏好选项，并明确区分当前与备份中的播放偏好设置。
+- 清除所有数据完成后立即重新打开应用，取消原有闹钟等待重启流程。
+- 调整清除数据后的重启兼容处理，最终采用直接启动全新首页的方式。
+- Media3 播放器依赖统一升级至 1.11.1，涵盖 ExoPlayer、HLS 与 UI 模块。
+- 优化手机扫码登录二维码尺寸，短屏设备弹窗显示更适配。
+- 关于页面补充当前版本号显示，并优化版本信息展示。
+- 优化备份恢复选项文案，默认题材切换为短剧。
 <!-- END APP: hongguoTV -->
 
 ## 应用目录
