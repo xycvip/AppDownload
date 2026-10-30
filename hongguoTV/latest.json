@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "546016cef708599a8f76f89178e88709a817d5bc",
-  "versionCode": 2026103374,
-  "versionName": "1.0.42",
+  "sourceCommit": "0702f1c684d2da344a12fc2c4123cfc1ec6ef9de",
+  "versionCode": 2026103376,
+  "versionName": "1.0.43",
   "minSdk": 26,
-  "tag": "hongguotv-v1.0.42",
+  "tag": "hongguotv-v1.0.43",
   "apk": {
-    "name": "HongguoTV-1.0.42.apk",
-    "size": 1598179,
-    "sha256": "ee356eb27fc3e8211d0db3e9049ed05206080518961d1ca43789b93ded1ff670",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.42/HongguoTV-1.0.42.apk"
+    "name": "HongguoTV-1.0.43.apk",
+    "size": 1598315,
+    "sha256": "5c28b932f16f34283be54fb05c0c065297a9c1b3057499bc47ac7fad4c892da3",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.43/HongguoTV-1.0.43.apk"
   },
-  "notes": "- 题材选择记住手动切换的短剧、漫剧和 AI 剧，冷启动仍默认短剧。\n- 题材类型标签按屏幕宽度自适应分配空间与间距。\n- 搜索热搜推荐改为短剧与漫剧混合展示，不再清一色 AI 剧。\n- 修复清除所有数据：停止后台任务、等待写入完成，再清空本机设置与记录后重启。"
+  "notes": "- 题材选择记住手动切换的短剧、漫剧和 AI 剧，冷启动仍默认短剧。\n- 题材类型标签按屏幕宽度自适应分配空间与间距。\n- 搜索热搜推荐改为短剧与漫剧混合展示，不再清一色 AI 剧。\n- 修复清除所有数据：停止后台任务、等待写入完成，再清空本机设置与记录后重启。\n- 修复播放评论分页：加载更多后从新增评论继续向下浏览，浏览到底部再加载下一页。"
 }
 
