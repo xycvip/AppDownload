@@ -10,5 +10,5 @@
     "size": 1587453,
     "sha256": "afc439874b309171ffc1f5e44d4f13d633579305b85a72b8a13f969fb6ec3287"
   },
-  "notes": "- Add account API connectivity check\n- Preserve refresh focus and show account API status\n- Restore focus to selected ranking action after reload\n- Complete focus restoration for catalog refresh actions\n- Restore focus after failed catalog refresh\n- Return focus to surviving filters after clearing genres\n- Keep homepage refresh button focus after reload\n- Build latest custom APK"
+  "notes": "- 新增账号接口连通性检测\n- 刷新后保留焦点，并显示账号接口状态\n- 重新加载后恢复到已选排行榜操作项\n- 完善片单刷新操作后的焦点恢复\n- 片单刷新失败后恢复焦点\n- 清空分类后将焦点返回可用筛选项\n- 首页重新加载后保留刷新按钮焦点\n- 构建最新定制版安装包"
 }
