@@ -7,21 +7,20 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**1.0.37**
+当前版本：**1.0.38**
 
-- [下载最新版 HongguoTV-1.0.37.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.37/HongguoTV-1.0.37.apk)
+- [下载最新版 HongguoTV-1.0.38.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.38/HongguoTV-1.0.38.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
 **本次更新说明**
 
-- 其他功能优化（详情见本次版本提交记录）
-- 发布说明改为中文并保留 AppDownload 多应用首页
-- 修正中文更新说明脚本的转义格式
-- 将红果TV APK 发布到 AppDownload 独立 Release
-- 支持从 AppDownload Release 下载更新包
-- 修正 Release 资源上传顺序与 URL 编码
-- 发布当前 custom 版本
+- 优化竖屏视频评论面板宽度与显示间距，避免遮挡视频画面。
+- 修复关闭评论后遥控器按键误控制播放的问题，恢复控件焦点操作。
+- 美化未登录评论操作的登录提示弹窗，统一弹窗样式。
+- 新增上、下、确认、菜单键功能自定义，可设置上一集、下一集、播放菜单、评论、播放/暂停、选集或无操作。
+- 修复手机端触屏无法唤起播放进度条的问题，支持左右滑动快退快进。
+- 设置中的“关于软件”统一显示名称。
 <!-- END APP: hongguoTV -->
 
 ## 应用目录
