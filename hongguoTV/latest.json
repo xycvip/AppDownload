@@ -12,4 +12,4 @@
     "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.36/HongguoTV-1.0.36.apk"
   },
   "notes": "- 其他功能优化（详情见本次版本提交记录）\n- 发布说明改为中文并保留 AppDownload 多应用首页\n- 修正中文更新说明脚本的转义格式\n- 将红果TV APK 发布到 AppDownload 独立 Release\n- 支持从 AppDownload Release 下载更新包\n- 修正 Release 资源上传顺序与 URL 编码"
-}\n
+}
