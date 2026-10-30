@@ -1,14 +1,15 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "versionCode": 2026103184,
-  "versionName": "1.0.35",
+  "versionCode": 2026103209,
+  "versionName": "1.0.36",
   "minSdk": 26,
-  "tag": "kotlin-v1.0.35",
+  "tag": "hongguotv-v1.0.36",
   "apk": {
-    "name": "HongguoTV-1.0.35.apk",
-    "size": 1587453,
-    "sha256": "afc439874b309171ffc1f5e44d4f13d633579305b85a72b8a13f969fb6ec3287"
+    "name": "HongguoTV-1.0.36.apk",
+    "size": 1590445,
+    "sha256": "98aa171fdf066b022dc1ebe801783c99a7fd360c293e922701978424b89a823e",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.36/HongguoTV-1.0.36.apk"
   },
-  "notes": "- 新增账号接口连通性检测\n- 刷新后保留焦点，并显示账号接口状态\n- 重新加载后恢复到已选排行榜操作项\n- 完善片单刷新操作后的焦点恢复\n- 片单刷新失败后恢复焦点\n- 清空分类后将焦点返回可用筛选项\n- 首页重新加载后保留刷新按钮焦点\n- 构建最新定制版安装包"
-}
+  "notes": "- 其他功能优化（详情见本次版本提交记录）\n- 发布说明改为中文并保留 AppDownload 多应用首页\n- 修正中文更新说明脚本的转义格式\n- 将红果TV APK 发布到 AppDownload 独立 Release\n- 支持从 AppDownload Release 下载更新包\n- 修正 Release 资源上传顺序与 URL 编码"
+}\n
