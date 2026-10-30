@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "packageName": "com.x.hongguotv",
+  "versionCode": 2026103184,
+  "versionName": "1.0.35",
+  "minSdk": 26,
+  "tag": "kotlin-v1.0.35",
+  "apk": {
+    "name": "HongguoTV-1.0.35.apk",
+    "size": 1587453,
+    "sha256": "afc439874b309171ffc1f5e44d4f13d633579305b85a72b8a13f969fb6ec3287"
+  },
+  "notes": "- Add account API connectivity check\n- Preserve refresh focus and show account API status\n- Restore focus to selected ranking action after reload\n- Complete focus restoration for catalog refresh actions\n- Restore focus after failed catalog refresh\n- Return focus to surviving filters after clearing genres\n- Keep homepage refresh button focus after reload\n- Build latest custom APK"
+}
