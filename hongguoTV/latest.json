@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "68bd7ae4ac5a75b1760b9f20f282f92e62f42fe6",
-  "versionCode": 2026103386,
-  "versionName": "1.0.45",
+  "sourceCommit": "fe745bf507ada765225153a21332d81474fc35fd",
+  "versionCode": 2026103459,
+  "versionName": "1.1.0",
   "minSdk": 26,
-  "tag": "hongguotv-v1.0.45",
+  "tag": "hongguotv-v1.1.0",
   "apk": {
-    "name": "HongguoTV-1.0.45.apk",
-    "size": 1601159,
-    "sha256": "6371969cecdf9a18fb4cf0f3d6d834556ef36ece51739b07bf0209635950e7a8",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.45/HongguoTV-1.0.45.apk"
+    "name": "HongguoTV-1.1.0.apk",
+    "size": 1609807,
+    "sha256": "96d83aaf67cb4e67fb9d8cd507bf189e00c1da71d663349ee44048d43e81b8ff",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.0/HongguoTV-1.1.0.apk"
   },
-  "notes": "- 设置页改为横向分类导航与网格卡片布局，标题和选项尽量单行显示。\n- 优化设置分类切换与遥控器焦点导航，保留原有设置功能。"
+  "notes": "- Refine about dialog update entry\n- Fix settings card focus state\n- Simplify settings page header\n- Show advanced danmaku settings by default\n- Show remote key settings directly in settings tab\n- Include blocked words in danmaku master switch\n- Add sleep timer remote action\n- Expose sleep timer in remote key customization\n- Rename remote timer action to 定时\n- Move sleep timer to playback controls\n- Harden video data source bounds and large-file reads\n- Validate remote video range payloads and bound cache on seeks\n- Pause danmaku animation loop with video playback\n- Detect supported video container before MP4 playback\n- Improve playback buffering diagnostics and render overlays\n- Bound remote video cache during seeks and guard read ranges\n- Optimize danmaku frame scheduling and continuous movement\n- Report unsupported video containers as non-retryable\n- Handle unsupported video formats without pointless retries\n- Tie danmaku frame callbacks to view lifecycle\n- Adapt playback buffer profile to device memory and network\n- Reject unsupported streaming containers before MP4 parsing\n- Polish video surface transition and buffering indicator\n- Guard remote read-ahead range arithmetic\n- 新增官方评论功能\n- Balance buffer profile for slow metered connections\n- Add persistent player overlay preferences\n- Report actual player data reads for speed overlay\n- Add configurable video info and live playback speed overlays\n- Refine player overlay placement and speed sampling\n- Redesign settings as a vertical focusable waterfall layout\n- Group danmaku under playback and order five vertical settings sections\n- Keep danmaku controls in the playback settings section\n- Highlight active settings category on focus\n- Unify settings category headings into one card\n- Expose grouped theater filter selectors\n- Add theater navigation and filter UI\n- Render theater filter screen and load catalog\n- Fix theater navigation focus mapping\n- Complete theater tab focus remapping\n- Correct theater focus routing\n- Keep unlabeled theater selector groups\n- Remap all focus links for theater tab\n- Match theater filter row labels to app layout\n- Replace theater filters with official App discovery API\n- Allow theater session to retain returned filter panel\n- Wire theater tab to official multi-filter App catalog\n- Reset theater cursors on refresh and require registered device\n- Render App-provided non-genre theater filter dimensions\n- Align theater filter defaults and API gateway fallback\n- Reset dependent theater dimensions and isolate filter scroll state\n- Use explicit removal lambda for theater filter reset\n- Match official theater genre labels\n- Remove duplicate catalog body declaration\n- Refresh home content silently whenever home tab is selected\n- Preserve full homepage manual refresh action\n- Refresh full homepage on tab click and hide refresh button\n- Move homepage genre picker to ranking toolbar\n- Add responsive full-width random discovery card\n- Move random discovery action below AI shelf\n- Center and compact random discovery card\n- Move view-all cards to end of home shelves\n- make AppDownload the only release destination\n- release: start HongguoTV 1.1.0 version line\n- remove obsolete sync-source-release.yml\n- remove obsolete sync-source-release.py\n- release: start HongguoTV 1.1.0"
 }
 
