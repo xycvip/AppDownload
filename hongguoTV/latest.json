@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "2ad9661111d3bafb925bcdb4d2744d2f1c44f0e0",
-  "versionCode": 2026103468,
-  "versionName": "1.1.8",
+  "sourceCommit": "a0b6b35355425b94d3a6b5d5c350b29f34643474",
+  "versionCode": 2026103469,
+  "versionName": "1.1.9",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.8",
+  "tag": "hongguotv-v1.1.9",
   "apk": {
-    "name": "HongguoTV-1.1.8.apk",
-    "size": 1617683,
-    "sha256": "258052635d6c71cfde4312025ee690db7e3ce60006e28b5b99b37b59a7cd7893",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.8/HongguoTV-1.1.8.apk"
+    "name": "HongguoTV-1.1.9.apk",
+    "size": 1611879,
+    "sha256": "4f6db54fafb0b6bdb605134c1cbeba516a5da23227c6284714ea8f9fc9cdc45b",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.9/HongguoTV-1.1.9.apk"
   },
-  "notes": "- 优化视频播放体验及播放设置\n- 完善本地数据备份与恢复"
+  "notes": "- 优化搜索功能与搜索结果展示\n- 优化视频播放体验及播放设置\n- 优化设置选项与操作体验\n- 优化界面布局与交互效果\n- 完善本地数据备份与恢复"
 }
 
