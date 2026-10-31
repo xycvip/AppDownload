@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "4aa143549bdb977c94aaf3b1d9a4178b720265d8",
-  "versionCode": 2026103460,
-  "versionName": "1.1.0",
+  "sourceCommit": "5a196018bf70161e3487d2ec186318ac9af35258",
+  "versionCode": 2026103461,
+  "versionName": "1.1.1",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.0",
+  "tag": "hongguotv-v1.1.1",
   "apk": {
-    "name": "HongguoTV-1.1.0.apk",
-    "size": 1609807,
-    "sha256": "70869bbf42ccd560e2d3fe199d1b32803e0e499b1e294cdc70d03a5310bc5e94",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.0/HongguoTV-1.1.0.apk"
+    "name": "HongguoTV-1.1.1.apk",
+    "size": 1611403,
+    "sha256": "efb4f0fdfca8e3a06625c3cb78f163100eba09cb24e3b3b8cc4c4834f99bf162",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.1/HongguoTV-1.1.1.apk"
   },
-  "notes": "- remove deleted source release script from validation"
+  "notes": "- Improve updater API, Raw and proxy fallback\n- Use API Raw and proxy fallback for release versioning\n- Use API-first release metadata and avoid global latest takeover\n- Keep HongguoTV releases out of repository-wide latest\n- 工作流中文化：cleanup-runs.yml\n- 工作流中文化：kotlin-native.yml\n- 工作流中文化：prepare-custom-update.yml\n- 工作流中文化：release.yml\n- 工作流中文化：sync-upstream.yml\n- 完善工作流中文显示：cleanup-runs.yml\n- 完善工作流中文显示：kotlin-native.yml\n- 完善工作流中文显示：prepare-custom-update.yml\n- 完善工作流中文显示：release.yml\n- 完善工作流中文显示：sync-upstream.yml\n- Delete .github/workflows/kotlin-native.yml\n- 优化红果TV正式发布工作流安全校验\n- 增加红果TV发布后远程核验\n- 改为基于上一版递增 versionCode\n- Remove post-publication remote verification\n- Remove duplicate home random button\n- Shorten home random pick label\n- Improve random discovery card border contrast\n- Make settings category navigation switch visible options\n- Wire settings category focus navigation\n- Preserve requested settings focus category\n- Keep all settings expanded and highlight focused category\n- Match settings category highlight to top navigation\n- Use shared card focus style for settings categories\n- Center settings category labels beside their panels\n- Unify settings background and refine focus navigation\n- Size settings divider to content height\n- Fix vertical swipe handoff on homepage shelves\n- Allow vertical swipes through theater filter rows\n- Fix homepage vertical swipe interception\n- Expand vertical swipe area across search results\n- Allow skipping tests for requested release  [skip tests]"
 }
 
