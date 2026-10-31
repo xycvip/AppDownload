@@ -7,15 +7,18 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**1.1.8**
+当前版本：**1.1.9**
 
-- [下载最新版 HongguoTV-1.1.8.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.8/HongguoTV-1.1.8.apk)
+- [下载最新版 HongguoTV-1.1.9.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.9/HongguoTV-1.1.9.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
 **本次更新说明**
 
+- 优化搜索功能与搜索结果展示
 - 优化视频播放体验及播放设置
+- 优化设置选项与操作体验
+- 优化界面布局与交互效果
 - 完善本地数据备份与恢复
 <!-- END APP: hongguoTV -->
 
