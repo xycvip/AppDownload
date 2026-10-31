@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "5a196018bf70161e3487d2ec186318ac9af35258",
-  "versionCode": 2026103461,
-  "versionName": "1.1.1",
+  "sourceCommit": "f31e1643ac59098677964aa352f3f4811fac17e5",
+  "versionCode": 2026103462,
+  "versionName": "1.1.2",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.1",
+  "tag": "hongguotv-v1.1.2",
   "apk": {
-    "name": "HongguoTV-1.1.1.apk",
-    "size": 1611403,
-    "sha256": "efb4f0fdfca8e3a06625c3cb78f163100eba09cb24e3b3b8cc4c4834f99bf162",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.1/HongguoTV-1.1.1.apk"
+    "name": "HongguoTV-1.1.2.apk",
+    "size": 1612227,
+    "sha256": "0ae7176766cb15de40eb8a03a90030353ed7e212feebe47fca97e9c6cfaf9a3d",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.2/HongguoTV-1.1.2.apk"
   },
-  "notes": "- Improve updater API, Raw and proxy fallback\n- Use API Raw and proxy fallback for release versioning\n- Use API-first release metadata and avoid global latest takeover\n- Keep HongguoTV releases out of repository-wide latest\n- 工作流中文化：cleanup-runs.yml\n- 工作流中文化：kotlin-native.yml\n- 工作流中文化：prepare-custom-update.yml\n- 工作流中文化：release.yml\n- 工作流中文化：sync-upstream.yml\n- 完善工作流中文显示：cleanup-runs.yml\n- 完善工作流中文显示：kotlin-native.yml\n- 完善工作流中文显示：prepare-custom-update.yml\n- 完善工作流中文显示：release.yml\n- 完善工作流中文显示：sync-upstream.yml\n- Delete .github/workflows/kotlin-native.yml\n- 优化红果TV正式发布工作流安全校验\n- 增加红果TV发布后远程核验\n- 改为基于上一版递增 versionCode\n- Remove post-publication remote verification\n- Remove duplicate home random button\n- Shorten home random pick label\n- Improve random discovery card border contrast\n- Make settings category navigation switch visible options\n- Wire settings category focus navigation\n- Preserve requested settings focus category\n- Keep all settings expanded and highlight focused category\n- Match settings category highlight to top navigation\n- Use shared card focus style for settings categories\n- Center settings category labels beside their panels\n- Unify settings background and refine focus navigation\n- Size settings divider to content height\n- Fix vertical swipe handoff on homepage shelves\n- Allow vertical swipes through theater filter rows\n- Fix homepage vertical swipe interception\n- Expand vertical swipe area across search results\n- Allow skipping tests for requested release  [skip tests]"
+  "notes": "- 优化首页内容展示与推荐体验\n- 优化视频播放体验及播放设置\n- 完善账号登录与账户功能\n- 优化设置选项与操作体验\n- 优化电视遥控器焦点与导航操作\n- 优化界面布局与交互效果\n- 完善本地数据备份与恢复"
 }
 
