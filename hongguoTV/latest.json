@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "03872cc2861151e01432d4b2380e0f0fcc9be679",
-  "versionCode": 2026103378,
-  "versionName": "1.0.44",
+  "sourceCommit": "68bd7ae4ac5a75b1760b9f20f282f92e62f42fe6",
+  "versionCode": 2026103386,
+  "versionName": "1.0.45",
   "minSdk": 26,
-  "tag": "hongguotv-v1.0.44",
+  "tag": "hongguotv-v1.0.45",
   "apk": {
-    "name": "HongguoTV-1.0.44.apk",
-    "size": 1598643,
-    "sha256": "e1a90e2b0e3eaaabf981ab321d8dfb4298f36c05bc037a26774ced32f47925ab",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.44/HongguoTV-1.0.44.apk"
+    "name": "HongguoTV-1.0.45.apk",
+    "size": 1601159,
+    "sha256": "6371969cecdf9a18fb4cf0f3d6d834556ef36ece51739b07bf0209635950e7a8",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.0.45/HongguoTV-1.0.45.apk"
   },
-  "notes": "- 题材选择记住手动切换的短剧、漫剧和 AI 剧，冷启动仍默认短剧。\n- 题材类型标签按屏幕宽度自适应分配空间与间距。\n- 搜索热搜推荐改为短剧与漫剧混合展示，不再清一色 AI 剧。\n- 修复清除所有数据：停止后台任务、等待写入完成，再清空本机设置与记录后重启。\n- 修复播放评论分页：加载更多后从新增评论继续向下浏览，浏览到底部再加载下一页。\n- 优化检查更新弹窗：状态提示固定醒目展示，更新说明可滚动查看。"
+  "notes": "- 设置页改为横向分类导航与网格卡片布局，标题和选项尽量单行显示。\n- 优化设置分类切换与遥控器焦点导航，保留原有设置功能。"
 }
 
