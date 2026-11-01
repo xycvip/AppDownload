@@ -1,12 +1,12 @@
 # AppDownload
 
-**红果 TV（HongguoTV）Android APK 非官方发布与应用更新分发仓库。**
+**红果TV Android APK 下载与版本更新仓库，提供最新版安装包、自动更新清单及历史版本信息。**
 
-本仓库集中提供 Android 应用安装包（APK）、版本信息、应用内更新清单和下载说明。用户可以在这里获取红果 TV 最新版本，并通过固定的更新清单地址检查新版本。
+本仓库由第三方维护，集中提供红果 TV（HongguoTV）Android 应用安装包（APK）、版本信息、应用内更新清单和下载说明。用户可以在这里获取本仓库发布的最新版本，并通过固定的更新清单地址检查新版本。本仓库与红果 TV 官方运营主体无隶属或授权关系。
 
 **项目关键词：** 红果TV、HongguoTV、Hongguo TV、Android、安卓应用、APK 下载、应用更新、版本发布、latest.json。
 
-**English:** AppDownload is an Android APK download and app release repository. It distributes HongguoTV releases, version metadata, and the app's update manifest.
+**English:** AppDownload is a community-maintained, third-party Android APK download and app update repository for HongguoTV. It provides APK releases, version metadata, and the app's update manifest. It is not affiliated with or endorsed by the official HongguoTV operator.
 
 ## 最新版本
 
@@ -53,7 +53,7 @@ AppDownload 是应用发布与下载分发仓库，不是 Android 源代码仓�
 ## Repository Information
 
 - Repository: `xycvip/AppDownload`
-- Project: HongguoTV Android APK downloads and releases
+- Project: Third-party HongguoTV Android APK downloads and updates
 - Distribution: GitHub Releases and GitHub Raw
 - Manifest: `hongguoTV/latest.json`
 
