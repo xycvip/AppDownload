@@ -1,6 +1,6 @@
 # AppDownload
 
-**红果 TV（HongguoTV）Android APK 官方发布与应用更新分发仓库。**
+**红果 TV（HongguoTV）Android APK 非官方发布与应用更新分发仓库。**
 
 本仓库集中提供 Android 应用安装包（APK）、版本信息、应用内更新清单和下载说明。用户可以在这里获取红果 TV 最新版本，并通过固定的更新清单地址检查新版本。
 
