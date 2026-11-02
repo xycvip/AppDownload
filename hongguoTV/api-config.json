@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
-  "config_version": 3,
-  "description_zh": "红果TV远程接口配置。所有键名、URL、路径均保持英文原样；description_zh 为中文说明字段，程序读取时忽略。此文件只配置安全的接口地址，不包含签名算法、加密协议或响应解析规则。",
+  "schema_version": 2,
+  "config_version": 4,
+  "description_zh": "红果TV远端接口配置 v2。operations 是唯一接口执行规则；APK 只执行内置安全能力，不再静默使用硬编码接口规则。",
   "updated_at": "2026-11-02",
   "home_recommend": {
     "description_zh": "首页推荐内容接口，负责获取首页短剧推荐列表。",
@@ -131,6 +131,452 @@
       "send_code": "/passport/mobile/send_code/v1/",
       "verify_code": "/passport/upsms/verify/",
       "sms_login": "/passport/mobile/sms_login/"
+    }
+  },
+  "operations": {
+    "ranking.list": {
+      "base_url": "https://hongguoduanju.com",
+      "path": "/rank/{board_path}",
+      "method": "GET",
+      "query": {
+        "page": "{page}"
+      },
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Accept-Language": "zh-CN,zh;q=0.9"
+      }
+    },
+    "website.category": {
+      "base_url": "https://hongguoduanju.com",
+      "path": "/category/{category_path}",
+      "method": "GET",
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Accept-Language": "zh-CN,zh;q=0.9"
+      }
+    },
+    "website.category_listing": {
+      "base_url": "https://hongguoduanju.com",
+      "path": "/category/{category_path}/{genre_slug}",
+      "method": "GET",
+      "query": {
+        "page": "{page}"
+      },
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Accept-Language": "zh-CN,zh;q=0.9"
+      }
+    },
+    "website.home": {
+      "base_url": "https://hongguoduanju.com",
+      "path": "/category?tab=1&sort_type=1",
+      "method": "GET",
+      "query": {
+        "page": "{page}"
+      },
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Accept-Language": "zh-CN,zh;q=0.9"
+      }
+    },
+    "website.search": {
+      "base_url": "https://hongguoduanju.com",
+      "path": "/api/search/result/",
+      "method": "GET",
+      "query": {
+        "query": "{keyword}",
+        "page": "{page}"
+      },
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Accept-Language": "zh-CN,zh;q=0.9"
+      }
+    },
+    "website.detail": {
+      "base_url": "https://hongguoduanju.com",
+      "path": "/detail",
+      "method": "GET",
+      "query": {
+        "series_id": "{series_id}"
+      },
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Accept-Language": "zh-CN,zh;q=0.9"
+      }
+    },
+    "cloud.user_info": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/reading/user/info/v1/",
+      "method": "GET",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "none"
+      },
+      "signing": {
+        "provider": "tt"
+      },
+      "retry": "idempotent_get"
+    },
+    "cloud.read_progress_list": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/reading/bookapi/read_progress/list/v1/",
+      "method": "GET",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "none"
+      },
+      "signing": {
+        "provider": "tt"
+      },
+      "retry": "idempotent_get"
+    },
+    "cloud.multi_detail": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/reading/bookapi/multi-detail/v1/",
+      "method": "GET",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "none"
+      },
+      "signing": {
+        "provider": "tt"
+      },
+      "retry": "idempotent_get"
+    },
+    "cloud.favorite_list": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/reading/bookapi/bookshelf/video/info/v1/",
+      "method": "GET",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "none"
+      },
+      "signing": {
+        "provider": "tt"
+      },
+      "retry": "idempotent_get"
+    },
+    "cloud.favorite_update": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/reading/bookapi/bookshelf/video/update/v1/",
+      "method": "POST",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "raw"
+      },
+      "signing": {
+        "provider": "tt"
+      },
+      "retry": "none"
+    },
+    "cloud.subscription_list": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/reading/user/subscribe/list/v0/",
+      "method": "GET",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "none"
+      },
+      "signing": {
+        "provider": "tt"
+      },
+      "retry": "idempotent_get"
+    },
+    "cloud.subscription_update": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/reading/bookapi/search/uncover_subscribe/v1/",
+      "method": "POST",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Encoding": "gzip"
+      },
+      "body": {
+        "type": "raw_gzip"
+      },
+      "signing": {
+        "provider": "tt"
+      },
+      "retry": "none"
+    },
+    "cloud.read_progress_upload": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/reading/bookapi/read_progress/upload/v1/",
+      "method": "POST",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "raw"
+      },
+      "signing": {
+        "provider": "tt"
+      },
+      "retry": "none"
+    },
+    "danmaku.list": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/novel/commentapi/comment/list/{vid}/v1/",
+      "method": "POST",
+      "headers": {
+        "User-Agent": "{video_user_agent}",
+        "comment-source": "601",
+        "server-channel": "1000",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "raw"
+      },
+      "signing": {
+        "provider": "tt"
+      }
+    },
+    "comments.list": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/novel/commentapi/comment/list/{vid}/v1/",
+      "method": "GET",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "signing": {
+        "provider": "tt"
+      }
+    },
+    "comments.replies": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/novel/commentapi/reply/list/{comment_id}/v1/",
+      "method": "POST",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "raw"
+      },
+      "signing": {
+        "provider": "tt"
+      }
+    },
+    "comments.publish": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/novel/commentapi/comment/add/v1/",
+      "method": "POST",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "raw"
+      },
+      "signing": {
+        "provider": "tt"
+      }
+    },
+    "comments.reply": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/novel/commentapi/reply/add/v1/",
+      "method": "POST",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "raw"
+      },
+      "signing": {
+        "provider": "tt"
+      }
+    },
+    "comments.action": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/novel/commentapi/comment/do_action/v1/",
+      "method": "POST",
+      "headers": {
+        "Cookie": "{cookie}",
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "body": {
+        "type": "raw"
+      },
+      "signing": {
+        "provider": "tt"
+      }
+    },
+    "theater.catalog": {
+      "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
+      "path": "/reading/distribution/category/landpage/v/",
+      "method": "POST",
+      "base_urls": [
+        "https://api5-normal-sinfonlineb.fqnovel.com",
+        "https://api5-normal-sinfonlinea.fqnovel.com"
+      ],
+      "headers": {
+        "Content-Type": "application/json; charset=UTF-8"
+      },
+      "body": {
+        "type": "raw"
+      },
+      "signing": {
+        "provider": "tt"
+      },
+      "retry": {
+        "policy": "transient"
+      },
+      "fallback_on_nonzero_code": true
+    },
+    "search.suggest": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/reading/bookapi/search/suggest/v",
+      "method": "GET",
+      "base_urls": [
+        "https://api5-normal-sinfonlinea.fqnovel.com"
+      ],
+      "signing": {
+        "provider": "tt"
+      }
+    },
+    "search.results": {
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+      "path": "/reading/bookapi/search/tab/v",
+      "method": "GET",
+      "base_urls": [
+        "https://api5-normal-sinfonlinea.fqnovel.com",
+        "https://reading.snssdk.com"
+      ],
+      "signing": {
+        "provider": "tt"
+      },
+      "retry": {
+        "policy": "idempotent_get"
+      },
+      "fallback_on_nonzero_code": true
+    },
+    "qr.get_qrcode": {
+      "base_url": "https://hongguoduanju.com",
+      "path": "/passport/web/get_qrcode/",
+      "method": "GET",
+      "query": {
+        "aid": "513755",
+        "passport_jssdk_version": "3.4.10",
+        "passport_jssdk_type": "normal",
+        "account_sdk_source": "web",
+        "is_from_ttaccountsdk": "1",
+        "language": "zh",
+        "next": "{next}"
+      },
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Referer": "{referer}",
+        "Origin": "{origin}",
+        "Accept": "application/json, text/javascript"
+      },
+      "retry": {
+        "policy": "idempotent_get"
+      }
+    },
+    "qr.check_qrconnect": {
+      "base_url": "https://hongguoduanju.com",
+      "path": "/passport/web/check_qrconnect/",
+      "method": "GET",
+      "query": {
+        "aid": "513755",
+        "passport_jssdk_version": "3.4.10",
+        "passport_jssdk_type": "normal",
+        "account_sdk_source": "web",
+        "is_from_ttaccountsdk": "1",
+        "language": "zh",
+        "next": "{next}",
+        "token": "{token}"
+      },
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Referer": "{referer}",
+        "Origin": "{origin}",
+        "Accept": "application/json, text/javascript"
+      },
+      "retry": {
+        "policy": "idempotent_get"
+      }
+    },
+    "qr.account_info": {
+      "base_url": "https://hongguoduanju.com",
+      "path": "/passport/account/info/v2/",
+      "method": "GET",
+      "query": {
+        "aid": "513755",
+        "passport_jssdk_version": "3.4.10",
+        "passport_jssdk_type": "normal",
+        "account_sdk_source": "web",
+        "is_from_ttaccountsdk": "1",
+        "language": "zh"
+      },
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Referer": "{referer}",
+        "Origin": "{origin}",
+        "Accept": "application/json, text/javascript"
+      },
+      "retry": {
+        "policy": "idempotent_get"
+      }
+    },
+    "device.register": {
+      "base_url": "https://log5-applog-lf.fqnovel.com",
+      "path": "/service/2/device_register/?tt_data=a&cronet_version=8d40f833_2026-03-03&ttnet_version=4.2.243.31-douyin&use_store_region_cookie=1",
+      "method": "POST",
+      "headers": {
+        "User-Agent": "{app_user_agent}",
+        "Content-Type": "application/octet-stream;tt-data=a",
+        "log-encode-type": "gzip",
+        "x-ss-dp": "8662",
+        "x-ss-req-ticket": "{now}",
+        "x-vc-bdturing-sdk-version": "4.0.3.cn",
+        "lc": "101",
+        "sdk-version": "2",
+        "passport-sdk-version": "5051452",
+        "x-neptune": "-8|50:51:59:30:40:47:49:39",
+        "x-ss-stub": "{computed.body_md5_upper}"
+      },
+      "body": {
+        "type": "device_register"
+      },
+      "retry": {
+        "policy": "none"
+      }
+    },
+    "playback.video_model": {
+      "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
+      "path": "/novel/player/video_model/v1/",
+      "method": "POST",
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Accept": "application/json; charset=utf-8,application/x-protobuf",
+        "Content-Type": "application/json; charset=utf-8",
+        "Cookie": "{cookie}"
+      },
+      "body": {
+        "type": "raw"
+      }
     }
   }
 }
