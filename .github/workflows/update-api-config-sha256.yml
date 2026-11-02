@@ -51,23 +51,17 @@ jobs:
           fi
 
           OLD_VERSION="$(git show "${BEFORE_SHA}:${CONFIG_FILE}" | jq -er '.config_version | numbers')"
-          CURRENT_VERSION="$(jq -er '.config_version | numbers' "$CONFIG_FILE")"
-
-          # 人工只改接口而未动版本号：自动 +1。
-          # 如果提交者已经把版本号调高，则尊重其值，避免重复递增。
-          if [ "$CURRENT_VERSION" -le "$OLD_VERSION" ]; then
-            NEXT_VERSION=$((OLD_VERSION + 1))
-          else
-            NEXT_VERSION="$CURRENT_VERSION"
-          fi
+          NEXT_VERSION=$((OLD_VERSION + 1))
 
           TODAY="$(date -u +%F)"
           TEMP_FILE="$(mktemp)"
-          jq --arg date "$TODAY" --argjson version "$NEXT_VERSION"             '.config_version = $version | .updated_at = $date'             "$CONFIG_FILE" > "$TEMP_FILE"
+          jq --arg date "$TODAY" --argjson version "$NEXT_VERSION" \
+            '.config_version = $version | .updated_at = $date' \
+            "$CONFIG_FILE" > "$TEMP_FILE"
           mv "$TEMP_FILE" "$CONFIG_FILE"
 
-          echo "配置版本：$OLD_VERSION -> $NEXT_VERSION"
-          echo "更新时间：$TODAY"
+          echo "配置版本：强制设置为上一版本 + 1，即 $OLD_VERSION -> $NEXT_VERSION"
+          echo "已覆盖手动填写的版本号，避免跳号或误改"
 
       - name: 检查接口配置文件
         shell: bash
