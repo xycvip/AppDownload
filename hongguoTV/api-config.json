@@ -826,7 +826,11 @@
         "https://api5-normal-sinfonlineb.fqnovel.com",
         "https://api5-normal-sinfonlinea.fqnovel.com"
       ],
-      "fallback_on_nonzero_code": true
+      "fallback_on_nonzero_code": true,
+      "fallback_http_statuses": [
+        404,
+        405
+      ]
     }
   },
   "说明": "本文件只保留源码实际调用的接口规则。每条接口的“_名称”和“_说明”为中文维护说明，不参与请求拼装；接口请求参数、签名、加密和设备协议由 APK 执行器处理。"
