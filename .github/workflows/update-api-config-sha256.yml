@@ -10,18 +10,18 @@ on:
       - 'hongguoTV/api-config.json'
   workflow_dispatch:
 
-# 仅授予更新摘要文件所需的仓库内容写入权限
+# 仅授予更新配置版本及摘要文件所需的仓库内容写入权限
 permissions:
   contents: write
 
-# 同一时间只运行一个摘要更新任务，避免并发提交造成摘要与配置不匹配
+# 同一时间只运行一个配置维护任务，避免并发提交造成版本或摘要不匹配
 concurrency:
   group: api-config-sha256
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  update-sha256:
-    name: 自动计算红果API文件SHA-256
+  update-config:
+    name: 自动递增配置版本并计算 SHA-256
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +29,45 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          fetch-depth: 1
+          fetch-depth: 0
+
+      - name: 自动递增配置版本
+        if: github.event_name == 'push'
+        shell: bash
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          CONFIG_FILE="hongguoTV/api-config.json"
+
+          if [ -z "${BEFORE_SHA}" ] || [ "${BEFORE_SHA}" = "0000000000000000000000000000000000000000" ]; then
+            echo "未提供有效的变更前提交，跳过自动递增"
+            exit 0
+          fi
+
+          if ! git cat-file -e "${BEFORE_SHA}:${CONFIG_FILE}" 2>/dev/null; then
+            echo "变更前提交中不存在配置文件，跳过版本比较"
+            exit 0
+          fi
+
+          OLD_VERSION="$(git show "${BEFORE_SHA}:${CONFIG_FILE}" | jq -er '.config_version | numbers')"
+          CURRENT_VERSION="$(jq -er '.config_version | numbers' "$CONFIG_FILE")"
+
+          # 人工只改接口而未动版本号：自动 +1。
+          # 如果提交者已经把版本号调高，则尊重其值，避免重复递增。
+          if [ "$CURRENT_VERSION" -le "$OLD_VERSION" ]; then
+            NEXT_VERSION=$((OLD_VERSION + 1))
+          else
+            NEXT_VERSION="$CURRENT_VERSION"
+          fi
+
+          TODAY="$(date -u +%F)"
+          TEMP_FILE="$(mktemp)"
+          jq --arg date "$TODAY" --argjson version "$NEXT_VERSION"             '.config_version = $version | .updated_at = $date'             "$CONFIG_FILE" > "$TEMP_FILE"
+          mv "$TEMP_FILE" "$CONFIG_FILE"
+
+          echo "配置版本：$OLD_VERSION -> $NEXT_VERSION"
+          echo "更新时间：$TODAY"
 
       - name: 检查接口配置文件
         shell: bash
@@ -61,22 +99,22 @@ jobs:
           echo "已生成接口配置 SHA-256："
           cat hongguoTV/api-config.sha256
 
-      - name: 提交并推送摘要文件
+      - name: 提交并推送配置版本及摘要
         shell: bash
         run: |
           set -euo pipefail
 
-          if git diff --quiet -- hongguoTV/api-config.sha256; then
-            echo "摘要没有变化，无需提交"
+          if git diff --quiet -- hongguoTV/api-config.json hongguoTV/api-config.sha256; then
+            echo "配置版本和摘要均没有变化，无需提交"
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add hongguoTV/api-config.sha256
-          git commit -m "自动更新接口配置 SHA-256 摘要"
+          git add hongguoTV/api-config.json hongguoTV/api-config.sha256
+          git commit -m "自动更新接口配置版本及 SHA-256"
           git push origin HEAD:main
 
       - name: 输出完成信息
         if: success()
-        run: echo "接口配置检查及 SHA-256 自动更新流程已完成"
+        run: echo "接口配置检查、版本递增及 SHA-256 自动更新流程已完成"
