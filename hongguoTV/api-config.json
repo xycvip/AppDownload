@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "config_version": 7,
+  "config_version": 8,
   "description_zh": "红果TV统一接口配置。operations 是唯一接口规则来源；签名、设备注册加密等协议算法由 APK 内置执行器完成，配置文件仅描述请求规则。",
-  "updated_at": "2026-11-02",
+  "updated_at": "2026-11-03",
   "operations": {
     "ranking.list": {
       "base_url": "https://hongguoduanju.com",
@@ -541,6 +541,37 @@
       },
       "_名称": "视频播放模型",
       "_说明": "提交剧集播放请求，获取播放资源及清晰度、编码等信息。"
+    },
+    "playback.video_tab": {
+      "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
+      "path": "/reading/bookapi/video_tab/multi_video_model/v1/?from_video_id=",
+      "method": "GET",
+      "query": {
+        "video_id": "{episode_id}",
+        "video_id_type": "0",
+        "device_level": "1",
+        "need_all_video_definition": "1",
+        "need_mp4_align": "0",
+        "use_os_player": "0",
+        "video_platform": "1024",
+        "source": "0"
+      },
+      "headers": {
+        "User-Agent": "{user_agent}",
+        "Accept": "application/json; charset=utf-8",
+        "Cookie": "{cookie}"
+      },
+      "body": {
+        "type": "none"
+      },
+      "signing": {
+        "provider": "none"
+      },
+      "retry": {
+        "policy": "none"
+      },
+      "_名称": "新版视频播放模型",
+      "_说明": "官方现行单集 GET 播放接口；video_id 为当前集数，from_video_id 保留空参数。响应位于 data.video_model_data.{video_id}.video_model。"
     }
   },
   "说明": "本文件只保留源码实际调用的接口规则。每条接口的“_名称”和“_说明”为中文维护说明，不参与请求拼装；接口请求参数、签名、加密和设备协议由 APK 执行器处理。"
