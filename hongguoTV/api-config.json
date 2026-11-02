@@ -1,25 +1,50 @@
 {
   "schema_version": 1,
-  "config_version": 1,
+  "config_version": 2,
   "description_zh": "红果TV远程接口配置。所有键名、URL、路径均保持英文原样；description_zh 为中文说明字段，程序读取时忽略。此文件只配置安全的接口地址，不包含签名算法、加密协议或响应解析规则。",
   "updated_at": "2026-11-02",
+  "home_recommend": {
+    "description_zh": "首页推荐内容接口，负责获取首页短剧推荐列表。",
+    "base_url": "https://hongguoduanju.com",
+    "endpoints": {
+      "home": "/category?tab=1&sort_type=1"
+    }
+  },
+  "website_category": {
+    "description_zh": "网站题材分类接口，负责获取分类筛选项和题材分类内容。",
+    "base_url": "https://hongguoduanju.com",
+    "endpoints": {
+      "category": "/category/{category_path}",
+      "category_listing": "/category/{category_path}/{genre_slug}"
+    }
+  },
+  "ranking": {
+    "description_zh": "排行榜接口，按榜单类型和页码获取漫剧榜、短剧榜及 AI 剧榜。",
+    "base_url": "https://hongguoduanju.com",
+    "endpoints": {
+      "ranking": "/rank/{board_path}"
+    }
+  },
+  "series_detail": {
+    "description_zh": "剧集详情与分集列表接口。当前网站由同一个详情响应同时提供剧集信息和 vid_list 分集数据，因此两个配置项对应同一实际请求。",
+    "base_url": "https://hongguoduanju.com",
+    "endpoints": {
+      "detail": "/detail?series_id={series_id}",
+      "episode_list": "/detail?series_id={series_id}"
+    }
+  },
+  "website_search": {
+    "description_zh": "网站搜索结果接口，返回搜索列表和分页信息。",
+    "base_url": "https://hongguoduanju.com",
+    "endpoints": {
+      "search": "/api/search/result/?query={query}&page={page}"
+    }
+  },
   "device_register": {
     "description_zh": "匿名播放设备注册。注册请求使用现有 TTEncrypt、gzip、请求头及响应解析协议。",
     "base_url": "https://log5-applog-lf.fqnovel.com",
     "endpoints": {
       "register": "/service/2/device_register/"
-    }
-  },
-  "website_content": {
-    "description_zh": "红果网站内容页面接口：负责首页、题材分类、榜单、详情和网站搜索。",
-    "base_url": "https://hongguoduanju.com",
-    "endpoints": {
-      "home": "/category?tab=1&sort_type=1",
-      "category": "/category/{category_path}",
-      "category_listing": "/category/{category_path}/{genre_slug}",
-      "ranking": "/rank/{board_path}",
-      "detail": "/detail?series_id={series_id}",
-      "search": "/api/search/result/?query={query}&page={page}"
     }
   },
   "theater_catalog": {
