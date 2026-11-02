@@ -70,7 +70,15 @@
         "Accept-Language": "zh-CN,zh;q=0.9"
       },
       "_名称": "官网关键词搜索",
-      "_说明": "按关键词和页码读取官网搜索结果，作为 App 搜索的备用数据来源。"
+      "_说明": "按关键词和页码读取官网搜索结果，作为 App 搜索的备用数据来源。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "website.detail": {
       "base_url": "https://hongguoduanju.com",
@@ -104,7 +112,15 @@
         "policy": "idempotent_get"
       },
       "_名称": "账号资料",
-      "_说明": "读取当前红果账号的用户资料，需携带登录 Cookie 和平台签名。"
+      "_说明": "读取当前红果账号的用户资料，需携带登录 Cookie 和平台签名。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "cloud.read_progress_list": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -124,7 +140,15 @@
         "policy": "idempotent_get"
       },
       "_名称": "云端观看历史",
-      "_说明": "读取当前账号的云端观看进度记录。"
+      "_说明": "读取当前账号的云端观看进度记录。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "cloud.multi_detail": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -144,7 +168,15 @@
         "policy": "idempotent_get"
       },
       "_名称": "云端作品详情批量查询",
-      "_说明": "批量补全云端历史记录中作品的名称、封面等信息。"
+      "_说明": "批量补全云端历史记录中作品的名称、封面等信息。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "cloud.favorite_list": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -164,7 +196,15 @@
         "policy": "idempotent_get"
       },
       "_名称": "账号收藏列表",
-      "_说明": "读取当前红果账号收藏的作品列表。"
+      "_说明": "读取当前红果账号收藏的作品列表。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "cloud.favorite_update": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -184,7 +224,15 @@
         "policy": "none"
       },
       "_名称": "账号收藏更新",
-      "_说明": "向账号收藏中添加或移除作品；写操作不自动重试，避免重复提交。"
+      "_说明": "向账号收藏中添加或移除作品；写操作不自动重试，避免重复提交。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "cloud.subscription_list": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -204,7 +252,15 @@
         "policy": "idempotent_get"
       },
       "_名称": "预约列表",
-      "_说明": "读取当前账号已预约和待上线作品记录。"
+      "_说明": "读取当前账号已预约和待上线作品记录。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "cloud.subscription_update": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -225,7 +281,15 @@
         "policy": "none"
       },
       "_名称": "作品预约操作",
-      "_说明": "提交作品预约请求；请求体按平台要求压缩并签名。"
+      "_说明": "提交作品预约请求；请求体按平台要求压缩并签名。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "cloud.read_progress_upload": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -245,7 +309,15 @@
         "policy": "none"
       },
       "_名称": "观看进度上传",
-      "_说明": "将本机播放进度上传到红果账号云端。"
+      "_说明": "将本机播放进度上传到红果账号云端。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "danmaku.list": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -267,7 +339,15 @@
         "policy": "none"
       },
       "_名称": "视频弹幕列表",
-      "_说明": "按剧集 vid 获取视频弹幕数据；使用平台要求的 POST 请求体和签名。"
+      "_说明": "按剧集 vid 获取视频弹幕数据；使用平台要求的 POST 请求体和签名。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "comments.list": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -287,7 +367,15 @@
         "policy": "none"
       },
       "_名称": "官方评论列表",
-      "_说明": "读取指定剧集的官方评论及分页游标。"
+      "_说明": "读取指定剧集的官方评论及分页游标。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "comments.replies": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -307,7 +395,15 @@
         "policy": "none"
       },
       "_名称": "官方评论回复列表",
-      "_说明": "读取指定评论下的回复内容。"
+      "_说明": "读取指定评论下的回复内容。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "comments.publish": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -327,7 +423,15 @@
         "policy": "none"
       },
       "_名称": "发布官方评论",
-      "_说明": "向指定作品或剧集提交一条官方评论。"
+      "_说明": "向指定作品或剧集提交一条官方评论。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "comments.reply": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -347,7 +451,15 @@
         "policy": "none"
       },
       "_名称": "发布评论回复",
-      "_说明": "向指定官方评论提交回复内容。"
+      "_说明": "向指定官方评论提交回复内容。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "comments.action": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -367,7 +479,15 @@
         "policy": "none"
       },
       "_名称": "官方评论互动操作",
-      "_说明": "执行官方评论支持的互动动作，例如点赞或取消点赞。"
+      "_说明": "执行官方评论支持的互动动作，例如点赞或取消点赞。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "theater.catalog": {
       "base_urls": [
@@ -422,7 +542,15 @@
         "policy": "none"
       },
       "_名称": "搜索联想词",
-      "_说明": "根据用户输入的关键词读取搜索联想词，用于搜索补全和多季作品查找。"
+      "_说明": "根据用户输入的关键词读取搜索联想词，用于搜索补全和多季作品查找。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "search.results": {
       "base_urls": [
@@ -439,7 +567,15 @@
       },
       "fallback_on_nonzero_code": true,
       "_名称": "App 搜索结果",
-      "_说明": "读取红果 App 搜索接口结果，支持备用主机切换。"
+      "_说明": "读取红果 App 搜索接口结果，支持备用主机切换。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "qr.get_qrcode": {
       "base_url": "https://hongguoduanju.com",
@@ -464,7 +600,19 @@
         "policy": "idempotent_get"
       },
       "_名称": "获取登录二维码",
-      "_说明": "创建红果官网扫码登录二维码，并返回二维码内容和有效期。"
+      "_说明": "创建红果官网扫码登录二维码，并返回二维码内容和有效期。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ],
+          "message": [
+            "message",
+            "msg"
+          ]
+        }
+      }
     },
     "qr.check_qrconnect": {
       "base_url": "https://hongguoduanju.com",
@@ -490,7 +638,19 @@
         "policy": "idempotent_get"
       },
       "_名称": "查询扫码登录状态",
-      "_说明": "轮询二维码是否已扫码、确认或过期；成功后继续完成登录跳转。"
+      "_说明": "轮询二维码是否已扫码、确认或过期；成功后继续完成登录跳转。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ],
+          "message": [
+            "message",
+            "msg"
+          ]
+        }
+      }
     },
     "qr.account_info": {
       "base_url": "https://hongguoduanju.com",
@@ -514,7 +674,19 @@
         "policy": "idempotent_get"
       },
       "_名称": "验证扫码账号信息",
-      "_说明": "扫码确认后读取账号资料，确认登录态有效。"
+      "_说明": "扫码确认后读取账号资料，确认登录态有效。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ],
+          "message": [
+            "message",
+            "msg"
+          ]
+        }
+      }
     },
     "device.register": {
       "base_url": "https://log5-applog-lf.fqnovel.com",
@@ -540,7 +712,15 @@
         "policy": "none"
       },
       "_名称": "设备注册",
-      "_说明": "注册匿名设备并获取 device_id、install_id 及相关 Cookie，供账号和设备接口使用。"
+      "_说明": "注册匿名设备并获取 device_id、install_id 及相关 Cookie，供账号和设备接口使用。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     },
     "playback.video_model": {
       "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
@@ -610,7 +790,15 @@
         "policy": "none"
       },
       "_名称": "新版视频播放模型",
-      "_说明": "官方现行单集 GET 播放接口；video_id 为当前集数，from_video_id 保留空参数。响应位于 data.video_model_data.{video_id}.video_model。"
+      "_说明": "官方现行单集 GET 播放接口；video_id 为当前集数，from_video_id 保留空参数。响应位于 data.video_model_data.{video_id}.video_model。",
+      "response": {
+        "aliases": {
+          "code": [
+            "code",
+            "Code"
+          ]
+        }
+      }
     }
   },
   "说明": "本文件只保留源码实际调用的接口规则。每条接口的“_名称”和“_说明”为中文维护说明，不参与请求拼装；接口请求参数、签名、加密和设备协议由 APK 执行器处理。"
