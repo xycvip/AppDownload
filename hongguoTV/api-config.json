@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "config_version": 1,
+  "description_zh": "红果TV远程接口配置。所有键名、URL、路径均保持英文原样；description_zh 为中文说明字段，程序读取时忽略。此文件只配置安全的接口地址，不包含签名算法、加密协议或响应解析规则。",
+  "updated_at": "2026-11-02",
+  "device_register": {
+    "description_zh": "匿名播放设备注册。注册请求使用现有 TTEncrypt、gzip、请求头及响应解析协议。",
+    "base_url": "https://log5-applog-lf.fqnovel.com",
+    "endpoints": {
+      "register": "/service/2/device_register/"
+    }
+  },
+  "website_content": {
+    "description_zh": "红果网站内容页面接口：负责首页、题材分类、榜单、详情和网站搜索。",
+    "base_url": "https://hongguoduanju.com",
+    "endpoints": {
+      "home": "/category?tab=1&sort_type=1",
+      "category": "/category/{category_path}",
+      "category_listing": "/category/{category_path}/{genre_slug}",
+      "ranking": "/rank/{board_path}",
+      "detail": "/detail?series_id={series_id}",
+      "search": "/api/search/result/?query={query}&page={page}"
+    }
+  },
+  "theater_catalog": {
+    "description_zh": "剧场 App 分类与筛选接口。主备域名分别配置，保留原有轮换顺序、签名及分页会话参数。",
+    "base_urls": [
+      "https://api5-normal-sinfonlineb.fqnovel.com",
+      "https://api5-normal-sinfonlinea.fqnovel.com"
+    ],
+    "endpoints": {
+      "catalog": "/reading/distribution/category/landpage/v/"
+    }
+  },
+  "search_suggest": {
+    "description_zh": "搜索关键词联想接口。",
+    "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+    "endpoints": {
+      "suggest": "/reading/bookapi/search/suggest/v"
+    }
+  },
+  "search_results": {
+    "description_zh": "App 搜索结果接口。保留原有主备域名顺序及搜索游标。",
+    "base_urls": [
+      "https://api5-normal-sinfonlinea.fqnovel.com",
+      "https://reading.snssdk.com"
+    ],
+    "endpoints": {
+      "results": "/reading/bookapi/search/tab/v"
+    }
+  },
+  "playback": {
+    "description_zh": "剧集播放信息接口。设备身份、Cookie、签名参数、空响应重试和重新注册逻辑仍由 APK 本地代码处理。",
+    "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
+    "endpoints": {
+      "video_model": "/novel/player/multi_video_model/v1/"
+    }
+  },
+  "official_comments": {
+    "description_zh": "官方评论业务：评论列表、回复列表、发表评论、发表回复和评论互动。",
+    "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+    "endpoints": {
+      "comment_list": "/novel/commentapi/comment/list/{vid}/v1/",
+      "reply_list": "/novel/commentapi/reply/list/{comment_id}/v1/",
+      "comment_add": "/novel/commentapi/comment/add/v1/",
+      "reply_add": "/novel/commentapi/reply/add/v1/",
+      "comment_action": "/novel/commentapi/comment/do_action/v1/"
+    }
+  },
+  "danmaku": {
+    "description_zh": "官方弹幕业务。虽然列表路径与评论列表路径相同，但请求参数、业务类型、节流和重试机制独立，不能与官方评论合并。",
+    "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+    "endpoints": {
+      "danmaku_list": "/novel/commentapi/comment/list/{vid}/v1/"
+    }
+  },
+  "cloud_account": {
+    "description_zh": "红果账户云端接口：账户资料、观看历史、收藏、剧集详情、预约列表、预约状态和进度同步。",
+    "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
+    "endpoints": {
+      "user_info": "/reading/user/info/v1/",
+      "read_progress_list": "/reading/bookapi/read_progress/list/v1/",
+      "multi_detail": "/reading/bookapi/multi-detail/v1/",
+      "favorite_list": "/reading/bookapi/bookshelf/video/info/v1/",
+      "favorite_update": "/reading/bookapi/bookshelf/video/update/v1/",
+      "subscription_list": "/reading/user/subscribe/list/v0/",
+      "subscription_update": "/reading/bookapi/search/uncover_subscribe/v1/",
+      "read_progress_upload": "/reading/bookapi/read_progress/upload/v1/"
+    }
+  },
+  "qr_login": {
+    "description_zh": "网页扫码登录：获取二维码、轮询扫码状态，以及读取登录账户资料。网页端短信登录路径单独列出，不与扫码流程混淆。",
+    "base_url": "https://hongguoduanju.com",
+    "endpoints": {
+      "get_qrcode": "/passport/web/get_qrcode/",
+      "check_qrconnect": "/passport/web/check_qrconnect/",
+      "account_info": "/passport/account/info/v2/",
+      "web_send_code": "/passport/web/send_code/",
+      "web_sms_login": "/passport/web/sms_login/"
+    }
+  },
+  "phone_login": {
+    "description_zh": "手机号短信登录接口。当前源码中保留的发送验证码、验证码校验和短信登录端点；是否展示入口由 APK 当前产品逻辑决定。",
+    "base_url": "https://api5-normal-lq.fqnovel.com",
+    "endpoints": {
+      "send_code": "/passport/mobile/send_code/v1/",
+      "verify_code": "/passport/upsms/verify/",
+      "sms_login": "/passport/mobile/sms_login/"
+    }
+  }
+}
