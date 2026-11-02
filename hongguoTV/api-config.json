@@ -338,7 +338,7 @@
       "path": "/novel/commentapi/comment/list/{vid}/v1/",
       "method": "POST",
       "headers": {
-        "User-Agent": "{video_user_agent}",
+        "User-Agent": "com.phoenix.read/71332 (Linux; U; Android 16; zh_CN; 25053RT47C; Build/BP2A.250605.031.A3; Cronet/TTNetVersion:04657795 2026-01-23 QuicVersion:c67e9834 2025-09-08)",
         "comment-source": "601",
         "server-channel": "1000",
         "Content-Type": "application/json; charset=utf-8"
@@ -545,7 +545,7 @@
       "path": "/service/2/device_register/?tt_data=a&cronet_version=8d40f833_2026-03-03&ttnet_version=4.2.243.31-douyin&use_store_region_cookie=1",
       "method": "POST",
       "headers": {
-        "User-Agent": "{app_user_agent}",
+        "User-Agent": "com.phoenix.read/72232 (Linux; U; Android 16; zh_CN; 25053RT47C; Build/BP2A.250605.031.A3)",
         "Content-Type": "application/octet-stream;tt-data=a",
         "log-encode-type": "gzip",
         "x-ss-dp": "8662",
