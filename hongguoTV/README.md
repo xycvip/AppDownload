@@ -1,20 +1,110 @@
 # 红果 TV 分发目录
 
-当前版本：**1.1.11**
+当前版本：**1.1.12**
 
-- APK 安装包：[下载 HongguoTV-1.1.11.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.11/HongguoTV-1.1.11.apk)
+- APK 安装包：[下载 HongguoTV-1.1.12.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.12/HongguoTV-1.1.12.apk)
 - 应用内更新清单：[latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 
 ## 本次更新说明
 
-- 优化搜索功能与搜索结果展示
-- 优化首页内容展示与推荐体验
-- 优化视频播放体验及播放设置
-- 完善账号登录与账户功能
-- 优化设置选项与操作体验
-- 完善片源管理与内容加载
-- 优化电视遥控器焦点与导航操作
-- 优化界面布局与交互效果
-- 完善本地数据备份与恢复
+- 增强播放接口多通道兜底并统一 App 请求传输
+- 完善官网动态取源与播放分集校验
+- 修正动态官网取源测试场景
+- 完善编码优先级与备用播放地址选择
+- 限制官网取源请求超时
+- 按设备硬件解码能力选择播放编码
+- 完善电视硬解检测与播放编码自动容错
+- 修正硬解帧率类型编译错误
+- 修正播放请求重复变量声明
+- 修正播放解码回退与设备能力判断
+- 升级解码能力缓存并修正旧版硬解识别
+- 增加解码帧率能力优先级测试
+- 按分辨率与帧率组合筛选硬件解码能力
+- 缓存硬解分辨率帧率组合能力
+- 修正解码能力缓存解析标签
+- 增加分辨率帧率组合能力测试
+- 兼容竖屏视频的解码尺寸方向判断
+- 补充分辨率方向兼容测试
+- 仅对视频轨解码错误触发编码回退
+- 仅选择硬件兼容片源并优化清晰度兜底
+- 扩展设备硬件视频编码能力检测
+- 播放器视频轨强制使用硬件解码器
+- 补充硬件解码筛选与清晰度兜底测试
+- 补充 VP9 与 AV1 硬件能力测试
+- 保留未知编码并由硬解选择器实测
+- 测试未知编码的硬件解码运行时校验
+- 复用播放器现有 Media3 实验 API 声明
+- 清晰度设置增加自动模式
+- 实现自动清晰度硬解优先选择
+- 设置页增加自动清晰度选项
+- 增加自动清晰度设置测试
+- 增加自动模式按设备硬解能力选最高画质测试
+- 修正自动清晰度测试的硬解能力条件
+- 调整清晰度选项顺序
+- 播放资源同清晰度多编码轮换
+- 增加同清晰度播放资源轮换测试
+- 为同编码资源保留 CDN 备用地址
+- 为分段读取增加 CDN 断流切换
+- 加强备用 CDN 内容一致性校验
+- 覆盖同编码 CDN 备用地址保留测试
+- 增加 CDN 断流切换与文件一致性测试
+- 区分 CDN 全部失效与普通网络错误
+- 让 CDN 失败异常携带原始编码信息
+- 增加网络失效资源的独立排除入口
+- CDN 全部失效时自动尝试同档其他编码
+- 修正 CDN 测试数据 JSON 结构
+- 修复：Fix playback when Android TV codec scan misses vendor decoders
+- Test fallback for incomplete Android codec scans
+- Keep core playback module platform independent
+- Diagnose empty playback candidate filtering
+- 新增或完善：Add manual source retry and playback diagnostics
+- Use MediaCodec enumeration for device video capabilities
+- Align player hardware decoder selection with MediaCodec detection
+- 新增或完善：Add exportable playback diagnostics report
+- 修复：Fix diagnostic report newline and redaction escaping
+- Enable playback diagnostics only in debug test builds
+- Hide and disable playback diagnostics in release builds
+- 诊断播放地址被过滤的具体原因
+- 修正播放地址诊断变量作用域
+- 保留 ByteVC2 作为硬解实测兜底候选
+- 将 ByteVC2 调整为末级播放兜底
+- 仅统计地址有效的 ByteVC2 兜底候选
+- 补充 ByteVC2 末级兜底与解码失败回退测试
+- 更新播放资源异常说明
+- 修正已完成硬件检测时的编码候选过滤
+- 修正 ByteVC2 编码标签测试预期
+- 避免 CDN 全部失败后后台预读重复请求
+- 增加 CDN 中途断流备用地址轮换测试
+- 校正未完成硬解扫描测试条件
+- 先解密播放地址再执行 URI 校验
+- 回退 custom 到上一正式版 1.1.10
+- 回退 custom 到上一正式版 1.1.11
+- 播放：增加 Range 网络异常分类与有限重试
+- 播放：让网络退避重试遵守请求取消状态
+- 播放：为视频 Range GET 增加瞬时故障重试
+- 播放：兼容多种响应结构并优先选择 H.264
+- 播放：接入独立播放通道调度和故障备用源
+- 播放：新增独立 StreamSource 通道调度器
+- 播放：接入 Media3 下一集样本预加载与 MediaSource 复用
+- 播放：修正预加载任务的播放代际校验
+- 播放：按视频方向正确解析嵌套清晰度尺寸
+- 播放：保留明确不兼容编码的原始错误
+- 播放：补齐直接 video_list 与 fallback_api 响应结构
+- 测试：覆盖嵌套 video_meta 与多种播放响应结构
+- 测试：覆盖 Range GET 瞬时网络异常重试策略
+- 设置：加入播放调试模式与独立诊断日志
+- 调试模式：补充播放起止、资源与故障诊断记录
+- 调试模式：整理播放恢复时的诊断层初始化
+- 调试模式入口默认隐藏并通过连续点击系统时间解锁
+- 设置页隐藏左侧主分类说明，保留子设置说明
+- 设置页左侧说明文字按卡片高度动态垂直居中
+- 修正设置说明居中方式并保持分类卡片原高度
+- 修复测试构建中的 Kotlin 编译错误
+- 修正正式版更新说明生成逻辑
+- 修正更新说明脚本转义字符
+- 调整更新说明基准缺失时的发布策略
+- Keep enabled debug setting visible
+- Keep debug setting visible until next app launch
+- Build formal release
 
 APK 文件名带版本号。每次成功发布后，工作流会自动更新本说明、APK 和 latest.json。
