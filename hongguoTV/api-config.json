@@ -775,7 +775,7 @@
     },
     "playback.video_tab": {
       "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
-      "path": "/reading/bookapi/video_tab/multi_video_model/v1/?from_video_id=",
+      "path": "/reading/bookapi/video_tab/multi_video_model/v1/",
       "method": "GET",
       "query": {
         "video_id": "{episode_id}",
@@ -785,7 +785,8 @@
         "need_mp4_align": "0",
         "use_os_player": "0",
         "video_platform": "1024",
-        "source": "0"
+        "source": "0",
+        "from_video_id": ""
       },
       "headers": {
         "User-Agent": "{user_agent}",
@@ -796,13 +797,13 @@
         "type": "none"
       },
       "signing": {
-        "provider": "none"
+        "provider": "tt"
       },
       "retry": {
-        "policy": "none"
+        "policy": "idempotent_get"
       },
       "_名称": "新版视频播放模型",
-      "_说明": "官方现行单集 GET 播放接口；video_id 为当前集数，from_video_id 保留空参数。作为旧版 POST 播放接口的跨方法备用接口，响应映射到统一 data.video_model_data 结构。",
+      "_说明": "按官方现行 GetVideoModelRequest 参数请求单集播放模型；所有必需 snake_case 参数齐全，使用平台设备身份与 TT 请求签名。失败后由 playback.video_model 的回退链处理。",
       "response": {
         "map": {
           "Code": [
