@@ -142,7 +142,7 @@
         "page": "{page}"
       },
       "headers": {
-        "User-Agent": "{user_agent}",
+        "User-Agent": "com.phoenix.read/71332 (Linux; U; Android 16; zh_CN; 25053RT47C; Build/BP2A.250605.031.A3; Cronet/TTNetVersion:04657795 2026-01-23 QuicVersion:c67e9834 2025-09-08)",
         "Accept-Language": "zh-CN,zh;q=0.9"
       }
     },
@@ -151,7 +151,7 @@
       "path": "/category/{category_path}",
       "method": "GET",
       "headers": {
-        "User-Agent": "{user_agent}",
+        "User-Agent": "com.phoenix.read/71332 (Linux; U; Android 16; zh_CN; 25053RT47C; Build/BP2A.250605.031.A3; Cronet/TTNetVersion:04657795 2026-01-23 QuicVersion:c67e9834 2025-09-08)",
         "Accept-Language": "zh-CN,zh;q=0.9"
       }
     },
@@ -163,7 +163,7 @@
         "page": "{page}"
       },
       "headers": {
-        "User-Agent": "{user_agent}",
+        "User-Agent": "com.phoenix.read/71332 (Linux; U; Android 16; zh_CN; 25053RT47C; Build/BP2A.250605.031.A3; Cronet/TTNetVersion:04657795 2026-01-23 QuicVersion:c67e9834 2025-09-08)",
         "Accept-Language": "zh-CN,zh;q=0.9"
       }
     },
@@ -175,7 +175,7 @@
         "page": "{page}"
       },
       "headers": {
-        "User-Agent": "{user_agent}",
+        "User-Agent": "com.phoenix.read/71332 (Linux; U; Android 16; zh_CN; 25053RT47C; Build/BP2A.250605.031.A3; Cronet/TTNetVersion:04657795 2026-01-23 QuicVersion:c67e9834 2025-09-08)",
         "Accept-Language": "zh-CN,zh;q=0.9"
       }
     },
@@ -188,7 +188,7 @@
         "page": "{page}"
       },
       "headers": {
-        "User-Agent": "{user_agent}",
+        "User-Agent": "com.phoenix.read/71332 (Linux; U; Android 16; zh_CN; 25053RT47C; Build/BP2A.250605.031.A3; Cronet/TTNetVersion:04657795 2026-01-23 QuicVersion:c67e9834 2025-09-08)",
         "Accept-Language": "zh-CN,zh;q=0.9"
       }
     },
@@ -200,7 +200,7 @@
         "series_id": "{series_id}"
       },
       "headers": {
-        "User-Agent": "{user_agent}",
+        "User-Agent": "com.phoenix.read/71332 (Linux; U; Android 16; zh_CN; 25053RT47C; Build/BP2A.250605.031.A3; Cronet/TTNetVersion:04657795 2026-01-23 QuicVersion:c67e9834 2025-09-08)",
         "Accept-Language": "zh-CN,zh;q=0.9"
       }
     },
@@ -565,7 +565,7 @@
       }
     },
     "playback.video_model": {
-      "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
+      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
       "path": "/novel/player/video_model/v1/",
       "method": "POST",
       "headers": {
