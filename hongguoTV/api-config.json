@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "config_version": 4,
+  "config_version": 5,
   "description_zh": "红果TV远端接口配置 v2。operations 是唯一接口执行规则；APK 只执行内置安全能力，不再静默使用硬编码接口规则。",
   "updated_at": "2026-11-02",
   "home_recommend": {
