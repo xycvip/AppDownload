@@ -1,0 +1,82 @@
+# 工作流名称：自动计算接口配置 SHA-256
+
+name: 自动计算接口配置 SHA-256
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'hongguoTV/api-config.json'
+  workflow_dispatch:
+
+# 仅授予更新摘要文件所需的仓库内容写入权限
+permissions:
+  contents: write
+
+# 同一时间只运行一个摘要更新任务，避免并发提交造成摘要与配置不匹配
+concurrency:
+  group: 接口配置摘要自动更新
+  cancel-in-progress: true
+
+jobs:
+  update-sha256:
+    name: 检查配置并自动更新摘要
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出主分支最新文件
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: 检查接口配置文件
+        shell: bash
+        run: |
+          set -euo pipefail
+          配置文件="hongguoTV/api-config.json"
+
+          if [ ! -s "$配置文件" ]; then
+            echo "::error::接口配置文件不存在或内容为空"
+            exit 1
+          fi
+
+          # 检查 JSON 语法及必要版本字段，防止错误配置生成有效摘要
+          jq -e '
+            type == "object"
+            and (.schema_version | type == "number")
+            and (.config_version | type == "number")
+            and (.schema_version > 0)
+            and (.config_version > 0)
+          ' "$配置文件" > /dev/null
+
+          echo "接口配置 JSON 格式及版本字段检查通过"
+
+      - name: 自动计算 SHA-256 摘要
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum hongguoTV/api-config.json > hongguoTV/api-config.sha256
+          echo "已生成接口配置 SHA-256："
+          cat hongguoTV/api-config.sha256
+
+      - name: 提交并推送摘要文件
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- hongguoTV/api-config.sha256; then
+            echo "摘要没有变化，无需提交"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hongguoTV/api-config.sha256
+          git commit -m "自动更新接口配置 SHA-256 摘要"
+          git push origin HEAD:main
+
+      - name: 输出完成信息
+        if: success()
+        run: echo "接口配置检查及 SHA-256 自动更新流程已完成"
