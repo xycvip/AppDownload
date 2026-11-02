@@ -390,7 +390,26 @@
       },
       "fallback_on_nonzero_code": true,
       "_名称": "剧场内容目录",
-      "_说明": "读取 App 剧场分类目录及筛选结果，支持备用主机切换。"
+      "_说明": "读取 App 剧场分类目录及筛选结果，支持备用主机切换。",
+      "response": {
+        "map": {
+          "code": [
+            "code",
+            "Code"
+          ],
+          "data": [
+            "data"
+          ]
+        },
+        "types": {
+          "code": "int",
+          "data": "object"
+        },
+        "required": [
+          "code",
+          "data"
+        ]
+      }
     },
     "search.suggest": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -540,7 +559,27 @@
         "policy": "none"
       },
       "_名称": "视频播放模型",
-      "_说明": "提交剧集播放请求，获取播放资源及清晰度、编码等信息。"
+      "_说明": "提交剧集播放请求，获取播放资源及清晰度、编码等信息。",
+      "response": {
+        "map": {
+          "Code": [
+            "Code",
+            "code"
+          ],
+          "data": [
+            "data"
+          ]
+        },
+        "types": {
+          "Code": "int",
+          "data": "object"
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "fallback_safe": true,
+      "fallback_on_nonzero_code": true
     },
     "playback.video_tab": {
       "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
