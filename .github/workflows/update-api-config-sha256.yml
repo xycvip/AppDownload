@@ -16,7 +16,7 @@ permissions:
 
 # 同一时间只运行一个摘要更新任务，避免并发提交造成摘要与配置不匹配
 concurrency:
-  group: 接口配置摘要自动更新
+  group: api-config-sha256
   cancel-in-progress: true
 
 jobs:
@@ -35,9 +35,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          配置文件="hongguoTV/api-config.json"
+          CONFIG_FILE="hongguoTV/api-config.json"
 
-          if [ ! -s "$配置文件" ]; then
+          if [ ! -s "$CONFIG_FILE" ]; then
             echo "::error::接口配置文件不存在或内容为空"
             exit 1
           fi
@@ -49,7 +49,7 @@ jobs:
             and (.config_version | type == "number")
             and (.schema_version > 0)
             and (.config_version > 0)
-          ' "$配置文件" > /dev/null
+          ' "$CONFIG_FILE" > /dev/null
 
           echo "接口配置 JSON 格式及版本字段检查通过"
 
