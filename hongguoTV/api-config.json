@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "config_version": 2,
+  "config_version": 3,
   "description_zh": "红果TV远程接口配置。所有键名、URL、路径均保持英文原样；description_zh 为中文说明字段，程序读取时忽略。此文件只配置安全的接口地址，不包含签名算法、加密协议或响应解析规则。",
   "updated_at": "2026-11-02",
   "home_recommend": {
@@ -75,10 +75,10 @@
     }
   },
   "playback": {
-    "description_zh": "剧集播放信息接口。设备身份、Cookie、签名参数、空响应重试和重新注册逻辑仍由 APK 本地代码处理。",
-    "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
+    "description_zh": "剧集播放模型接口。采用最新参考实现记录的单集 video_model 路径；设备身份、请求签名、空响应识别及设备重置仍由 APK 本地代码处理。",
+    "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
     "endpoints": {
-      "video_model": "/novel/player/multi_video_model/v1/"
+      "video_model": "/novel/player/video_model/v1/"
     }
   },
   "official_comments": {
