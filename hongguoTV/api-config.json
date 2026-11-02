@@ -1,138 +1,8 @@
 {
   "schema_version": 2,
   "config_version": 5,
-  "description_zh": "红果TV远端接口配置 v2。operations 是唯一接口执行规则；APK 只执行内置安全能力，不再静默使用硬编码接口规则。",
+  "description_zh": "红果TV统一接口配置。operations 是唯一接口规则来源；签名、设备注册加密等协议算法由 APK 内置执行器完成，配置文件仅描述请求规则。",
   "updated_at": "2026-11-02",
-  "home_recommend": {
-    "description_zh": "首页推荐内容接口，负责获取首页短剧推荐列表。",
-    "base_url": "https://hongguoduanju.com",
-    "endpoints": {
-      "home": "/category?tab=1&sort_type=1"
-    }
-  },
-  "website_category": {
-    "description_zh": "网站题材分类接口，负责获取分类筛选项和题材分类内容。",
-    "base_url": "https://hongguoduanju.com",
-    "endpoints": {
-      "category": "/category/{category_path}",
-      "category_listing": "/category/{category_path}/{genre_slug}"
-    }
-  },
-  "ranking": {
-    "description_zh": "排行榜接口，按榜单类型和页码获取漫剧榜、短剧榜及 AI 剧榜。",
-    "base_url": "https://hongguoduanju.com",
-    "endpoints": {
-      "ranking": "/rank/{board_path}"
-    }
-  },
-  "series_detail": {
-    "description_zh": "剧集详情与分集列表接口。当前网站由同一个详情响应同时提供剧集信息和 vid_list 分集数据，因此两个配置项对应同一实际请求。",
-    "base_url": "https://hongguoduanju.com",
-    "endpoints": {
-      "detail": "/detail?series_id={series_id}",
-      "episode_list": "/detail?series_id={series_id}"
-    }
-  },
-  "website_search": {
-    "description_zh": "网站搜索结果接口，返回搜索列表和分页信息。",
-    "base_url": "https://hongguoduanju.com",
-    "endpoints": {
-      "search": "/api/search/result/?query={query}&page={page}"
-    }
-  },
-  "device_register": {
-    "description_zh": "匿名播放设备注册。注册请求使用现有 TTEncrypt、gzip、请求头及响应解析协议。",
-    "base_url": "https://log5-applog-lf.fqnovel.com",
-    "endpoints": {
-      "register": "/service/2/device_register/"
-    }
-  },
-  "theater_catalog": {
-    "description_zh": "剧场 App 分类与筛选接口。主备域名分别配置，保留原有轮换顺序、签名及分页会话参数。",
-    "base_urls": [
-      "https://api5-normal-sinfonlineb.fqnovel.com",
-      "https://api5-normal-sinfonlinea.fqnovel.com"
-    ],
-    "endpoints": {
-      "catalog": "/reading/distribution/category/landpage/v/"
-    }
-  },
-  "search_suggest": {
-    "description_zh": "搜索关键词联想接口。",
-    "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
-    "endpoints": {
-      "suggest": "/reading/bookapi/search/suggest/v"
-    }
-  },
-  "search_results": {
-    "description_zh": "App 搜索结果接口。保留原有主备域名顺序及搜索游标。",
-    "base_urls": [
-      "https://api5-normal-sinfonlinea.fqnovel.com",
-      "https://reading.snssdk.com"
-    ],
-    "endpoints": {
-      "results": "/reading/bookapi/search/tab/v"
-    }
-  },
-  "playback": {
-    "description_zh": "剧集播放模型接口。采用最新参考实现记录的单集 video_model 路径；设备身份、请求签名、空响应识别及设备重置仍由 APK 本地代码处理。",
-    "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
-    "endpoints": {
-      "video_model": "/novel/player/video_model/v1/"
-    }
-  },
-  "official_comments": {
-    "description_zh": "官方评论业务：评论列表、回复列表、发表评论、发表回复和评论互动。",
-    "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
-    "endpoints": {
-      "comment_list": "/novel/commentapi/comment/list/{vid}/v1/",
-      "reply_list": "/novel/commentapi/reply/list/{comment_id}/v1/",
-      "comment_add": "/novel/commentapi/comment/add/v1/",
-      "reply_add": "/novel/commentapi/reply/add/v1/",
-      "comment_action": "/novel/commentapi/comment/do_action/v1/"
-    }
-  },
-  "danmaku": {
-    "description_zh": "官方弹幕业务。虽然列表路径与评论列表路径相同，但请求参数、业务类型、节流和重试机制独立，不能与官方评论合并。",
-    "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
-    "endpoints": {
-      "danmaku_list": "/novel/commentapi/comment/list/{vid}/v1/"
-    }
-  },
-  "cloud_account": {
-    "description_zh": "红果账户云端接口：账户资料、观看历史、收藏、剧集详情、预约列表、预约状态和进度同步。",
-    "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
-    "endpoints": {
-      "user_info": "/reading/user/info/v1/",
-      "read_progress_list": "/reading/bookapi/read_progress/list/v1/",
-      "multi_detail": "/reading/bookapi/multi-detail/v1/",
-      "favorite_list": "/reading/bookapi/bookshelf/video/info/v1/",
-      "favorite_update": "/reading/bookapi/bookshelf/video/update/v1/",
-      "subscription_list": "/reading/user/subscribe/list/v0/",
-      "subscription_update": "/reading/bookapi/search/uncover_subscribe/v1/",
-      "read_progress_upload": "/reading/bookapi/read_progress/upload/v1/"
-    }
-  },
-  "qr_login": {
-    "description_zh": "网页扫码登录：获取二维码、轮询扫码状态，以及读取登录账户资料。网页端短信登录路径单独列出，不与扫码流程混淆。",
-    "base_url": "https://hongguoduanju.com",
-    "endpoints": {
-      "get_qrcode": "/passport/web/get_qrcode/",
-      "check_qrconnect": "/passport/web/check_qrconnect/",
-      "account_info": "/passport/account/info/v2/",
-      "web_send_code": "/passport/web/send_code/",
-      "web_sms_login": "/passport/web/sms_login/"
-    }
-  },
-  "phone_login": {
-    "description_zh": "手机号短信登录接口。当前源码中保留的发送验证码、验证码校验和短信登录端点；是否展示入口由 APK 当前产品逻辑决定。",
-    "base_url": "https://api5-normal-lq.fqnovel.com",
-    "endpoints": {
-      "send_code": "/passport/mobile/send_code/v1/",
-      "verify_code": "/passport/upsms/verify/",
-      "sms_login": "/passport/mobile/sms_login/"
-    }
-  },
   "operations": {
     "ranking.list": {
       "base_url": "https://hongguoduanju.com",
@@ -218,7 +88,9 @@
       "signing": {
         "provider": "tt"
       },
-      "retry": "idempotent_get"
+      "retry": {
+        "policy": "idempotent_get"
+      }
     },
     "cloud.read_progress_list": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -234,7 +106,9 @@
       "signing": {
         "provider": "tt"
       },
-      "retry": "idempotent_get"
+      "retry": {
+        "policy": "idempotent_get"
+      }
     },
     "cloud.multi_detail": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -250,7 +124,9 @@
       "signing": {
         "provider": "tt"
       },
-      "retry": "idempotent_get"
+      "retry": {
+        "policy": "idempotent_get"
+      }
     },
     "cloud.favorite_list": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -266,7 +142,9 @@
       "signing": {
         "provider": "tt"
       },
-      "retry": "idempotent_get"
+      "retry": {
+        "policy": "idempotent_get"
+      }
     },
     "cloud.favorite_update": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -282,7 +160,9 @@
       "signing": {
         "provider": "tt"
       },
-      "retry": "none"
+      "retry": {
+        "policy": "none"
+      }
     },
     "cloud.subscription_list": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -298,7 +178,9 @@
       "signing": {
         "provider": "tt"
       },
-      "retry": "idempotent_get"
+      "retry": {
+        "policy": "idempotent_get"
+      }
     },
     "cloud.subscription_update": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -315,7 +197,9 @@
       "signing": {
         "provider": "tt"
       },
-      "retry": "none"
+      "retry": {
+        "policy": "none"
+      }
     },
     "cloud.read_progress_upload": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -331,7 +215,9 @@
       "signing": {
         "provider": "tt"
       },
-      "retry": "none"
+      "retry": {
+        "policy": "none"
+      }
     },
     "danmaku.list": {
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
@@ -348,6 +234,9 @@
       },
       "signing": {
         "provider": "tt"
+      },
+      "retry": {
+        "policy": "none"
       }
     },
     "comments.list": {
@@ -358,8 +247,14 @@
         "Cookie": "{cookie}",
         "Content-Type": "application/json; charset=utf-8"
       },
+      "body": {
+        "type": "none"
+      },
       "signing": {
         "provider": "tt"
+      },
+      "retry": {
+        "policy": "none"
       }
     },
     "comments.replies": {
@@ -375,6 +270,9 @@
       },
       "signing": {
         "provider": "tt"
+      },
+      "retry": {
+        "policy": "none"
       }
     },
     "comments.publish": {
@@ -390,6 +288,9 @@
       },
       "signing": {
         "provider": "tt"
+      },
+      "retry": {
+        "policy": "none"
       }
     },
     "comments.reply": {
@@ -405,6 +306,9 @@
       },
       "signing": {
         "provider": "tt"
+      },
+      "retry": {
+        "policy": "none"
       }
     },
     "comments.action": {
@@ -420,16 +324,18 @@
       },
       "signing": {
         "provider": "tt"
+      },
+      "retry": {
+        "policy": "none"
       }
     },
     "theater.catalog": {
-      "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
-      "path": "/reading/distribution/category/landpage/v/",
-      "method": "POST",
       "base_urls": [
         "https://api5-normal-sinfonlineb.fqnovel.com",
         "https://api5-normal-sinfonlinea.fqnovel.com"
       ],
+      "path": "/reading/distribution/category/landpage/v/",
+      "method": "POST",
       "headers": {
         "Content-Type": "application/json; charset=UTF-8"
       },
@@ -448,21 +354,20 @@
       "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
       "path": "/reading/bookapi/search/suggest/v",
       "method": "GET",
-      "base_urls": [
-        "https://api5-normal-sinfonlinea.fqnovel.com"
-      ],
       "signing": {
         "provider": "tt"
+      },
+      "retry": {
+        "policy": "none"
       }
     },
     "search.results": {
-      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
-      "path": "/reading/bookapi/search/tab/v",
-      "method": "GET",
       "base_urls": [
         "https://api5-normal-sinfonlinea.fqnovel.com",
         "https://reading.snssdk.com"
       ],
+      "path": "/reading/bookapi/search/tab/v",
+      "method": "GET",
       "signing": {
         "provider": "tt"
       },
@@ -565,8 +470,8 @@
       }
     },
     "playback.video_model": {
-      "base_url": "https://api5-normal-sinfonlinea.fqnovel.com",
-      "path": "/novel/player/video_model/v1/",
+      "base_url": "https://api5-normal-sinfonlineb.fqnovel.com",
+      "path": "/novel/player/multi_video_model/v1/",
       "method": "POST",
       "headers": {
         "User-Agent": "{user_agent}",
@@ -576,6 +481,9 @@
       },
       "body": {
         "type": "raw"
+      },
+      "retry": {
+        "policy": "none"
       }
     }
   }
