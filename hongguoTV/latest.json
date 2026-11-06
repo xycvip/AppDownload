@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "c5362e6dc23f2ecba90d6394c108ae89282a6125",
-  "versionCode": 2026110606,
-  "versionName": "1.1.24",
+  "sourceCommit": "8ce168853170072a048b1337fa9c5f48215eec6e",
+  "versionCode": 2026110607,
+  "versionName": "1.1.25",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.24",
+  "tag": "hongguotv-v1.1.25",
   "apk": {
-    "name": "HongguoTV-1.1.24.apk",
+    "name": "HongguoTV-1.1.25.apk",
     "size": 1953929,
-    "sha256": "4aaeb647d66efb6deecababa0e5a04f55fe6038b0023946c989af163fed8adc0",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.24/HongguoTV-1.1.24.apk"
+    "sha256": "899880360ad8089a78db0773dd09886af895328cb0f09931e8ca9134092a5bff",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.25/HongguoTV-1.1.25.apk"
   },
-  "notes": "- 修复Gitee首次正式版发行版自动创建\n- 更新正式版 1.1.23 下载信息"
+  "notes": "- 修复Gitee更新发行版缺少必填Tag参数\n- 更新正式版 1.1.24 下载信息"
 }

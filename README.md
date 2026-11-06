@@ -13,16 +13,16 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**1.1.24**
+当前版本：**1.1.25**
 
-- [下载最新版 HongguoTV-1.1.24.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.24/HongguoTV-1.1.24.apk)
+- [下载最新版 HongguoTV-1.1.25.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.25/HongguoTV-1.1.25.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
 **本次更新说明**
 
-- 修复Gitee首次正式版发行版自动创建
-- 更新正式版 1.1.23 下载信息
+- 修复Gitee更新发行版缺少必填Tag参数
+- 更新正式版 1.1.24 下载信息
 <!-- END APP: hongguoTV -->
 
 ## 仓库用途
