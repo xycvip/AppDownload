@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "cafc5802eaddee03cdb6fff15cc0adb16f5ecf67",
-  "versionCode": 2026110612,
-  "versionName": "1.1.30",
+  "sourceCommit": "1d498e41486f917e29316b351614b6a22614dd96",
+  "versionCode": 2026110701,
+  "versionName": "1.1.31",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.30",
+  "tag": "hongguotv-v1.1.31",
   "apk": {
-    "name": "HongguoTV-1.1.30.apk",
-    "size": 1955973,
-    "sha256": "ab9a747ed315b5ce69c98124210b84ab41b99979e702d4888830b4bdb3b8b19d",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.30/HongguoTV-1.1.30.apk"
+    "name": "HongguoTV-1.1.31.apk",
+    "size": 1956641,
+    "sha256": "f2ec71127901871e31cf0d34b34c3acfbbd22fea6d23dd8bb451d16527667771",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.31/HongguoTV-1.1.31.apk"
   },
-  "notes": "- ui: 总榜名称调整为综合榜\n- fix: 明确排行榜首排海报向上焦点\n- fix: 统一排行榜分页来源名称\n- fix: 统一排行榜来源名称\n- feat: 增加总榜入口并调整榜单顺序\n- feat: 默认打开红果综合总榜\n- feat: 接入红果综合热播总榜\n- fix: 完善GitHub手动下载源备用清单\n- fix: 修复GitCode下载源回退判断\n- 更新正式版 1.1.29 下载信息"
+  "notes": "- **问题修复**：修复正式版发布脚本 heredoc 缩进。\n- **排行榜优化**：片库和排行榜题材标签改为亮橘色。\n- **界面与体验优化**：首页题材标签文字改为亮橘色。\n- **体验优化**：首页海报标题下显示作品题材；海报标题下显示作品题材；修正正式版发布说明脚本转义；优化正式版中文发布说明生成。"
 }

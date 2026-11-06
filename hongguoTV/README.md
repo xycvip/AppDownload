@@ -1,23 +1,17 @@
 # 红果 TV 分发目录
 
 <!-- LATEST_RELEASE_START -->
-当前版本：**1.1.30**
+当前版本：**1.1.31**
 
-- APK 安装包：[下载 HongguoTV-1.1.30.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.30/HongguoTV-1.1.30.apk)
+- APK 安装包：[下载 HongguoTV-1.1.31.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.31/HongguoTV-1.1.31.apk)
 - 应用内更新清单：[latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 
 ## 本次更新说明
 
-- ui: 总榜名称调整为综合榜
-- fix: 明确排行榜首排海报向上焦点
-- fix: 统一排行榜分页来源名称
-- fix: 统一排行榜来源名称
-- feat: 增加总榜入口并调整榜单顺序
-- feat: 默认打开红果综合总榜
-- feat: 接入红果综合热播总榜
-- fix: 完善GitHub手动下载源备用清单
-- fix: 修复GitCode下载源回退判断
-- 更新正式版 1.1.29 下载信息
+- **问题修复**：修复正式版发布脚本 heredoc 缩进。
+- **排行榜优化**：片库和排行榜题材标签改为亮橘色。
+- **界面与体验优化**：首页题材标签文字改为亮橘色。
+- **体验优化**：首页海报标题下显示作品题材；海报标题下显示作品题材；修正正式版发布说明脚本转义；优化正式版中文发布说明生成。
 <!-- LATEST_RELEASE_END -->
 
 ## 红果TV正式版 1.1.16
@@ -399,5 +393,19 @@
 - fix: 完善GitHub手动下载源备用清单
 - fix: 修复GitCode下载源回退判断
 - 更新正式版 1.1.29 下载信息
+
+---
+
+## 红果TV正式版 1.1.31
+
+- 下载：[HongguoTV-1.1.31.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.31/HongguoTV-1.1.31.apk)
+- versionCode：2026110701
+- SHA-256：f2ec71127901871e31cf0d34b34c3acfbbd22fea6d23dd8bb451d16527667771
+
+### 本次更新
+- **问题修复**：修复正式版发布脚本 heredoc 缩进。
+- **排行榜优化**：片库和排行榜题材标签改为亮橘色。
+- **界面与体验优化**：首页题材标签文字改为亮橘色。
+- **体验优化**：首页海报标题下显示作品题材；海报标题下显示作品题材；修正正式版发布说明脚本转义；优化正式版中文发布说明生成。
 
 ---
