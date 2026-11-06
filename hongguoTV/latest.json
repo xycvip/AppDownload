@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "a2bf2ab334ab2b67888fd7fc8c14d60a16bd6070",
-  "versionCode": 2026110603,
-  "versionName": "1.1.21",
+  "sourceCommit": "0187d49a5f499b1442d5e073f7b68a7d317da67a",
+  "versionCode": 2026110604,
+  "versionName": "1.1.22",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.21",
+  "tag": "hongguotv-v1.1.22",
   "apk": {
-    "name": "HongguoTV-1.1.21.apk",
-    "size": 1953925,
-    "sha256": "11ecb3f1a63b16c240a356036cccbf24e1f40ff8923672b40dcd6172eee66505",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.21/HongguoTV-1.1.21.apk"
+    "name": "HongguoTV-1.1.22.apk",
+    "size": 1953929,
+    "sha256": "24a7a61e8d2dc9267bee981fc95b6b26c8c979472415729991ef6dd1975ffe45",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.22/HongguoTV-1.1.22.apk"
   },
-  "notes": "- 修正Gitee文件同步步骤环境变量\n- 正式版同步Gitee更新清单和说明文件\n- 正式版仅发布到 AppDownload 和 Gitee\n- 更新正式版 1.1.20 下载信息"
+  "notes": "- 增强Gitee发行版ID查询兼容\n- 修复Gitee已存在发行版ID解析\n- 更新正式版 1.1.21 下载信息"
 }
