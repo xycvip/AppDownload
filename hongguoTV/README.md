@@ -1,17 +1,15 @@
 # 红果 TV 分发目录
 
 <!-- LATEST_RELEASE_START -->
-当前版本：**1.1.23**
+当前版本：**1.1.24**
 
-- APK 安装包：[下载 HongguoTV-1.1.23.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.23/HongguoTV-1.1.23.apk)
+- APK 安装包：[下载 HongguoTV-1.1.24.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.24/HongguoTV-1.1.24.apk)
 - 应用内更新清单：[latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 
 ## 本次更新说明
 
-- 新增Gitee网络连接独立检测工作流
-- 修正Gitee请求重试函数调用
-- 增加Gitee发布网络请求重试
-- 更新正式版 1.1.22 下载信息
+- 修复Gitee首次正式版发行版自动创建
+- 更新正式版 1.1.23 下载信息
 <!-- LATEST_RELEASE_END -->
 
 ## 红果TV正式版 1.1.16
@@ -267,5 +265,17 @@
 - 修正Gitee请求重试函数调用
 - 增加Gitee发布网络请求重试
 - 更新正式版 1.1.22 下载信息
+
+---
+
+## 红果TV正式版 1.1.24
+
+- 下载：[HongguoTV-1.1.24.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.24/HongguoTV-1.1.24.apk)
+- versionCode：2026110606
+- SHA-256：4aaeb647d66efb6deecababa0e5a04f55fe6038b0023946c989af163fed8adc0
+
+### 本次更新
+- 修复Gitee首次正式版发行版自动创建
+- 更新正式版 1.1.23 下载信息
 
 ---

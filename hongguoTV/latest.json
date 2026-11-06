@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "711fc8c4346cafb960b18fc3a0f37306e8f1362a",
-  "versionCode": 2026110605,
-  "versionName": "1.1.23",
+  "sourceCommit": "c5362e6dc23f2ecba90d6394c108ae89282a6125",
+  "versionCode": 2026110606,
+  "versionName": "1.1.24",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.23",
+  "tag": "hongguotv-v1.1.24",
   "apk": {
-    "name": "HongguoTV-1.1.23.apk",
+    "name": "HongguoTV-1.1.24.apk",
     "size": 1953929,
-    "sha256": "0ab7de01de73abd764a4a302156f73172cb6930b97815b634696dfabadb4df69",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.23/HongguoTV-1.1.23.apk"
+    "sha256": "4aaeb647d66efb6deecababa0e5a04f55fe6038b0023946c989af163fed8adc0",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.24/HongguoTV-1.1.24.apk"
   },
-  "notes": "- 新增Gitee网络连接独立检测工作流\n- 修正Gitee请求重试函数调用\n- 增加Gitee发布网络请求重试\n- 更新正式版 1.1.22 下载信息"
+  "notes": "- 修复Gitee首次正式版发行版自动创建\n- 更新正式版 1.1.23 下载信息"
 }
