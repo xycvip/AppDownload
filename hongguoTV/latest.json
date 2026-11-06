@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "8ce168853170072a048b1337fa9c5f48215eec6e",
-  "versionCode": 2026110607,
-  "versionName": "1.1.25",
+  "sourceCommit": "868e59cae4995ef6ed3a0c2dad8f02756b020924",
+  "versionCode": 2026110608,
+  "versionName": "1.1.26",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.25",
+  "tag": "hongguotv-v1.1.26",
   "apk": {
-    "name": "HongguoTV-1.1.25.apk",
-    "size": 1953929,
-    "sha256": "899880360ad8089a78db0773dd09886af895328cb0f09931e8ca9134092a5bff",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.25/HongguoTV-1.1.25.apk"
+    "name": "HongguoTV-1.1.26.apk",
+    "size": 1953925,
+    "sha256": "c017ab49fc2b73505c3c7682c0ed1b009cacf544e8a6443d80100868467a6f3f",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.26/HongguoTV-1.1.26.apk"
   },
-  "notes": "- 修复Gitee更新发行版缺少必填Tag参数\n- 更新正式版 1.1.24 下载信息"
+  "notes": "- 重建正式版工作流末尾Gitee清理与结果步骤\n- 修正正式版工作流Gitee清理循环缩进\n- 修复正式版工作流末尾Gitee清理代码结构\n- 补同步Gitee说明仅保留最新版更新信息\n- Gitee说明文档仅保留最新版更新信息\n- 正式版发布后清理Gitee旧正式版发行记录\n- 修复Gitee正式版附件文件名和MIME类型\n- 修复Gitee新建文件POST及重试日志污染\n- 修复Gitee新建文件使用POST接口\n- 兼容Gitee空数组响应并创建新文件\n- 修复Gitee空数组响应时创建新文件\n- 修复Gitee补同步说明文件换行\n- 修复Gitee补同步工作流路径和换行处理\n- 新增Gitee正式版文件补同步工作流\n- 修正Gitee文件SHA解析参数\n- 修复Gitee文件查询数组响应解析\n- 更新正式版 1.1.25 下载信息"
 }

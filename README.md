@@ -13,16 +13,31 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**1.1.25**
+当前版本：**1.1.26**
 
-- [下载最新版 HongguoTV-1.1.25.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.25/HongguoTV-1.1.25.apk)
+- [下载最新版 HongguoTV-1.1.26.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.26/HongguoTV-1.1.26.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
 **本次更新说明**
 
-- 修复Gitee更新发行版缺少必填Tag参数
-- 更新正式版 1.1.24 下载信息
+- 重建正式版工作流末尾Gitee清理与结果步骤
+- 修正正式版工作流Gitee清理循环缩进
+- 修复正式版工作流末尾Gitee清理代码结构
+- 补同步Gitee说明仅保留最新版更新信息
+- Gitee说明文档仅保留最新版更新信息
+- 正式版发布后清理Gitee旧正式版发行记录
+- 修复Gitee正式版附件文件名和MIME类型
+- 修复Gitee新建文件POST及重试日志污染
+- 修复Gitee新建文件使用POST接口
+- 兼容Gitee空数组响应并创建新文件
+- 修复Gitee空数组响应时创建新文件
+- 修复Gitee补同步说明文件换行
+- 修复Gitee补同步工作流路径和换行处理
+- 新增Gitee正式版文件补同步工作流
+- 修正Gitee文件SHA解析参数
+- 修复Gitee文件查询数组响应解析
+- 更新正式版 1.1.25 下载信息
 <!-- END APP: hongguoTV -->
 
 ## 仓库用途
