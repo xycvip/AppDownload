@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "bdaad472525da67836b03affa32ad18812e40b4c",
-  "versionCode": 2026110702,
-  "versionName": "1.1.32",
+  "sourceCommit": "73ac6a42034045107f027a3943dee4928f70d5ab",
+  "versionCode": 2026110703,
+  "versionName": "1.1.33",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.32",
+  "tag": "hongguotv-v1.1.33",
   "apk": {
-    "name": "HongguoTV-1.1.32.apk",
-    "size": 1956733,
-    "sha256": "d271edbc6da8c4e5e7872b3dd70b8830a0237f039a9b1658641ee8ff5524e0d2",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.32/HongguoTV-1.1.32.apk"
+    "name": "HongguoTV-1.1.33.apk",
+    "size": 1956737,
+    "sha256": "4d8807ef0f922584b3c9181f17ede41fb4fe6c811f832261006cbcb8689e6fb4",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.33/HongguoTV-1.1.33.apk"
   },
-  "notes": "- **体验优化**：完善 GitCode APK 验证结构检查；覆盖 GitCode APK 正式附件地址；按 GitCode API 返回地址读取更新清单；覆盖 GitCode 新版附件地址格式；修正 GitCode Release 附件地址解析。\n- **下载体验优化**：覆盖 GitCode Release 清单下载地址。\n- **操作体验优化**：返回键支持从搜索导航返回首页。"
+  "notes": "优化使用体验"
 }
