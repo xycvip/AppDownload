@@ -1,15 +1,14 @@
 # 红果 TV 分发目录
 
 <!-- LATEST_RELEASE_START -->
-当前版本：**1.1.34**
+当前版本：**1.1.35**
 
-- APK 安装包：[下载 HongguoTV-1.1.34.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.34/HongguoTV-1.1.34.apk)
+- APK 安装包：[下载 HongguoTV-1.1.35.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.35/HongguoTV-1.1.35.apk)
 - 应用内更新清单：[latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 
 ## 本次更新说明
 
-- **体验优化**：显式允许 GitCode 文件 CDN 域名；Ci: GitCode清单诊断改为请求原始地址。
-- **下载体验优化**：GitCode下载保留原始地址并允许其子域名；Ci: 增加 GitCode APK 原始地址下载校验。
+优化使用体验
 <!-- LATEST_RELEASE_END -->
 
 ## 红果TV正式版 1.1.16
@@ -441,5 +440,16 @@
 ### 本次更新
 - **体验优化**：显式允许 GitCode 文件 CDN 域名；Ci: GitCode清单诊断改为请求原始地址。
 - **下载体验优化**：GitCode下载保留原始地址并允许其子域名；Ci: 增加 GitCode APK 原始地址下载校验。
+
+---
+
+## 红果TV正式版 1.1.35
+
+- 下载：[HongguoTV-1.1.35.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.35/HongguoTV-1.1.35.apk)
+- versionCode：2026110705
+- SHA-256：3a49864828bedc0d0d590cace77d5b3755abae8f79f4467122f972cb58aa6f29
+
+### 本次更新
+优化使用体验
 
 ---
