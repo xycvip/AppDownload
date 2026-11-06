@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "3204bfa8f1f2e532a5fb9d424d3e25afefeb7db2",
-  "versionCode": 2026110601,
-  "versionName": "1.1.19",
+  "sourceCommit": "e1d89f7de40cf3355fbc4be1e1ddfc5d398395cf",
+  "versionCode": 2026110602,
+  "versionName": "1.1.20",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.19",
+  "tag": "hongguotv-v1.1.20",
   "apk": {
-    "name": "HongguoTV-1.1.19.apk",
-    "size": 1952685,
-    "sha256": "add622a124a9d3b4491775537e47f4d36789a7cf802dccc669b77b0f04639300",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.19/HongguoTV-1.1.19.apk"
+    "name": "HongguoTV-1.1.20.apk",
+    "size": 1953929,
+    "sha256": "f35d342837bc004f04a5f8e893d2ffcc13793cb21cf3fdb89a927c50b444c0ca",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.20/HongguoTV-1.1.20.apk"
   },
-  "notes": "- 更新播放器方向重启行为说明\n- 取消手机播放器方向持久化写入\n- 调整手机播放器方向为进程内记忆并在重启后恢复横屏\n- 更新播放器方向持久化逻辑说明\n- 同步手机播放器方向偏好的字段说明\n- 退出播放器时保留已保存的手机方向偏好\n- 持久化手机播放器方向选择\n- 恢复手机播放器上次选择的屏幕方向\n- 将追剧导航默认入口切换为最近观看\n- 调整追剧页入口顺序并默认显示最近观看\n- 升级 GitHub Actions 运行时并消除 Node.js 20 警告\n- 修复弹幕 SP 字体缩放弃用警告\n- 修复 APK 安装 Intent 弃用警告\n- 移除签名对照测试临时诊断输出\n- 修正 F13 哈希消息调度递推\n- 增加签名哈希差异诊断\n- 增加签名对照测试差异诊断\n- 按弹幕备用线路数量修正退避测试断言\n- 修正文件传输测试中的查询路径格式\n- 修正剧场接口测试以覆盖新版双阶段请求\n- 切换追剧分区后恢复对应入口焦点\n- 完善追剧入口的遥控器焦点连接\n- 将收藏和最近观看归入追剧导航\n- 新增追剧导航并合并收藏与最近观看入口\n- 调整 v1 首屏请求顺序并修正身份状态识别\n- 剧场筛选接口优先使用 v1 并保留旧接口回退\n- 诊断日志记录内容接口空响应的HTTP状态和字节数\n- 修正剧场身份失效状态码识别\n- 增加剧场接口身份恢复与网络故障回归测试\n- 修复剧场接口空响应后的设备身份恢复并增加逐域名诊断\n- 手机播放方向选择保持至应用退出\n- 手机长按三倍速松手不弹出控制栏\n- 手机长按三倍速不唤起播放工具栏\n- ci: 将手机播放器代码纳入自动编译检查\n- fix: 接入手机播放工具栏点击收起回调\n- fix: 手机端点击视频空白处收起播放工具栏\n- fix: 剧场接口增加六线路故障切换\n- ci: 添加核心模块单元测试工作流\n- fix: 剧场接口签名绑定注册设备身份\n- fix: 弹幕复用注册设备身份并增加线路切换\n- 更新正式版 1.1.18 下载信息"
+  "notes": "- fix: 明确换源检查状态提示\n- fix: 兼容现有Gitee发行版更新清单\n- fix: 正式版Gitee下载线路增加缓存规避\n- ci: Gitee正式版更新清单使用Gitee APK下载地址\n- feat: 正式版换源按钮适配Gitee优先线路\n- feat: 正式版更新源改为Gitee优先并保留GitHub回退\n- ci: 删除独立Gitee同步工作流，统一由正式版发布工作流执行\n- ci: 将Gitee正式版同步合并到发布工作流\n- ci: 从源码仓库自动同步正式版到 Gitee\n- ci: 正式版同步发布到源码仓库 GitHub Release\n- 更新正式版 1.1.19 下载信息"
 }
