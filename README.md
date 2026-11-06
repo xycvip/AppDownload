@@ -13,25 +13,18 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**1.1.20**
+当前版本：**1.1.21**
 
-- [下载最新版 HongguoTV-1.1.20.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.20/HongguoTV-1.1.20.apk)
+- [下载最新版 HongguoTV-1.1.21.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.21/HongguoTV-1.1.21.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
 **本次更新说明**
 
-- fix: 明确换源检查状态提示
-- fix: 兼容现有Gitee发行版更新清单
-- fix: 正式版Gitee下载线路增加缓存规避
-- ci: Gitee正式版更新清单使用Gitee APK下载地址
-- feat: 正式版换源按钮适配Gitee优先线路
-- feat: 正式版更新源改为Gitee优先并保留GitHub回退
-- ci: 删除独立Gitee同步工作流，统一由正式版发布工作流执行
-- ci: 将Gitee正式版同步合并到发布工作流
-- ci: 从源码仓库自动同步正式版到 Gitee
-- ci: 正式版同步发布到源码仓库 GitHub Release
-- 更新正式版 1.1.19 下载信息
+- 修正Gitee文件同步步骤环境变量
+- 正式版同步Gitee更新清单和说明文件
+- 正式版仅发布到 AppDownload 和 Gitee
+- 更新正式版 1.1.20 下载信息
 <!-- END APP: hongguoTV -->
 
 ## 仓库用途

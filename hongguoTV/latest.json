@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "e1d89f7de40cf3355fbc4be1e1ddfc5d398395cf",
-  "versionCode": 2026110602,
-  "versionName": "1.1.20",
+  "sourceCommit": "a2bf2ab334ab2b67888fd7fc8c14d60a16bd6070",
+  "versionCode": 2026110603,
+  "versionName": "1.1.21",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.20",
+  "tag": "hongguotv-v1.1.21",
   "apk": {
-    "name": "HongguoTV-1.1.20.apk",
-    "size": 1953929,
-    "sha256": "f35d342837bc004f04a5f8e893d2ffcc13793cb21cf3fdb89a927c50b444c0ca",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.20/HongguoTV-1.1.20.apk"
+    "name": "HongguoTV-1.1.21.apk",
+    "size": 1953925,
+    "sha256": "11ecb3f1a63b16c240a356036cccbf24e1f40ff8923672b40dcd6172eee66505",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.21/HongguoTV-1.1.21.apk"
   },
-  "notes": "- fix: 明确换源检查状态提示\n- fix: 兼容现有Gitee发行版更新清单\n- fix: 正式版Gitee下载线路增加缓存规避\n- ci: Gitee正式版更新清单使用Gitee APK下载地址\n- feat: 正式版换源按钮适配Gitee优先线路\n- feat: 正式版更新源改为Gitee优先并保留GitHub回退\n- ci: 删除独立Gitee同步工作流，统一由正式版发布工作流执行\n- ci: 将Gitee正式版同步合并到发布工作流\n- ci: 从源码仓库自动同步正式版到 Gitee\n- ci: 正式版同步发布到源码仓库 GitHub Release\n- 更新正式版 1.1.19 下载信息"
+  "notes": "- 修正Gitee文件同步步骤环境变量\n- 正式版同步Gitee更新清单和说明文件\n- 正式版仅发布到 AppDownload 和 Gitee\n- 更新正式版 1.1.20 下载信息"
 }
