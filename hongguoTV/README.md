@@ -1,14 +1,32 @@
 # 红果 TV 分发目录
 
 <!-- LATEST_RELEASE_START -->
-当前版本：**1.1.27**
+当前版本：**1.1.28**
 
-- APK 安装包：[下载 HongguoTV-1.1.27.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.27/HongguoTV-1.1.27.apk)
+- APK 安装包：[下载 HongguoTV-1.1.28.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.28/HongguoTV-1.1.28.apk)
 - 应用内更新清单：[latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 
 ## 本次更新说明
 
-优化使用体验
+- fix: 修复更新弹窗重复添加按钮导致闪退
+- ui: 调整版本更新弹窗布局与下载速度显示
+- fix: 避免无感连播接管时重复定位导致短暂停顿
+- fix: 切换更新弹窗时保持关于页按钮状态
+- fix: 无新版时清除暂存的下载线路选择
+- fix: 标注三条下载线路并修正速度单位
+- fix: 关于软件弹窗固定检查更新按钮
+- fix: 保留手动下载线路选择并将速度置顶
+- feat: 下载显示实时速度并支持指定线路
+- feat: 接入三个下载地址的选择操作
+- feat: 更新弹窗增加三个下载地址按钮
+- feat: 更新弹窗显示实时下载速度
+- feat: 更新下载支持三条手动线路与实时速度
+- fix: GitCode主源失败时允许手动线路触发GitHub备用
+- fix: GitCode下载失败时先尝试GitHub Release备用
+- fix: 兼容更新下载空响应处理
+- fix: GitCode下载失败时安全回退AppDownload
+- feat: 正式版自动更新改为GitCode优先
+- 更新正式版 1.1.27 下载信息
 <!-- LATEST_RELEASE_END -->
 
 ## 红果TV正式版 1.1.16
@@ -326,5 +344,34 @@
 
 ### 本次更新
 优化使用体验
+
+---
+
+## 红果TV正式版 1.1.28
+
+- 下载：[HongguoTV-1.1.28.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.28/HongguoTV-1.1.28.apk)
+- versionCode：2026110610
+- SHA-256：77fd2a219e38ee3fe4298624c57ab2664156d5726b5a07c2216abc6ff14d2af6
+
+### 本次更新
+- fix: 修复更新弹窗重复添加按钮导致闪退
+- ui: 调整版本更新弹窗布局与下载速度显示
+- fix: 避免无感连播接管时重复定位导致短暂停顿
+- fix: 切换更新弹窗时保持关于页按钮状态
+- fix: 无新版时清除暂存的下载线路选择
+- fix: 标注三条下载线路并修正速度单位
+- fix: 关于软件弹窗固定检查更新按钮
+- fix: 保留手动下载线路选择并将速度置顶
+- feat: 下载显示实时速度并支持指定线路
+- feat: 接入三个下载地址的选择操作
+- feat: 更新弹窗增加三个下载地址按钮
+- feat: 更新弹窗显示实时下载速度
+- feat: 更新下载支持三条手动线路与实时速度
+- fix: GitCode主源失败时允许手动线路触发GitHub备用
+- fix: GitCode下载失败时先尝试GitHub Release备用
+- fix: 兼容更新下载空响应处理
+- fix: GitCode下载失败时安全回退AppDownload
+- feat: 正式版自动更新改为GitCode优先
+- 更新正式版 1.1.27 下载信息
 
 ---
