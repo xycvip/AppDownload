@@ -13,18 +13,17 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**1.1.31**
+当前版本：**1.1.32**
 
-- [下载最新版 HongguoTV-1.1.31.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.31/HongguoTV-1.1.31.apk)
+- [下载最新版 HongguoTV-1.1.32.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.32/HongguoTV-1.1.32.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
 **本次更新说明**
 
-- **问题修复**：修复正式版发布脚本 heredoc 缩进。
-- **排行榜优化**：片库和排行榜题材标签改为亮橘色。
-- **界面与体验优化**：首页题材标签文字改为亮橘色。
-- **体验优化**：首页海报标题下显示作品题材；海报标题下显示作品题材；修正正式版发布说明脚本转义；优化正式版中文发布说明生成。
+- **体验优化**：完善 GitCode APK 验证结构检查；覆盖 GitCode APK 正式附件地址；按 GitCode API 返回地址读取更新清单；覆盖 GitCode 新版附件地址格式；修正 GitCode Release 附件地址解析。
+- **下载体验优化**：覆盖 GitCode Release 清单下载地址。
+- **操作体验优化**：返回键支持从搜索导航返回首页。
 <!-- END APP: hongguoTV -->
 
 ## 仓库用途

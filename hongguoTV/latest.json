@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "1d498e41486f917e29316b351614b6a22614dd96",
-  "versionCode": 2026110701,
-  "versionName": "1.1.31",
+  "sourceCommit": "bdaad472525da67836b03affa32ad18812e40b4c",
+  "versionCode": 2026110702,
+  "versionName": "1.1.32",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.31",
+  "tag": "hongguotv-v1.1.32",
   "apk": {
-    "name": "HongguoTV-1.1.31.apk",
-    "size": 1956641,
-    "sha256": "f2ec71127901871e31cf0d34b34c3acfbbd22fea6d23dd8bb451d16527667771",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.31/HongguoTV-1.1.31.apk"
+    "name": "HongguoTV-1.1.32.apk",
+    "size": 1956733,
+    "sha256": "d271edbc6da8c4e5e7872b3dd70b8830a0237f039a9b1658641ee8ff5524e0d2",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.32/HongguoTV-1.1.32.apk"
   },
-  "notes": "- **问题修复**：修复正式版发布脚本 heredoc 缩进。\n- **排行榜优化**：片库和排行榜题材标签改为亮橘色。\n- **界面与体验优化**：首页题材标签文字改为亮橘色。\n- **体验优化**：首页海报标题下显示作品题材；海报标题下显示作品题材；修正正式版发布说明脚本转义；优化正式版中文发布说明生成。"
+  "notes": "- **体验优化**：完善 GitCode APK 验证结构检查；覆盖 GitCode APK 正式附件地址；按 GitCode API 返回地址读取更新清单；覆盖 GitCode 新版附件地址格式；修正 GitCode Release 附件地址解析。\n- **下载体验优化**：覆盖 GitCode Release 清单下载地址。\n- **操作体验优化**：返回键支持从搜索导航返回首页。"
 }
