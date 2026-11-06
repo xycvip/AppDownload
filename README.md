@@ -13,19 +13,24 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**1.1.29**
+当前版本：**1.1.30**
 
-- [下载最新版 HongguoTV-1.1.29.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.29/HongguoTV-1.1.29.apk)
+- [下载最新版 HongguoTV-1.1.30.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.30/HongguoTV-1.1.30.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
 **本次更新说明**
 
-- fix: 增强B播放器接管后的初始缓冲
-- fix: 正式版不再发布到源码仓库
-- revert: 恢复导航栏首页名称
-- ui: 修改导航栏首页文案
-- 更新正式版 1.1.28 下载信息
+- ui: 总榜名称调整为综合榜
+- fix: 明确排行榜首排海报向上焦点
+- fix: 统一排行榜分页来源名称
+- fix: 统一排行榜来源名称
+- feat: 增加总榜入口并调整榜单顺序
+- feat: 默认打开红果综合总榜
+- feat: 接入红果综合热播总榜
+- fix: 完善GitHub手动下载源备用清单
+- fix: 修复GitCode下载源回退判断
+- 更新正式版 1.1.29 下载信息
 <!-- END APP: hongguoTV -->
 
 ## 仓库用途

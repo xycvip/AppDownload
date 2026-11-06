@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "7fbea02d624acc7817b1873ed8be34094b0e8826",
-  "versionCode": 2026110611,
-  "versionName": "1.1.29",
+  "sourceCommit": "cafc5802eaddee03cdb6fff15cc0adb16f5ecf67",
+  "versionCode": 2026110612,
+  "versionName": "1.1.30",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.29",
+  "tag": "hongguotv-v1.1.30",
   "apk": {
-    "name": "HongguoTV-1.1.29.apk",
-    "size": 1955749,
-    "sha256": "8b0cd5e8851abf2427c387cbb944ea72caab9cad2281be3bd0f76b018c19af75",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.29/HongguoTV-1.1.29.apk"
+    "name": "HongguoTV-1.1.30.apk",
+    "size": 1955973,
+    "sha256": "ab9a747ed315b5ce69c98124210b84ab41b99979e702d4888830b4bdb3b8b19d",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.30/HongguoTV-1.1.30.apk"
   },
-  "notes": "- fix: 增强B播放器接管后的初始缓冲\n- fix: 正式版不再发布到源码仓库\n- revert: 恢复导航栏首页名称\n- ui: 修改导航栏首页文案\n- 更新正式版 1.1.28 下载信息"
+  "notes": "- ui: 总榜名称调整为综合榜\n- fix: 明确排行榜首排海报向上焦点\n- fix: 统一排行榜分页来源名称\n- fix: 统一排行榜来源名称\n- feat: 增加总榜入口并调整榜单顺序\n- feat: 默认打开红果综合总榜\n- feat: 接入红果综合热播总榜\n- fix: 完善GitHub手动下载源备用清单\n- fix: 修复GitCode下载源回退判断\n- 更新正式版 1.1.29 下载信息"
 }
