@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "2245b3a603accbba65ac4b4ab72aa7451e040fae",
-  "versionCode": 2026110705,
-  "versionName": "1.1.35",
+  "sourceCommit": "6ed485fe826942425cf5594e0e69b302d27b7acc",
+  "versionCode": 2026110706,
+  "versionName": "1.1.36",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.35",
+  "tag": "hongguotv-v1.1.36",
   "apk": {
-    "name": "HongguoTV-1.1.35.apk",
-    "size": 1956757,
-    "sha256": "3a49864828bedc0d0d590cace77d5b3755abae8f79f4467122f972cb58aa6f29",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.35/HongguoTV-1.1.35.apk"
+    "name": "HongguoTV-1.1.36.apk",
+    "size": 1986801,
+    "sha256": "8e430a192292739b247f10c5d976e7fed217c070e56c8695aaf5d85f3b5319ea",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.36/HongguoTV-1.1.36.apk"
   },
-  "notes": "优化使用体验"
+  "notes": "- **播放体验优化**：调整播放线路首选项说明文案；将播放线路标签统一改为线路首选；仅保留播放线路切换成功提示；同步播放线路设置文案说明；将播放接口设置文案统一改为播放线路；同步播放接口新名称；更新播放接口名称与设置说明；Ci: 增加播放接口自动回归测试与Debug构建；记录本地播放接口自动选择与会话隔离；覆盖播放接口自动故障切换逻辑；本地播放接口失败自动切换并记忆成功线路；补充播放线路检测请求取消说明；修复播放线路工厂 Kotlin 编译错误；切换播放线路时取消旧接口检测请求；自动与手动播放接口检测支持线路切换取消；为播放接口检测增加可取消请求作用域；记录原生与 Phoenix 播放线路互斥修复；接口检测遵循当前播放线路；切换播放线路时清理旧任务并重启当前播放；隔离单播放器预加载线路缓存；普通播放统一使用当前播放线路；修复播放线路选择与诊断隔离；审计播放接口诊断并补充技术说明；修复播放接口诊断列表编译错误；增加播放接口调试诊断信息；接入 Phoenix 播放接口选择；将 Phoenix 播放接口拆分为独立模块；补齐应用对播放模块的直接依赖；拆分原生播放接口与共享媒体模块。\n- **体验优化**：统一 Native 线路优先显示文案；隔离 Phoenix 与原生接口的 CookieJar；记录 PhoenixReadApi 上游来源及签名差异；修正 Phoenix 诊断回调构造参数；补齐共享媒体模块的 CENC 样本诊断属性；将请求加密组件迁入共享媒体模块。\n- **界面与体验优化**：统一调试面板 Phoenix 名称；统一诊断中的 Native 名称。\n- **问题修复**：Ci: 修复 Android SDK 安装步骤并重跑接口回归；防止诊断回调异常中断自动切换。\n- **下载体验优化**：隔离无感连播备用线路缓存。"
 }
