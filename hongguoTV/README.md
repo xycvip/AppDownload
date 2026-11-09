@@ -1,17 +1,14 @@
 # 红果 TV 分发目录
 
 <!-- LATEST_RELEASE_START -->
-当前版本：**1.1.39**
+当前版本：**1.1.40**
 
-- APK 安装包：[下载 HongguoTV-1.1.39.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.39/HongguoTV-1.1.39.apk)
+- APK 安装包：[下载 HongguoTV-1.1.40.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.40/HongguoTV-1.1.40.apk)
 - 应用内更新清单：[latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 
 ## 本次更新说明
 
-- **问题修复**：修复 P/N 自动切换与无感连播逻辑。
-- **体验优化**：Align Native playback profile with Phoenix；Align Native registration device profile with Phoenix；Correct registration URL resolution assertion；Update Phoenix registration tests for aligned playback profile；Pass playback device profile into Phoenix registration URL；Align Phoenix registration device parameters with playback profile；仅在注册被服务端拒绝时暂停重注册；将 Phoenix 设备身份轮换次数对齐 Xanerix；按 Xanerix 注册身份管理机制重写 Phoenix 会话；按 Xanerix 注册协议重写 Phoenix 设备注册；Match guoapp playback query canonical encoding；Align Phoenix query and fallback handling with guoapp；Rewrite Phoenix playback flow to match guoapp。
-- **播放体验优化**：修复 Phoenix P 播放入口缺失导入；完整恢复 0.0.42 Phoenix P 播放实现；将 0.0.42 Native 播放实现完整移植到 Phoenix；按可用内存阈值启用备用播放器；移除播放线路切换通知前缀。
-- **下载体验优化**：延长 Gradle Wrapper 下载超时时间。
+更新内容  - 新增 Phoenix 播放线路，支持双线路自动切换。 - 优化新线路播放，支持清晰度选择。 - 新增无感连播，实现集数切换时无缝衔接。 - 优化无感连播开启条件，可用内存需达到或超过 300MB。 - 新增清晰度自动选择：高清优先、兼容优先。 - 新增弹幕多种颜色自定义功能。 - 新增动态四叶草状态图标，直观显示当前接口状态。 - 优化接口自检，进入设置页面即可显示接口状态。
 <!-- LATEST_RELEASE_END -->
 
 ## 红果TV正式版 1.1.16
@@ -509,5 +506,16 @@
 - **体验优化**：Align Native playback profile with Phoenix；Align Native registration device profile with Phoenix；Correct registration URL resolution assertion；Update Phoenix registration tests for aligned playback profile；Pass playback device profile into Phoenix registration URL；Align Phoenix registration device parameters with playback profile；仅在注册被服务端拒绝时暂停重注册；将 Phoenix 设备身份轮换次数对齐 Xanerix；按 Xanerix 注册身份管理机制重写 Phoenix 会话；按 Xanerix 注册协议重写 Phoenix 设备注册；Match guoapp playback query canonical encoding；Align Phoenix query and fallback handling with guoapp；Rewrite Phoenix playback flow to match guoapp。
 - **播放体验优化**：修复 Phoenix P 播放入口缺失导入；完整恢复 0.0.42 Phoenix P 播放实现；将 0.0.42 Native 播放实现完整移植到 Phoenix；按可用内存阈值启用备用播放器；移除播放线路切换通知前缀。
 - **下载体验优化**：延长 Gradle Wrapper 下载超时时间。
+
+---
+
+## 红果TV正式版 1.1.40
+
+- 下载：[HongguoTV-1.1.40.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.40/HongguoTV-1.1.40.apk)
+- versionCode：2026110902
+- SHA-256：1bb87febd0c58033a1d4c0b3751ab234dfc6b2e2c61eee659ab0123799d1f552
+
+### 本次更新
+更新内容  - 新增 Phoenix 播放线路，支持双线路自动切换。 - 优化新线路播放，支持清晰度选择。 - 新增无感连播，实现集数切换时无缝衔接。 - 优化无感连播开启条件，可用内存需达到或超过 300MB。 - 新增清晰度自动选择：高清优先、兼容优先。 - 新增弹幕多种颜色自定义功能。 - 新增动态四叶草状态图标，直观显示当前接口状态。 - 优化接口自检，进入设置页面即可显示接口状态。
 
 ---
