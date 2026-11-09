@@ -13,19 +13,18 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**1.1.38**
+当前版本：**1.1.39**
 
-- [下载最新版 HongguoTV-1.1.38.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.38/HongguoTV-1.1.38.apk)
+- [下载最新版 HongguoTV-1.1.39.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.39/HongguoTV-1.1.39.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
 **本次更新说明**
 
-- **下载体验优化**：修复自动回退成功回调的默认参数；记录自动回退提示的首帧显示规则；修正线路回退成功回调参数；补充线路回退提示的单元测试；播放线路自动回退成功后等待首帧再提示。
-- **播放体验优化**：修复播放恢复代码中的 Context 常量引用；更新播放故障恢复机制说明；完善播放故障恢复：同线路重试后双线路切换；播放失败时清理未展示的线路切换提示；播放线路切换提示延后到实际首帧；区分播放线路与内容平台；修正播放接口验证结果记录；更正播放线路说明与1.1.37验证状态。
-- **操作体验优化**：修复启动时焦点默认落在四叶状态灯。
-- **体验优化**：限制自动恢复仅处理媒体与网络故障；保留跨线路恢复待显示提示；修正首帧提示的 Activity 接收者引用；接口诊断请求不触发用户线路提示；清理河马平台说明；更新无感连播线路隔离与审计基准；校准1.1.37功能说明与验证记录。
-- **问题修复**：完善线路恢复确认与失败回滚；修复线路首选左侧说明不显示。
+- **问题修复**：修复 P/N 自动切换与无感连播逻辑。
+- **体验优化**：Align Native playback profile with Phoenix；Align Native registration device profile with Phoenix；Correct registration URL resolution assertion；Update Phoenix registration tests for aligned playback profile；Pass playback device profile into Phoenix registration URL；Align Phoenix registration device parameters with playback profile；仅在注册被服务端拒绝时暂停重注册；将 Phoenix 设备身份轮换次数对齐 Xanerix；按 Xanerix 注册身份管理机制重写 Phoenix 会话；按 Xanerix 注册协议重写 Phoenix 设备注册；Match guoapp playback query canonical encoding；Align Phoenix query and fallback handling with guoapp；Rewrite Phoenix playback flow to match guoapp。
+- **播放体验优化**：修复 Phoenix P 播放入口缺失导入；完整恢复 0.0.42 Phoenix P 播放实现；将 0.0.42 Native 播放实现完整移植到 Phoenix；按可用内存阈值启用备用播放器；移除播放线路切换通知前缀。
+- **下载体验优化**：延长 Gradle Wrapper 下载超时时间。
 <!-- END APP: hongguoTV -->
 
 ## 仓库用途
