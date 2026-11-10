@@ -1,22 +1,14 @@
 # 红果 TV 分发目录
 
 <!-- LATEST_RELEASE_START -->
-当前版本：**1.1.41**
+当前版本：**1.1.42**
 
-- APK 安装包：[下载 HongguoTV-1.1.41.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.41/HongguoTV-1.1.41.apk)
+- APK 安装包：[下载 HongguoTV-1.1.42.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.42/HongguoTV-1.1.42.apk)
 - 应用内更新清单：[latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 
 ## 本次更新说明
 
-更新内容
-- 新增 Phoenix 播放线路，支持双线路自动切换。
-- 优化新线路播放，支持清晰度选择。
-- 新增无感连播，实现集数切换时无缝衔接。
-- 优化无感连播开启条件，可用内存需达到或超过 300MB。
-- 新增清晰度自动选择：高清优先、兼容优先。
-- 新增弹幕多种颜色自定义功能。
-- 新增动态四叶草状态图标，直观显示当前接口状态。
-- 优化接口自检，进入设置页面即可显示接口状态。
+新增手机推送红果/抖音App分享链接播放
 <!-- LATEST_RELEASE_END -->
 
 ## 红果TV正式版 1.1.16
@@ -544,5 +536,16 @@
 - 新增弹幕多种颜色自定义功能。
 - 新增动态四叶草状态图标，直观显示当前接口状态。
 - 优化接口自检，进入设置页面即可显示接口状态。
+
+---
+
+## 红果TV正式版 1.1.42
+
+- 下载：[HongguoTV-1.1.42.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.42/HongguoTV-1.1.42.apk)
+- versionCode：2026111101
+- SHA-256：95a9520b106b5cad233032b45f320488dc5f1a7ac00d9a5249ad9c190a125718
+
+### 本次更新
+新增手机推送红果/抖音App分享链接播放
 
 ---
