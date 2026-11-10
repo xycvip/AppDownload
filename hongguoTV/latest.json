@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "2eee5a3b38d23f04756230a8066715380a7753ce",
-  "versionCode": 2026111101,
-  "versionName": "1.1.42",
+  "sourceCommit": "afbfd108003087b0571ea9475e8744957fda333b",
+  "versionCode": 2026111102,
+  "versionName": "1.1.43",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.42",
+  "tag": "hongguotv-v1.1.43",
   "apk": {
-    "name": "HongguoTV-1.1.42.apk",
-    "size": 2008337,
-    "sha256": "95a9520b106b5cad233032b45f320488dc5f1a7ac00d9a5249ad9c190a125718",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.42/HongguoTV-1.1.42.apk"
+    "name": "HongguoTV-1.1.43.apk",
+    "size": 2008785,
+    "sha256": "5d03b6dc82efc4194cb47a76a15cd5049d3e2b1ccee4f9e9ca2342110c4bf273",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.43/HongguoTV-1.1.43.apk"
   },
-  "notes": "新增手机推送红果/抖音App分享链接播放"
+  "notes": "优化使用体验"
 }
