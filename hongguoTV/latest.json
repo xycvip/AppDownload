@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "afbfd108003087b0571ea9475e8744957fda333b",
-  "versionCode": 2026111102,
-  "versionName": "1.1.43",
+  "sourceCommit": "a9dac32242676390073e49a077223eed03ccac6c",
+  "versionCode": 2026111103,
+  "versionName": "1.1.44",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.43",
+  "tag": "hongguotv-v1.1.44",
   "apk": {
-    "name": "HongguoTV-1.1.43.apk",
-    "size": 2008785,
-    "sha256": "5d03b6dc82efc4194cb47a76a15cd5049d3e2b1ccee4f9e9ca2342110c4bf273",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.43/HongguoTV-1.1.43.apk"
+    "name": "HongguoTV-1.1.44.apk",
+    "size": 2019445,
+    "sha256": "d6c186cb425b8e31fe428aef9d77b55ef5ba947669417a42e88fdadf8a2f985f",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.44/HongguoTV-1.1.44.apk"
   },
   "notes": "优化使用体验"
 }
