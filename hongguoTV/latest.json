@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "a9dac32242676390073e49a077223eed03ccac6c",
-  "versionCode": 2026111103,
-  "versionName": "1.1.44",
+  "sourceCommit": "a62969d7f2ace8540b6dcdb560ccb9c06b4cac8a",
+  "versionCode": 2026111104,
+  "versionName": "1.1.45",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.44",
+  "tag": "hongguotv-v1.1.45",
   "apk": {
-    "name": "HongguoTV-1.1.44.apk",
-    "size": 2019445,
-    "sha256": "d6c186cb425b8e31fe428aef9d77b55ef5ba947669417a42e88fdadf8a2f985f",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.44/HongguoTV-1.1.44.apk"
+    "name": "HongguoTV-1.1.45.apk",
+    "size": 2039617,
+    "sha256": "65bc346db10ed4ed7c66a4febe30253787d5686ed0d25611c94265b174721fb8",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.45/HongguoTV-1.1.45.apk"
   },
-  "notes": "优化使用体验"
+  "notes": "修复双线路"
 }
