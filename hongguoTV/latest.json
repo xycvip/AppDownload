@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "a62969d7f2ace8540b6dcdb560ccb9c06b4cac8a",
-  "versionCode": 2026111104,
-  "versionName": "1.1.45",
+  "sourceCommit": "869aa75b7b293bc7afc31b7c2d0103cc357bf2ab",
+  "versionCode": 2026111301,
+  "versionName": "1.1.46",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.45",
+  "tag": "hongguotv-v1.1.46",
   "apk": {
-    "name": "HongguoTV-1.1.45.apk",
-    "size": 2039617,
-    "sha256": "65bc346db10ed4ed7c66a4febe30253787d5686ed0d25611c94265b174721fb8",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.45/HongguoTV-1.1.45.apk"
+    "name": "HongguoTV-1.1.46.apk",
+    "size": 2048681,
+    "sha256": "889f8c9c4048860ad8486e0e4b5eff2e41dd7e1897870b8624af3b95a569981c",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.46/HongguoTV-1.1.46.apk"
   },
-  "notes": "修复双线路"
+  "notes": "【播放与播放器】\n- 调整双线路播放优先级，优化主线路与兼容线路切换逻辑\n- 优化播放设备注册及会话身份处理\n- 改进播放接口异常响应时的兼容处理  【演员榜与排行榜】\n- 调整排行榜页面，新增演员榜入口\n- 增加剧星榜、星光榜相关页面及演员作品列表功能\n- 优化排行榜页面导航、焦点和交互体验  【分享与推送播放】\n- 优化抖音短剧分享链接解析\n- 增强剧名识别能力，减少作者名称、营销文案和无关话题干扰\n- 增加短剧详情识别，改进剧名获取及候选匹配流程\n- 优化分享链接无法直接识别时的后续处理  【界面与交互】\n- 优化排行榜及目录页面布局和焦点处理\n- 弹幕默认显示行数调整为2行\n- 优化页面操作及使用体验"
 }
