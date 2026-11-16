@@ -1,27 +1,18 @@
 # 红果 TV 分发目录
 
 <!-- LATEST_RELEASE_START -->
-当前版本：**1.1.46**
+当前版本：**1.1.47**
 
-- APK 安装包：[下载 HongguoTV-1.1.46.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.46/HongguoTV-1.1.46.apk)
+- APK 安装包：[下载 HongguoTV-1.1.47.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.47/HongguoTV-1.1.47.apk)
 - 应用内更新清单：[latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 
 ## 本次更新说明
 
 【播放与播放器】
-- 调整双线路播放优先级，优化主线路与兼容线路切换逻辑
-- 优化播放设备注册及会话身份处理
-- 改进播放接口异常响应时的兼容处理  【演员榜与排行榜】
-- 调整排行榜页面，新增演员榜入口
-- 增加剧星榜、星光榜相关页面及演员作品列表功能
-- 优化排行榜页面导航、焦点和交互体验  【分享与推送播放】
-- 优化抖音短剧分享链接解析
-- 增强剧名识别能力，减少作者名称、营销文案和无关话题干扰
-- 增加短剧详情识别，改进剧名获取及候选匹配流程
-- 优化分享链接无法直接识别时的后续处理  【界面与交互】
-- 优化排行榜及目录页面布局和焦点处理
-- 弹幕默认显示行数调整为2行
-- 优化页面操作及使用体验
+- 将 N 接口播放主链路对齐至 V5 多视频模型接口
+- 同步 V5 请求签名、压缩请求体及响应解析
+- 优化视频清晰度选择与编码兼容处理
+- 保持 P 接口及现有播放器管线独立不变
 <!-- LATEST_RELEASE_END -->
 
 ## 红果TV正式版 1.1.16
@@ -617,5 +608,20 @@
 - 优化排行榜及目录页面布局和焦点处理
 - 弹幕默认显示行数调整为2行
 - 优化页面操作及使用体验
+
+---
+
+## 红果TV正式版 1.1.47
+
+- 下载：[HongguoTV-1.1.47.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.47/HongguoTV-1.1.47.apk)
+- versionCode：2026111601
+- SHA-256：130a024b55815aca7e2d1a50c3fcb843b0e140ba832e4c153011908134413330
+
+### 本次更新
+【播放与播放器】
+- 将 N 接口播放主链路对齐至 V5 多视频模型接口
+- 同步 V5 请求签名、压缩请求体及响应解析
+- 优化视频清晰度选择与编码兼容处理
+- 保持 P 接口及现有播放器管线独立不变
 
 ---
