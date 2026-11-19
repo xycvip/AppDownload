@@ -36,6 +36,7 @@ env:
 
 jobs:
   sync:
+    if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'redguo-') }}
     name: 同步发布与文档
     runs-on: ubuntu-latest
     timeout-minutes: 40
@@ -406,12 +407,39 @@ jobs:
           fail=0
 
           # 读现有 README（可能为空仓库）
-          code=$(curl -s -o gc_readme.json -w '%{http_code}' "${api}/contents/README.md?access_token=${TOKEN}")
-          if [ "$code" = "200" ]; then
-            python3 -c "import json,base64,pathlib;d=json.load(open('gc_readme.json'));pathlib.Path('old_doc.md').write_text(base64.b64decode(d['content']).decode('utf-8'))"
-          else
-            : > old_doc.md
+          # 只有 404 才表示 README 尚不存在；其他异常必须中止，避免覆盖历史文档。
+          if ! code=$(curl --silent --show-error --connect-timeout 20 --max-time 60 \
+            -o gc_readme.json -w '%{http_code}' \
+            "${api}/contents/README.md?access_token=${TOKEN}"); then
+            echo "::error::读取 GitCode README 失败：curl 网络请求异常"
+            exit 1
           fi
+
+          case "$code" in
+            200)
+              python3 - <<'PY'
+          import base64, json, pathlib
+          data = json.loads(pathlib.Path('gc_readme.json').read_text(encoding='utf-8'))
+          content = data.get('content')
+          if not isinstance(content, str) or not content:
+              raise SystemExit('GitCode README 响应缺少有效 content，拒绝覆盖')
+          try:
+              decoded = base64.b64decode(content, validate=True).decode('utf-8')
+          except Exception as exc:
+              raise SystemExit(f'GitCode README 解码失败，拒绝覆盖：{exc}')
+          pathlib.Path('old_doc.md').write_text(decoded, encoding='utf-8')
+          PY
+              ;;
+            404)
+              echo "GitCode README 不存在，按首次创建处理"
+              : > old_doc.md
+              ;;
+            *)
+              echo "::error::读取 GitCode README 失败（HTTP ${code}），拒绝覆盖历史文档"
+              head -c 500 gc_readme.json || true
+              exit 1
+              ;;
+          esac
 
           python3 merge.py out/latest_block.md old_doc.md out/gc_readme.md
 
