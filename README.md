@@ -28,6 +28,21 @@
 - 保持 P 接口及现有播放器管线独立不变
 <!-- END APP: hongguoTV -->
 
+<!-- BEGIN APP: redguo -->
+### 红果剧场
+
+当前版本：**1.0.0**（内部版本 `2026112001`）
+
+- [下载 32 位安装包 RedGuo-1.0.0-v7a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v7a.apk)
+- [下载 64 位安装包 RedGuo-1.0.0-v8a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v8a.apk)
+- [应用内更新清单 update.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/redguo/update.json)
+- [红果剧场全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/redguo)
+
+**本次更新说明**
+
+初始版本
+<!-- END APP: redguo -->
+
 ## 仓库用途
 
 AppDownload 是应用发布与下载分发仓库，不是 Android 源代码仓库。应用源码、开发过程和功能实现请以对应的源码项目为准。
@@ -35,6 +50,7 @@ AppDownload 是应用发布与下载分发仓库，不是 Android 源代码仓�
 ### 应用目录
 
 - `hongguoTV/`：红果 TV（HongguoTV）Android APK 发布文件与应用内更新清单。
+- `redguo/`：红果剧场（RedGuo）Android APK 发布文件与应用内更新清单。
 
 ### 下载与更新
 
