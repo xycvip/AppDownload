@@ -3,7 +3,7 @@ name: 发布同步到 GitCode 与更新清单
 # 放在 xycvip/AppDownload 仓库的 .github/workflows/sync-gitcode.yml
 #
 # 触发方式：
-#   1. 自动：RedGuoAPP 发布正式版后会远程触发本工作流，并带上 tag
+#   1. 自动：AppDownload 收到新 Release published 事件后，按该 Release 的 tag 同步
 #   2. 手动：在 AppDownload 的 Actions 页面点 Run workflow（tag 留空取最新）
 # 做四件事：
 #   1. 更新本仓库根 README 里的 redguo 区块（发布信息）
@@ -11,6 +11,8 @@ name: 发布同步到 GitCode 与更新清单
 #   3. 把同一份安装包转发到 GitCode xycvip/redguo 的 Release
 #   4. 写 GitCode 仓库根目录的 update.json、latest.json 与 README.md
 on:
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       tag:
@@ -22,7 +24,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: sync-release-${{ inputs.tag || 'latest' }}
+  group: sync-release-${{ github.event.release.tag_name || inputs.tag || 'latest' }}
   cancel-in-progress: false
 
 env:
@@ -43,7 +45,7 @@ jobs:
         id: meta
         env:
           GH_TOKEN: ${{ github.token }}
-          INPUT_TAG: ${{ inputs.tag }}
+          INPUT_TAG: ${{ inputs.tag || github.event.release.tag_name }}
         run: |
           set -euo pipefail
 
