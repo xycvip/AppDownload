@@ -2,12 +2,14 @@ name: 发布同步到 GitCode 与更新清单
 
 # 放在 xycvip/AppDownload 仓库的 .github/workflows/sync-gitcode.yml
 #
-# 纯手动触发：在 AppDownload 的 Actions 页面点 Run workflow，才会执行同步。
+# 触发方式：
+#   1. 自动：RedGuoAPP 发布正式版后会远程触发本工作流，并带上 tag
+#   2. 手动：在 AppDownload 的 Actions 页面点 Run workflow（tag 留空取最新）
 # 做四件事：
 #   1. 更新本仓库根 README 里的 redguo 区块（发布信息）
-#   2. 写 redguo/latest.json 与 redguo/README.md（更新清单 + 更新文档）
+#   2. 写 redguo/update.json、latest.json 与 README.md（更新清单 + 更新文档）
 #   3. 把同一份安装包转发到 GitCode xycvip/redguo 的 Release
-#   4. 写 GitCode 仓库根目录的 latest.json 与 README.md
+#   4. 写 GitCode 仓库根目录的 update.json、latest.json 与 README.md
 on:
   workflow_dispatch:
     inputs:
@@ -146,33 +148,44 @@ jobs:
               }
 
           a32, a64 = build('v7a'), build('v8a')
-          main = dict(a64)
-          main.pop('abi')
 
-          latest = {
-              'schema': 1,
-              'packageName': pkg,
-              'versionCode': int(code),
-              'versionName': name,
-              'tag': tag,
-          }
-          if commit:
-              latest['sourceCommit'] = commit
-          if released:
-              latest['releasedAt'] = released
-          latest['apk'] = main
-          latest['apks'] = [
-              {'abi': a['abi'], 'name': a['name'], 'size': a['size'],
-               'sha256': a['sha256'], 'url': a['url']} for a in (a32, a64)
-          ]
-          latest['notes'] = notes
-          latest['mirror'] = 'https://gitcode.com/%s/%s/releases/tag/%s' % (
+          # 清单由构建工作流生成并挂在 Release 上，这里原样复制，保证两边字节一致。
+          manifest_path = pathlib.Path('dist/update.json')
+          if manifest_path.exists():
+              manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          else:
+              print('::warning::发布里没有 update.json，按发布信息补一份')
+              manifest = {
+                  'schema': 1,
+                  'packageName': pkg,
+                  'version': '%s+%s' % (name, code),
+                  'versionCode': int(code),
+                  'versionName': name,
+                  'tag': tag,
+                  'apks': [
+                      {'abi': a['abi'], 'name': a['name'], 'size': a['size'],
+                       'sha256': a['sha256'], 'url': a['url'],
+                       'mirrors': ['https://gitcode.com/%s/%s/releases/download/%s/%s' % (
+                           env['GITCODE_OWNER'], env['GITCODE_REPO'], tag, a['name'])]}
+                      for a in (a32, a64)
+                  ],
+              }
+          if commit and not manifest.get('sourceCommit'):
+              manifest['sourceCommit'] = commit
+          if released and not manifest.get('releasedAt'):
+              manifest['releasedAt'] = released
+          notes = (manifest.get('notes') or notes).strip()
+
+          payload = json.dumps(manifest, ensure_ascii=False, indent=2) + '\n'
+          pathlib.Path('out/update.json').write_text(payload, encoding='utf-8')
+          # 同一份内容再写一份 latest.json：与 hongguoTV 目录保持一致，
+          # 也给不认 update.json 的老工具和人工查看留个入口。
+          pathlib.Path('out/latest.json').write_text(payload, encoding='utf-8')
+
+          raw_latest = 'https://raw.githubusercontent.com/%s/main/redguo/update.json' % repo
+          # GitCode 的仓库文件走 CloudWAF，raw 地址会 418，这里只链发布页。
+          page_gitcode = 'https://gitcode.com/%s/%s/releases/tag/%s' % (
               env['GITCODE_OWNER'], env['GITCODE_REPO'], tag)
-
-          pathlib.Path('out/latest.json').write_text(
-              json.dumps(latest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-
-          raw_latest = 'https://raw.githubusercontent.com/%s/main/redguo/latest.json' % repo
           tree = 'https://github.com/%s/tree/main/redguo' % repo
 
           block = '''<!-- LATEST_RELEASE_START -->
@@ -181,7 +194,7 @@ jobs:
           - 32 位安装包：[{f32}]({u32})（armeabi-v7a）
           - 64 位安装包：[{f64}]({u64})（arm64-v8a）
           - 完整性校验：[SHA256SUMS]({usum})
-          - 应用内更新清单：[latest.json]({ulatest})
+          - 应用内更新清单：[update.json]({ulatest})（[GitCode 发布页]({ugitcode})）
           - 完整发布页：[{tag}]({utag})
 
           ## 本次更新说明
@@ -192,7 +205,7 @@ jobs:
               f32=a32['name'], u32=a32['url'],
               f64=a64['name'], u64=a64['url'],
               usum='https://github.com/%s/releases/download/%s/SHA256SUMS' % (repo, tag),
-              ulatest=raw_latest, tag=tag,
+              ulatest=raw_latest, ugitcode=page_gitcode, tag=tag,
               utag='https://github.com/%s/releases/tag/%s' % (repo, tag),
               notes=notes)
 
@@ -203,7 +216,7 @@ jobs:
 
           - [下载 32 位安装包 {f32}]({u32})
           - [下载 64 位安装包 {f64}]({u64})
-          - [应用内更新清单 latest.json]({ulatest})
+          - [应用内更新清单 update.json]({ulatest})
           - [红果剧场全部下载文件与说明]({tree})
 
           **本次更新说明**
@@ -215,11 +228,11 @@ jobs:
 
           pathlib.Path('out/latest_block.md').write_text(block + '\n', encoding='utf-8')
           pathlib.Path('out/app_block.md').write_text(app + '\n', encoding='utf-8')
-          print('latest.json / 区块 生成完成')
+          print('update.json / 区块 生成完成')
           PY
 
           python3 gen.py
-          cat out/latest.json
+          cat out/update.json
 
       - name: 更新 AppDownload 仓库文件
         env:
@@ -314,7 +327,8 @@ jobs:
           PY
           put README.md out/root_readme.md "${APP_NAME} ${NAME}（${CODE}）：更新下载信息"
 
-          # 2) redguo/latest.json
+          # 2) redguo/update.json 与 redguo/latest.json（内容相同，文件名兼容）
+          put redguo/update.json out/update.json "${APP_NAME} ${NAME}：更新清单"
           put redguo/latest.json out/latest.json "${APP_NAME} ${NAME}：更新清单"
 
           # 3) redguo/README.md（更新文档，保留历史）
@@ -428,6 +442,7 @@ jobs:
             fi
           }
 
+          write_file update.json out/update.json "红果剧场 ${NAME}：更新清单"
           write_file latest.json out/latest.json "红果剧场 ${NAME}：更新清单"
           write_file README.md out/gc_readme.md "红果剧场 ${NAME}：更新说明"
 
@@ -449,7 +464,7 @@ jobs:
             echo "| 内部版本号 | ${CODE} |"
             echo "| tag | ${TAG} |"
             echo "| GitHub 发布页 | https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG} |"
-            echo "| 更新清单 | https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/redguo/latest.json |"
+            echo "| 更新清单 | https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/redguo/update.json |"
             echo "| 更新文档 | https://github.com/${GITHUB_REPOSITORY}/blob/main/redguo/README.md |"
             echo "| GitCode 发布页 | https://gitcode.com/${GITCODE_OWNER}/${GITCODE_REPO}/releases/tag/${TAG} |"
           } >> "$GITHUB_STEP_SUMMARY"
