@@ -345,6 +345,7 @@ jobs:
 
       - name: 上传到 GitCode Release
         env:
+          GH_TOKEN: ${{ github.token }}
           TOKEN: ${{ secrets.GITCODE_TOKEN }}
           TAG: ${{ steps.meta.outputs.tag }}
           NAME: ${{ steps.meta.outputs.name }}
