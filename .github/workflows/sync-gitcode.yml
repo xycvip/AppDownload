@@ -17,15 +17,12 @@ on:
         description: '要同步的 tag（留空取最新的 redguo 发布，如 redguo-v2.0.4-2026111902）'
         required: false
         type: string
-  repository_dispatch:
-    types:
-      - redguo-release
 
 permissions:
   contents: write
 
 concurrency:
-  group: sync-release-${{ github.event.client_payload.tag || inputs.tag || 'latest' }}
+  group: sync-release-${{ inputs.tag || 'latest' }}
   cancel-in-progress: false
 
 env:
@@ -46,7 +43,7 @@ jobs:
         id: meta
         env:
           GH_TOKEN: ${{ github.token }}
-          INPUT_TAG: ${{ github.event.client_payload.tag || inputs.tag }}
+          INPUT_TAG: ${{ inputs.tag }}
         run: |
           set -euo pipefail
 
