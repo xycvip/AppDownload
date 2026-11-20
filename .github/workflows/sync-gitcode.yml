@@ -181,10 +181,6 @@ jobs:
 
           payload = json.dumps(manifest, ensure_ascii=False, indent=2) + '\n'
           pathlib.Path('out/update.json').write_text(payload, encoding='utf-8')
-          # 同一份内容再写一份 latest.json：与 hongguoTV 目录保持一致，
-          # 也给不认 update.json 的老工具和人工查看留个入口。
-          pathlib.Path('out/latest.json').write_text(payload, encoding='utf-8')
-
           raw_latest = 'https://raw.githubusercontent.com/%s/main/redguo/update.json' % repo
           # GitCode 的仓库文件走 CloudWAF，raw 地址会 418，这里只链发布页。
           page_gitcode = 'https://gitcode.com/%s/%s/releases/tag/%s' % (
@@ -330,9 +326,8 @@ jobs:
           PY
           put README.md out/root_readme.md "${APP_NAME} ${NAME}（${CODE}）：更新下载信息"
 
-          # 2) redguo/update.json 与 redguo/latest.json（内容相同，文件名兼容）
+          # 2) redguo/update.json（应用内更新唯一清单）
           put redguo/update.json out/update.json "${APP_NAME} ${NAME}：更新清单"
-          put redguo/latest.json out/latest.json "${APP_NAME} ${NAME}：更新清单"
 
           # 3) redguo/README.md（更新文档，保留历史）
           if gh api "repos/${GITHUB_REPOSITORY}/contents/redguo/README.md" --jq .content > /dev/null 2>&1; then
@@ -474,7 +469,6 @@ jobs:
           }
 
           write_file update.json out/update.json "红果剧场 ${NAME}：更新清单"
-          write_file latest.json out/latest.json "红果剧场 ${NAME}：更新清单"
           write_file README.md out/gc_readme.md "红果剧场 ${NAME}：更新说明"
 
           exit "$fail"
