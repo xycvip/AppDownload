@@ -6,15 +6,15 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: '要同步的红果TV正式版 tag，例如 hongguotv-v1.1.47'
-        required: true
+        description: '要同步的正式版 tag；留空则自动选择最新的正式版'
+        required: false
         type: string
 
 permissions:
   contents: read
 
 concurrency:
-  group: sync-hongguotv-gitcode-${{ github.event.release.tag_name || inputs.tag }}
+  group: sync-hongguotv-gitcode-${{ github.event.release.tag_name || inputs.tag || 'latest' }}
   cancel-in-progress: false
 
 env:
@@ -37,6 +37,18 @@ jobs:
         run: |
           set -euo pipefail
           TAG="$INPUT_TAG"
+          if [ -z "$TAG" ]; then
+            echo "未填写 tag，自动查找最新的红果TV正式版 Release"
+            TAG="$(gh release list --repo "$GITHUB_REPOSITORY" --limit 100 \
+              --json tagName,isDraft,isPrerelease,publishedAt \
+              --jq '[.[] | select(.isDraft == false and .isPrerelease == false and (.tagName | startswith("hongguotv-v")))] | sort_by(.publishedAt) | last | .tagName // empty')"
+            if [ -z "$TAG" ]; then
+              echo "::error::没有找到可同步的红果TV正式版 Release"
+              exit 1
+            fi
+            echo "自动选择最新正式版：$TAG"
+          fi
+          export TAG
           case "$TAG" in
             hongguotv-v*) ;;
             *) echo "::error::只允许同步 hongguotv-v 开头的正式版 tag：$TAG"; exit 1 ;;
@@ -55,7 +67,7 @@ jobs:
           test -s dist/SHA256SUMS
           python3 - <<'PY'
           import json, os, pathlib, re
-          tag = os.environ["INPUT_TAG"]
+          tag = os.environ["TAG"]
           data = json.loads(pathlib.Path("dist/update.json").read_text(encoding="utf-8"))
           if data.get("schema") != 1 or data.get("packageName") != "com.x.hongguotv":
               raise SystemExit("update.json 包名或 schema 不匹配")
@@ -104,6 +116,7 @@ jobs:
 
       - name: 创建或复用 GitCode Release
         env:
+          GH_TOKEN: ${{ github.token }}
           TOKEN: ${{ secrets.GITCODE_TOKEN }}
           TAG: ${{ steps.meta.outputs.tag }}
           VERSION_NAME: ${{ steps.meta.outputs.version_name }}
