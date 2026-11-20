@@ -163,6 +163,25 @@ jobs:
             echo "已上传 GitCode 附件：$fname"
           done
 
+      - name: 最终核对 GitCode Release 附件
+        env:
+          TOKEN: ${{ secrets.GITCODE_TOKEN }}
+          TAG: ${{ steps.meta.outputs.tag }}
+        run: |
+          set -euo pipefail
+          API="https://api.gitcode.com/api/v5/repos/${GITCODE_OWNER}/${GITCODE_REPO}"
+          curl -fsS "${API}/releases/tags/${TAG}?access_token=${TOKEN}" -o gitcode-release-final.json
+          jq -e --arg apk "${{ steps.meta.outputs.apk_name }}" '
+            (.assets // []) as $assets
+            | ([$assets[].name] | index($apk) != null)
+              and ([$assets[].name] | index("SHA256SUMS") != null)
+              and ([$assets[].name] | index("update.json") != null)
+          ' gitcode-release-final.json >/dev/null || {
+            echo "::error::GitCode Release 附件不完整，必须包含 APK、SHA256SUMS、update.json"
+            exit 1
+          }
+          echo "GitCode Release 附件核对通过：APK、SHA256SUMS、update.json"
+
       - name: 输出同步结果
         if: success()
         env:
