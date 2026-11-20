@@ -18,6 +18,20 @@
 
 ## 历史版本
 
+### 红果剧场正式版 1.0.1
+
+发布版本：**1.0.1**（内部版本 `2026112002`）
+
+- 32 位安装包：[RedGuo-1.0.1-v7a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v7a.apk)（armeabi-v7a）
+- 64 位安装包：[RedGuo-1.0.1-v8a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v8a.apk)（arm64-v8a）
+- 完整性校验：[SHA256SUMS](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/SHA256SUMS)
+- 应用内更新清单：[update.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/redguo/update.json)（[GitCode 发布页](https://gitcode.com/xycvip/redguo/releases/tag/redguo-v1.0.1-2026112002)）
+- 完整发布页：[redguo-v1.0.1-2026112002](https://github.com/xycvip/AppDownload/releases/tag/redguo-v1.0.1-2026112002)
+
+**本次更新说明**
+
+优化exo播放体验
+
 ### 红果剧场正式版 1.0.0
 
 发布版本：**1.0.0**（内部版本 `2026112001`）
