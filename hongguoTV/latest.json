@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "1381ae2891cc4312eb97d32865ce1bf867c95e2b",
-  "versionCode": 2026111601,
-  "versionName": "1.1.47",
+  "sourceCommit": "ff7afdcaca903c499ca86f53b8f0129029171960",
+  "versionCode": 2026112001,
+  "versionName": "1.1.48",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.47",
+  "tag": "hongguotv-v1.1.48",
   "apk": {
-    "name": "HongguoTV-1.1.47.apk",
-    "size": 2038749,
-    "sha256": "130a024b55815aca7e2d1a50c3fcb843b0e140ba832e4c153011908134413330",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.47/HongguoTV-1.1.47.apk"
+    "name": "HongguoTV-1.1.48.apk",
+    "size": 2027445,
+    "sha256": "dc875f543eebcd779605f3eb81160d3a0782c7381ec6eee9075bfe0c61926af8",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.48/HongguoTV-1.1.48.apk"
   },
-  "notes": "【播放与播放器】\n- 将 N 接口播放主链路对齐至 V5 多视频模型接口\n- 同步 V5 请求签名、压缩请求体及响应解析\n- 优化视频清晰度选择与编码兼容处理\n- 保持 P 接口及现有播放器管线独立不变"
+  "notes": "- 对齐 P 播放接口，更新设备注册及播放请求流程\n- 适配 V5 签名机制，优化接口请求兼容性\n- 保留原有视频解析与解密逻辑\n- 优化 P 接口播放流程\n- 保持 N 播放接口原有行为不变"
 }
