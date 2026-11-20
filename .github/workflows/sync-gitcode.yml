@@ -7,9 +7,9 @@ name: 发布同步到 GitCode 与更新清单
 #   2. 手动：在 AppDownload 的 Actions 页面点 Run workflow（tag 留空取最新）
 # 做四件事：
 #   1. 更新本仓库根 README 里的 redguo 区块（发布信息）
-#   2. 写 redguo/update.json、latest.json 与 README.md（更新清单 + 更新文档）
+#   2. 写 redguo/update.json 与 README.md（更新清单 + 更新文档）
 #   3. 把同一份安装包转发到 GitCode xycvip/redguo 的 Release
-#   4. 写 GitCode 仓库根目录的 update.json、latest.json 与 README.md
+#   4. 写 GitCode 仓库根目录的 update.json 与 README.md
 on:
   release:
     types: [published]
