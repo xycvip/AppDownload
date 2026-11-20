@@ -64,6 +64,11 @@ jobs:
           gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir dist --clobber
 
           test -s dist/update.json
+          test -s dist/latest.json
+          cmp -s dist/update.json dist/latest.json || {
+            echo "::error::Release 中的 latest.json 与 update.json 内容不一致"
+            exit 1
+          }
           test -s dist/SHA256SUMS
           python3 - <<'PY'
           import json, os, pathlib, re
@@ -110,9 +115,12 @@ jobs:
           }
 
           # GitCode 版本清单必须指向 GitCode Release 附件，不能继续指向 GitHub。
-          jq --arg url "https://gitcode.com/${GITCODE_OWNER}/${GITCODE_REPO}/releases/download/${TAG}/${APK_NAME}"             '.apk.url = $url' dist/update.json > dist/update-gitcode.json
+          GITCODE_APK_URL="https://gitcode.com/${GITCODE_OWNER}/${GITCODE_REPO}/releases/download/${TAG}/${APK_NAME}"
+          jq --arg url "$GITCODE_APK_URL" '.apk.url = $url' dist/update.json > dist/update-gitcode.json
+          jq --arg url "$GITCODE_APK_URL" '.apk.url = $url' dist/latest.json > dist/latest-gitcode.json
           mv dist/update-gitcode.json dist/update.json
-          echo "APK SHA-256 校验通过，已生成 GitCode 下载地址"
+          mv dist/latest-gitcode.json dist/latest.json
+          echo "APK SHA-256 校验通过，update.json 与 latest.json 均已切换为 GitCode 下载地址"
 
       - name: 创建或复用 GitCode Release
         env:
@@ -142,7 +150,7 @@ jobs:
           fi
 
           # 对已存在的同名附件跳过上传，避免手动重跑时重复添加。
-          for f in "dist/${{ steps.meta.outputs.apk_name }}" dist/SHA256SUMS dist/update.json; do
+          for f in "dist/${{ steps.meta.outputs.apk_name }}" dist/SHA256SUMS dist/update.json dist/latest.json; do
             [ -s "$f" ] || { echo "::error::缺少待上传文件：$f"; exit 1; }
             fname="$(basename "$f")"
             if jq -e --arg n "$fname" '(.assets // []) | any(.name == $n)' gitcode-release.json >/dev/null 2>&1; then
@@ -176,11 +184,12 @@ jobs:
             | ([$assets[].name] | index($apk) != null)
               and ([$assets[].name] | index("SHA256SUMS") != null)
               and ([$assets[].name] | index("update.json") != null)
+              and ([$assets[].name] | index("latest.json") != null)
           ' gitcode-release-final.json >/dev/null || {
-            echo "::error::GitCode Release 附件不完整，必须包含 APK、SHA256SUMS、update.json"
+            echo "::error::GitCode Release 附件不完整，必须包含 APK、SHA256SUMS、update.json、latest.json"
             exit 1
           }
-          echo "GitCode Release 附件核对通过：APK、SHA256SUMS、update.json"
+          echo "GitCode Release 附件核对通过：APK、SHA256SUMS、update.json、latest.json"
 
       - name: 输出同步结果
         if: success()
@@ -195,6 +204,6 @@ jobs:
             echo "- Tag：${TAG}"
             echo "- GitHub Release：https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG}"
             echo "- GitCode Release：https://gitcode.com/${GITCODE_OWNER}/${GITCODE_REPO}/-/releases/${TAG}"
-            echo "- 已同步：APK、SHA256SUMS、update.json"
+            echo "- 已同步：APK、SHA256SUMS、update.json、latest.json"
             echo "- GitCode update.json 中的 APK 地址已切换为 GitCode Release 下载地址"
           } >> "$GITHUB_STEP_SUMMARY"
