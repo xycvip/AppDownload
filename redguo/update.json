@@ -1,37 +1,38 @@
 {
   "schema": 1,
   "packageName": "com.x.redguoapp",
-  "version": "1.0.0+2026112001",
-  "versionCode": 2026112001,
-  "versionName": "1.0.0",
-  "tag": "redguo-v1.0.0-2026112001",
-  "sourceCommit": "54d0eb2438c68ede63df7ed15356f51d1bf9d885",
-  "notes": "初始版本",
+  "signingCertSha256": "9213027e0e23b8d9387b6dd7790bac6723f8553d59fd051b8022df321562d20b",
+  "version": "1.0.1+2026112002",
+  "versionCode": 2026112002,
+  "versionName": "1.0.1",
+  "tag": "redguo-v1.0.1-2026112002",
+  "sourceCommit": "a59d451d488fbb98b0e62f3c322efadb4f5c5f71",
+  "notes": "优化exo播放体验",
   "apks": [
     {
       "abi": "armeabi-v7a",
-      "name": "RedGuo-1.0.0-v7a.apk",
-      "size": 44900393,
-      "sha256": "160a6ca7325dac6bbfe76398de6fc69c218e86a4bc277545273662456a5fbd1e",
-      "url": "https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v7a.apk",
+      "name": "RedGuo-1.0.1-v7a.apk",
+      "size": 44902713,
+      "sha256": "a3bbfa24319da4e776818e586cef1a5d190069bf32f71f46a400c0ac55fef4bb",
+      "url": "https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v7a.apk",
       "mirrors": [
-        "https://gitcode.com/xycvip/redguo/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v7a.apk",
-        "https://gh-proxy.com/https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v7a.apk",
-        "https://ghfast.top/https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v7a.apk"
+        "https://gitcode.com/xycvip/redguo/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v7a.apk",
+        "https://gh-proxy.com/https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v7a.apk",
+        "https://ghfast.top/https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v7a.apk"
       ]
     },
     {
       "abi": "arm64-v8a",
-      "name": "RedGuo-1.0.0-v8a.apk",
-      "size": 35946307,
-      "sha256": "a589164178ffc622fe2ad06a99b83bad76e7ce299f8e9ce23cabea39b573e0f1",
-      "url": "https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v8a.apk",
+      "name": "RedGuo-1.0.1-v8a.apk",
+      "size": 35947799,
+      "sha256": "26be9a51a760196a818b003ed052f944321d14b5779dd85e0dc73c0861114a6c",
+      "url": "https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v8a.apk",
       "mirrors": [
-        "https://gitcode.com/xycvip/redguo/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v8a.apk",
-        "https://gh-proxy.com/https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v8a.apk",
-        "https://ghfast.top/https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v8a.apk"
+        "https://gitcode.com/xycvip/redguo/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v8a.apk",
+        "https://gh-proxy.com/https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v8a.apk",
+        "https://ghfast.top/https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v8a.apk"
       ]
     }
   ],
-  "releasedAt": "2026-11-19T19:14:27Z"
+  "releasedAt": "2026-11-20T11:05:48Z"
 }
