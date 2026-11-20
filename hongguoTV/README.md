@@ -1,18 +1,14 @@
 # 红果 TV 分发目录
 
 <!-- LATEST_RELEASE_START -->
-当前版本：**1.1.48**
+当前版本：**1.1.49**
 
-- APK 安装包：[下载 HongguoTV-1.1.48.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.48/HongguoTV-1.1.48.apk)
+- APK 安装包：[下载 HongguoTV-1.1.49.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.49/HongguoTV-1.1.49.apk)
 - 应用内更新清单：[latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 
 ## 本次更新说明
 
-- 对齐 P 播放接口，更新设备注册及播放请求流程
-- 适配 V5 签名机制，优化接口请求兼容性
-- 保留原有视频解析与解密逻辑
-- 优化 P 接口播放流程
-- 保持 N 播放接口原有行为不变
+新增线路失效给于提示
 <!-- LATEST_RELEASE_END -->
 
 ## 红果TV正式版 1.1.16
@@ -638,5 +634,16 @@
 - 保留原有视频解析与解密逻辑
 - 优化 P 接口播放流程
 - 保持 N 播放接口原有行为不变
+
+---
+
+## 红果TV正式版 1.1.49
+
+- 下载：[HongguoTV-1.1.49.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.49/HongguoTV-1.1.49.apk)
+- versionCode：2026112002
+- SHA-256：7e3fe0929afcf4e9b3099f4fb1c0d38a988f9f970a0a146546d18eede5a7f446
+
+### 本次更新
+新增线路失效给于提示
 
 ---
