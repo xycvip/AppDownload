@@ -31,16 +31,16 @@
 <!-- BEGIN APP: redguo -->
 ### 红果剧场
 
-当前版本：**1.0.0**（内部版本 `2026112001`）
+当前版本：**1.0.1**（内部版本 `2026112002`）
 
-- [下载 32 位安装包 RedGuo-1.0.0-v7a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v7a.apk)
-- [下载 64 位安装包 RedGuo-1.0.0-v8a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.0-2026112001/RedGuo-1.0.0-v8a.apk)
+- [下载 32 位安装包 RedGuo-1.0.1-v7a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v7a.apk)
+- [下载 64 位安装包 RedGuo-1.0.1-v8a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v8a.apk)
 - [应用内更新清单 update.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/redguo/update.json)
 - [红果剧场全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/redguo)
 
 **本次更新说明**
 
-初始版本
+优化exo播放体验
 <!-- END APP: redguo -->
 
 ## 仓库用途
