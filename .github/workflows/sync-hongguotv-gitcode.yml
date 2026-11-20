@@ -1,0 +1,168 @@
+name: 红果TV同步到 GitCode
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: '要同步的红果TV正式版 tag，例如 hongguotv-v1.1.47'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-hongguotv-gitcode-${{ github.event.release.tag_name || inputs.tag }}
+  cancel-in-progress: false
+
+env:
+  GITCODE_OWNER: xycvip
+  GITCODE_REPO: hongguotv
+
+jobs:
+  sync:
+    if: ${{ (github.event_name == 'release' && startsWith(github.event.release.tag_name, 'hongguotv-v')) || github.event_name == 'workflow_dispatch' }}
+    name: 同步红果TV正式版到 GitCode
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 校验版本并下载 GitHub Release 附件
+        id: meta
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INPUT_TAG: ${{ inputs.tag || github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          TAG="$INPUT_TAG"
+          case "$TAG" in
+            hongguotv-v*) ;;
+            *) echo "::error::只允许同步 hongguotv-v 开头的正式版 tag：$TAG"; exit 1 ;;
+          esac
+
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json isDraft,isPrerelease,assets,name,body > release.json
+          jq -e '.isDraft == false and .isPrerelease == false' release.json >/dev/null || {
+            echo "::error::目标 Release 是草稿或预发布版本，拒绝同步"
+            exit 1
+          }
+
+          mkdir -p dist
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir dist --clobber
+
+          test -s dist/update.json
+          test -s dist/SHA256SUMS
+          python3 - <<'PY'
+          import json, os, pathlib, re
+          tag = os.environ["INPUT_TAG"]
+          data = json.loads(pathlib.Path("dist/update.json").read_text(encoding="utf-8"))
+          if data.get("schema") != 1 or data.get("packageName") != "com.x.hongguotv":
+              raise SystemExit("update.json 包名或 schema 不匹配")
+          if data.get("tag") != tag:
+              raise SystemExit("update.json 的 tag 与目标 Release 不一致")
+          if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", str(data.get("versionName", ""))):
+              raise SystemExit("update.json versionName 格式错误")
+          apk = data.get("apk") or {}
+          name = apk.get("name", "")
+          if name != f'HongguoTV-{data["versionName"]}.apk':
+              raise SystemExit("APK 文件名与版本号不匹配")
+          if not re.fullmatch(r"[0-9a-fA-F]{64}", str(apk.get("sha256", ""))):
+              raise SystemExit("APK SHA-256 格式错误")
+          if not isinstance(apk.get("size"), int) or apk["size"] <= 0:
+              raise SystemExit("APK 文件大小无效")
+          if not pathlib.Path("dist", name).is_file():
+              raise SystemExit(f"Release 缺少 APK：{name}")
+          if pathlib.Path("dist", name).stat().st_size != apk["size"]:
+              raise SystemExit("APK 实际大小与 update.json 不一致")
+          pathlib.Path("meta.env").write_text(
+              f'VERSION_NAME={data["versionName"]}\nAPK_NAME={name}\n', encoding="utf-8")
+          PY
+          source meta.env
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version_name=$VERSION_NAME" >> "$GITHUB_OUTPUT"
+          echo "apk_name=$APK_NAME" >> "$GITHUB_OUTPUT"
+          echo "已通过正式版清单与 APK 基础校验：$TAG"
+
+      - name: 校验 APK SHA-256 并生成 GitCode 更新清单
+        env:
+          TAG: ${{ steps.meta.outputs.tag }}
+        run: |
+          set -euo pipefail
+          APK_NAME="${{ steps.meta.outputs.apk_name }}"
+          EXPECTED="$(jq -r '.apk.sha256' dist/update.json | tr 'A-F' 'a-f')"
+          ACTUAL="$(sha256sum "dist/$APK_NAME" | awk '{print $1}')"
+          [ "$EXPECTED" = "$ACTUAL" ] || {
+            echo "::error::APK SHA-256 校验失败"
+            exit 1
+          }
+
+          # GitCode 版本清单必须指向 GitCode Release 附件，不能继续指向 GitHub。
+          jq --arg url "https://gitcode.com/${GITCODE_OWNER}/${GITCODE_REPO}/releases/download/${TAG}/${APK_NAME}"             '.apk.url = $url' dist/update.json > dist/update-gitcode.json
+          mv dist/update-gitcode.json dist/update.json
+          echo "APK SHA-256 校验通过，已生成 GitCode 下载地址"
+
+      - name: 创建或复用 GitCode Release
+        env:
+          TOKEN: ${{ secrets.GITCODE_TOKEN }}
+          TAG: ${{ steps.meta.outputs.tag }}
+          VERSION_NAME: ${{ steps.meta.outputs.version_name }}
+        run: |
+          set -euo pipefail
+          if [ -z "${TOKEN:-}" ]; then
+            echo "::error::未配置 AppDownload 仓库密钥 GITCODE_TOKEN"
+            exit 1
+          fi
+
+          API="https://api.gitcode.com/api/v5/repos/${GITCODE_OWNER}/${GITCODE_REPO}"
+          TITLE="红果TV正式版 ${VERSION_NAME}"
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json body --jq .body > release-notes.md
+
+          if curl -fsS "${API}/releases/tags/${TAG}?access_token=${TOKEN}" -o gitcode-release.json; then
+            echo "GitCode 已存在 Release：$TAG"
+          else
+            jq -n --arg tag "$TAG" --arg name "$TITLE" --rawfile body release-notes.md \
+              '{tag_name:$tag, name:$name, body:$body}' > payload.json
+            curl -fsS -X POST "${API}/releases?access_token=${TOKEN}" \
+              -H 'Content-Type: application/json' --data-binary @payload.json -o gitcode-release.json
+            echo "已创建 GitCode Release：$TAG"
+          fi
+
+          # 对已存在的同名附件跳过上传，避免手动重跑时重复添加。
+          for f in "dist/${{ steps.meta.outputs.apk_name }}" dist/SHA256SUMS dist/update.json; do
+            [ -s "$f" ] || { echo "::error::缺少待上传文件：$f"; exit 1; }
+            fname="$(basename "$f")"
+            if jq -e --arg n "$fname" '(.assets // []) | any(.name == $n)' gitcode-release.json >/dev/null 2>&1; then
+              echo "GitCode 附件已存在，跳过：$fname"
+              continue
+            fi
+
+            encoded="$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$fname")"
+            info="$(curl -fsS "${API}/releases/${TAG}/upload_url?access_token=${TOKEN}&file_name=${encoded}")"
+            url="$(printf '%s' "$info" | jq -r '.url // empty')"
+            [ -n "$url" ] || { echo "::error::未获取到附件上传地址：$fname"; exit 1; }
+
+            args=()
+            while IFS= read -r line; do args+=(-H "$line"); done < <(
+              printf '%s' "$info" | jq -r '.headers // {} | to_entries[] | "\(.key): \(.value)"'
+            )
+            curl -fsS -X PUT "${args[@]}" --upload-file "$f" "$url" >/dev/null
+            echo "已上传 GitCode 附件：$fname"
+          done
+
+      - name: 输出同步结果
+        if: success()
+        env:
+          TAG: ${{ steps.meta.outputs.tag }}
+          VERSION_NAME: ${{ steps.meta.outputs.version_name }}
+        run: |
+          {
+            echo "## 红果TV GitCode 同步成功"
+            echo ""
+            echo "- 版本：${VERSION_NAME}"
+            echo "- Tag：${TAG}"
+            echo "- GitHub Release：https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG}"
+            echo "- GitCode Release：https://gitcode.com/${GITCODE_OWNER}/${GITCODE_REPO}/-/releases/${TAG}"
+            echo "- 已同步：APK、SHA256SUMS、update.json"
+            echo "- GitCode update.json 中的 APK 地址已切换为 GitCode Release 下载地址"
+          } >> "$GITHUB_STEP_SUMMARY"
