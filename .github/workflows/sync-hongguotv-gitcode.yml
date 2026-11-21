@@ -123,6 +123,7 @@ jobs:
           echo "APK SHA-256 校验通过，update.json 与 latest.json 均已切换为 GitCode 下载地址"
 
       - name: 创建或复用 GitCode Release
+        id: gitcode_release
         env:
           GH_TOKEN: ${{ github.token }}
           TOKEN: ${{ secrets.GITCODE_TOKEN }}
@@ -139,11 +140,36 @@ jobs:
           TITLE="红果TV正式版 ${VERSION_NAME}"
           gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json body --jq .body > release-notes.md
 
+          # 只有 GitHub 上最新的正式版才标记为 GitCode latest，防止手动补同步旧版本时覆盖最新通道。
+          LATEST_TAG="$(gh release list --repo "$GITHUB_REPOSITORY" --limit 100 \
+            --json tagName,isDraft,isPrerelease,publishedAt \
+            --jq '[.[] | select(.isDraft == false and .isPrerelease == false and (.tagName | startswith("hongguotv-v")))] | sort_by(.publishedAt) | last | .tagName // empty')"
+          [ -n "$LATEST_TAG" ] || { echo "::error::无法确定 GitHub 最新正式版 tag"; exit 1; }
+          IS_LATEST=false
+          if [ "$TAG" = "$LATEST_TAG" ]; then
+            IS_LATEST=true
+          fi
+          echo "is_latest=$IS_LATEST" >> "$GITHUB_OUTPUT"
+          echo "GitHub 最新正式版：$LATEST_TAG；本次目标是否为最新：$IS_LATEST"
+
           if curl -fsS "${API}/releases/tags/${TAG}?access_token=${TOKEN}" -o gitcode-release.json; then
             echo "GitCode 已存在 Release：$TAG"
+            if [ "$IS_LATEST" = "true" ]; then
+              # 已存在的 Release 也必须显式升级为 latest，不能只在创建时设置。
+              jq -n --arg name "$TITLE" --rawfile body release-notes.md \
+                '{name:$name, body:$body, release_status:"latest"}' > payload.json
+              curl -fsS -X PATCH "${API}/releases/${TAG}?access_token=${TOKEN}" \
+                -H 'Content-Type: application/json' --data-binary @payload.json -o gitcode-release.json
+              echo "已将现有 GitCode Release 状态更新为 latest"
+            fi
           else
-            jq -n --arg tag "$TAG" --arg name "$TITLE" --rawfile body release-notes.md \
-              '{tag_name:$tag, name:$name, body:$body}' > payload.json
+            if [ "$IS_LATEST" = "true" ]; then
+              jq -n --arg tag "$TAG" --arg name "$TITLE" --rawfile body release-notes.md \
+                '{tag_name:$tag, name:$name, body:$body, release_status:"latest"}' > payload.json
+            else
+              jq -n --arg tag "$TAG" --arg name "$TITLE" --rawfile body release-notes.md \
+                '{tag_name:$tag, name:$name, body:$body}' > payload.json
+            fi
             curl -fsS -X POST "${API}/releases?access_token=${TOKEN}" \
               -H 'Content-Type: application/json' --data-binary @payload.json -o gitcode-release.json
             echo "已创建 GitCode Release：$TAG"
@@ -175,20 +201,28 @@ jobs:
         env:
           TOKEN: ${{ secrets.GITCODE_TOKEN }}
           TAG: ${{ steps.meta.outputs.tag }}
+          IS_LATEST: ${{ steps.gitcode_release.outputs.is_latest }}
         run: |
           set -euo pipefail
           API="https://api.gitcode.com/api/v5/repos/${GITCODE_OWNER}/${GITCODE_REPO}"
           curl -fsS "${API}/releases/tags/${TAG}?access_token=${TOKEN}" -o gitcode-release-final.json
-          jq -e --arg apk "${{ steps.meta.outputs.apk_name }}" '
+          jq -e --arg apk "${{ steps.meta.outputs.apk_name }}" --argjson must_be_latest "$IS_LATEST" '
             (.assets // []) as $assets
             | ([$assets[].name] | index($apk) != null)
               and ([$assets[].name] | index("SHA256SUMS") != null)
               and ([$assets[].name] | index("update.json") != null)
               and ([$assets[].name] | index("latest.json") != null)
+              and (if $must_be_latest then .release_status == "latest" else true end)
           ' gitcode-release-final.json >/dev/null || {
-            echo "::error::GitCode Release 附件不完整，必须包含 APK、SHA256SUMS、update.json、latest.json"
+            echo "::error::GitCode Release 附件不完整，或最新正式版 release_status 未成功设置为 latest"
+            cat gitcode-release-final.json
             exit 1
           }
+          if [ "$IS_LATEST" = "true" ]; then
+            echo "GitCode 最新正式版状态核对通过：release_status=latest"
+          else
+            echo "本次补同步的不是最新正式版，不覆盖 GitCode latest 状态"
+          fi
           echo "GitCode Release 附件核对通过：APK、SHA256SUMS、update.json、latest.json"
 
       - name: 输出同步结果
