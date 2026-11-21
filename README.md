@@ -27,16 +27,20 @@
 <!-- BEGIN APP: redguo -->
 ### 红果剧场
 
-当前版本：**1.0.1**（内部版本 `2026112002`）
+当前版本：**1.0.2**（内部版本 `2026112201`）
 
-- [下载 32 位安装包 RedGuo-1.0.1-v7a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v7a.apk)
-- [下载 64 位安装包 RedGuo-1.0.1-v8a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.1-2026112002/RedGuo-1.0.1-v8a.apk)
+- [下载 32 位安装包 RedGuo-1.0.2-v7a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.2-2026112201/RedGuo-1.0.2-v7a.apk)
+- [下载 64 位安装包 RedGuo-1.0.2-v8a.apk](https://github.com/xycvip/AppDownload/releases/download/redguo-v1.0.2-2026112201/RedGuo-1.0.2-v8a.apk)
 - [应用内更新清单 update.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/redguo/update.json)
 - [红果剧场全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/redguo)
 
 **本次更新说明**
 
-优化exo播放体验
+- 修复连续切换几集后必然卡住转圈、返回后重新点开也无法播放的问题：被取消的请求会一直占着网络限流名额不放，名额占满后所有请求排队直到超时；现在取消时立即释放名额，前台排队加了上限，排队超时也会自动重试，不再出现「一直转圈」。
+- 修复切集时偶发「Unexpected runtime error」导致备用预热失效、连播不无感的问题：两路播放器统一缓冲参数，不再在切集时翻转内核内部状态。
+- 取消双播放器的内存限制：是否预热只由「预开下一集」开关决定，内存紧张的设备也能无感切集。
+- 精简为仅安卓版本：移除 iOS / Windows / macOS 平台代码与桌面专属功能（桌面小窗、老板键、窗口置顶、窗口全屏等），安装包只含 ARM 架构，不再提供 x86 模拟器架构与 32+64 整合包。
+- 播放调试日记区分音频与视频轨道：AAC 音频走软解属正常现象，不再误读成视频掉软解。
 <!-- END APP: redguo -->
 
 ## 仓库用途
