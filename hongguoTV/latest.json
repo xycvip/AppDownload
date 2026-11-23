@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "2d3c601a322e93af455c6efa8a42d748c4f9f022",
-  "versionCode": 2026112002,
-  "versionName": "1.1.49",
+  "sourceCommit": "b4a5ddd0df16031ed324de7bf4b562fd23ee1a8c",
+  "versionCode": 2026112301,
+  "versionName": "1.1.50",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.49",
+  "tag": "hongguotv-v1.1.50",
   "apk": {
-    "name": "HongguoTV-1.1.49.apk",
-    "size": 2027701,
-    "sha256": "7e3fe0929afcf4e9b3099f4fb1c0d38a988f9f970a0a146546d18eede5a7f446",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.49/HongguoTV-1.1.49.apk"
+    "name": "HongguoTV-1.1.50.apk",
+    "size": 2215252,
+    "sha256": "b811110c83b1905f2b52265a5e3d998c1c835c3dbdffc762e779d32e91b778d0",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.50/HongguoTV-1.1.50.apk"
   },
-  "notes": "新增线路失效给于提示"
+  "notes": "修复播放"
 }
