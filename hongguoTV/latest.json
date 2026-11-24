@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "b4a5ddd0df16031ed324de7bf4b562fd23ee1a8c",
-  "versionCode": 2026112301,
-  "versionName": "1.1.50",
+  "sourceCommit": "25ae0189a8b638577273b4fcb94afd955a11577d",
+  "versionCode": 2026112401,
+  "versionName": "2.0.0",
   "minSdk": 26,
-  "tag": "hongguotv-v1.1.50",
+  "tag": "hongguotv-v2.0.0",
   "apk": {
-    "name": "HongguoTV-1.1.50.apk",
-    "size": 2215252,
-    "sha256": "b811110c83b1905f2b52265a5e3d998c1c835c3dbdffc762e779d32e91b778d0",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v1.1.50/HongguoTV-1.1.50.apk"
+    "name": "HongguoTV-2.0.0.apk",
+    "size": 5672850,
+    "sha256": "6d309b5468a135e8824a2932446ba8f43c928bcf306585b5bba7ab951b345252",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v2.0.0/HongguoTV-2.0.0.apk"
   },
-  "notes": "修复播放"
+  "notes": "全新界面"
 }
