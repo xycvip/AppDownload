@@ -1,0 +1,35 @@
+name: 红果TV下载与访问趋势统计
+on:
+  schedule:
+    - cron: "20 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: hongguotv-statistics
+  cancel-in-progress: false
+jobs:
+  update:
+    name: 更新红果TV统计曲线
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 检出统计仓库
+        uses: actions/checkout@v4
+      - name: 更新统计数据与曲线图
+        env:
+          GITHUB_TOKEN: \${{ github.token }}
+          TRAFFIC_TOKEN: \${{ secrets.TRAFFIC_TOKEN }}
+        run: python3 .github/scripts/update_hongguotv_stats.py
+      - name: 提交统计结果
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md stats/history.json stats/downloads.svg stats/traffic.svg
+          if git diff --cached --quiet; then
+            echo "统计数据没有变化，无需提交"
+            exit 0
+          fi
+          git commit -m "更新红果TV下载与访问统计"
+          git push
