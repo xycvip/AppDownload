@@ -29,6 +29,8 @@
 
 浏览量和独立访客来自 GitHub Traffic API。GitHub 原始数据仅保留最近 14 天，工作流每天归档；启用前的历史访问数据无法补回。
 
+首次启用访问统计前，需要在仓库 Settings → Secrets and variables → Actions 添加名为 TRAFFIC_TOKEN 的 Fine-grained Personal Access Token，并授予本仓库 Administration: Read-only 权限。未配置时，APK 下载统计仍会运行，但访问量曲线不会更新。
+
 <!-- HONGGUOTV_STATS_END -->
 
 ## 最新版本
