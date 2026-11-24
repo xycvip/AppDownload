@@ -8,51 +8,6 @@
 
 **English:** AppDownload is a community-maintained, third-party Android APK download and app update repository for HongguoTV. It provides APK releases, version metadata, and the app's update manifest. It is not affiliated with or endorsed by the official HongguoTV operator.
 
-<!-- HONGGUOTV_STATS_START -->
-## 红果TV数据统计
-
-> 更新时间：2026-11-24 UTC。仅统计红果TV正式版 Release 中的 HongGuoTV APK，不包含其他应用。
-
-| 指标 | 数据 |
-| --- | ---: |
-| 红果TV APK 累计下载量 | **2,559** |
-| 最近 7 天下载量 | **0** |
-| 最近 30 天下载量 | **0** |
-| 最新正式版 | **红果TV正式版 2.0.0** |
-
-### 历史版本下载量
-
-| 版本 | APK 下载量 |
-| --- | ---: |
-| 红果TV正式版 2.0.0 | 60 |
-| 红果TV正式版 1.1.50 | 287 |
-| 红果TV正式版 1.1.49 | 804 |
-| 红果TV正式版 1.1.48 | 45 |
-| 红果TV正式版 1.1.47 | 338 |
-| 红果TV正式版 1.1.46 | 234 |
-| 红果TV正式版 1.1.45 | 87 |
-| 红果TV正式版 1.1.44 | 9 |
-| 红果TV正式版 1.1.43 | 41 |
-| 红果TV正式版 1.1.42 | 4 |
-| 红果TV正式版 1.1.41 | 82 |
-| 红果TV正式版 1.1.40 | 5 |
-| 红果TV正式版 1.1.39 | 32 |
-| 红果TV正式版 1.1.38 | 48 |
-| 红果TV正式版 1.1.37 | 35 |
-
-### 每日 APK 下载趋势（最近 90 天）
-
-![红果TV每日APK下载趋势](stats/downloads.svg)
-
-### 仓库浏览量与独立访客（最近 90 天）
-
-![仓库访问趋势](stats/traffic.svg)
-
-浏览量和独立访客来自 GitHub Traffic API。GitHub 原始数据仅保留最近 14 天，工作流每天归档；启用前的历史访问数据无法补回。
-首次启用访问统计前，请在仓库 Settings → Secrets and variables → Actions 中添加 TRAFFIC_TOKEN；该 Fine-grained PAT 需要对本仓库授予 Administration: Read-only 权限。未配置时下载统计仍会运行，但访问曲线不会更新。
-
-<!-- HONGGUOTV_STATS_END -->
-
 ## 最新版本
 
 <!-- BEGIN APP: hongguoTV -->
@@ -118,3 +73,37 @@ AppDownload 是应用发布与下载分发仓库，不是 Android 源代码仓�
 - Manifest: `hongguoTV/latest.json`
 
 如需反馈下载或更新问题，请通过本仓库的 Issues 提交，并注明设备型号、Android 版本和遇到的问题。
+
+<!-- HONGGUOTV_STATS_START -->
+## 红果TV统计
+
+**累计下载：2,559 次** · **最新版本：2.0.0**
+
+| 历史版本 | 下载量 |
+| --- | ---: |
+| 2.0.0 | 60 |
+| 1.1.50 | 287 |
+| 1.1.49 | 804 |
+| 1.1.48 | 45 |
+| 1.1.47 | 338 |
+| 1.1.46 | 234 |
+| 1.1.45 | 87 |
+| 1.1.44 | 9 |
+| 1.1.43 | 41 |
+| 1.1.42 | 4 |
+| 1.1.41 | 82 |
+| 1.1.40 | 5 |
+| 1.1.39 | 32 |
+| 1.1.38 | 48 |
+| 1.1.37 | 35 |
+
+**每日下载趋势**
+
+![红果TV每日下载趋势](stats/downloads.svg)
+
+**仓库访问趋势**
+
+![仓库访问趋势](stats/traffic.svg)
+
+<sub>仅统计红果TV正式版 APK。访问数据需配置 TRAFFIC_TOKEN；每日数据从启用统计后开始归档。</sub>
+<!-- HONGGUOTV_STATS_END -->
