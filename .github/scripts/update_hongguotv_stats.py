@@ -79,7 +79,11 @@ def chart(filename,title,series):
         out.append(f'<text x="{x:.1f}" y="{H-30}" font-size="10" text-anchor="middle" fill="#6b7280">{data[i]["date"][5:]}</text>')
     out.append("</svg>"); (STATS/filename).write_text("\n".join(out))
 
-chart("downloads.svg","HongGuoTV APK downloads · last 90 days",[("downloads","Daily downloads")])
+running=0
+for row in ordered:
+    running += int(row.get("downloads",0))
+    row["cumulative_downloads"] = running
+chart("downloads.svg","HongGuoTV APK downloads · last 90 days",[("downloads","Daily downloads"),("cumulative_downloads","Cumulative downloads")])
 chart("traffic.svg","AppDownload repository views · last 90 days",[("views","Views"),("uniques","Unique visitors")])
 total=sum(counts.values()); last7=sum(int(x.get("downloads",0)) for x in ordered[-7:])
 last30=sum(int(x.get("downloads",0)) for x in ordered[-30:])
@@ -91,11 +95,17 @@ f"> 更新时间：{history['updated_at'][:10]} UTC。仅统计红果TV正式版
 f"| 红果TV APK 累计下载量 | **{total:,}** |",
 f"| 最近 7 天下载量 | **{last7:,}** |",f"| 最近 30 天下载量 | **{last30:,}** |",
 f"| 最新正式版 | **{html.escape(latest)}** |","",
+"### 历史版本下载量","",
+"| 版本 | APK 下载量 |",
+"| --- | ---: |",
+*([f"| {html.escape(x['name'])} | {int(x['downloads']):,} |" for x in history.get("release_rows",[])[:15]] or ["| 暂无历史版本数据 | — |"]),
+"",
 "### 每日 APK 下载趋势（最近 90 天）","",
 "![红果TV每日APK下载趋势](stats/downloads.svg)","",
 "### 仓库浏览量与独立访客（最近 90 天）","",
 "![仓库访问趋势](stats/traffic.svg)","",
-"浏览量和独立访客来自 GitHub Traffic API。GitHub 原始数据仅保留最近 14 天，工作流每天归档；启用前的历史访问数据无法补回。","",
+"浏览量和独立访客来自 GitHub Traffic API。GitHub 原始数据仅保留最近 14 天，工作流每天归档；启用前的历史访问数据无法补回。",
+"首次启用访问统计前，请在仓库 Settings → Secrets and variables → Actions 中添加 TRAFFIC_TOKEN；该 Fine-grained PAT 需要对本仓库授予 Administration: Read-only 权限。未配置时下载统计仍会运行，但访问曲线不会更新。","",
 "<!-- HONGGUOTV_STATS_END -->"])
 readme=README_FILE.read_text(encoding="utf-8")
 a,b="<!-- HONGGUOTV_STATS_START -->","<!-- HONGGUOTV_STATS_END -->"
