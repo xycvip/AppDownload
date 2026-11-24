@@ -79,11 +79,7 @@ def chart(filename,title,series):
         out.append(f'<text x="{x:.1f}" y="{H-30}" font-size="10" text-anchor="middle" fill="#6b7280">{data[i]["date"][5:]}</text>')
     out.append("</svg>"); (STATS/filename).write_text("\n".join(out))
 
-running=0
-for row in ordered:
-    running += int(row.get("downloads",0))
-    row["cumulative_downloads"] = running
-chart("downloads.svg","HongGuoTV APK downloads · last 90 days",[("downloads","Daily downloads"),("cumulative_downloads","Cumulative downloads")])
+chart("downloads.svg","HongGuoTV APK downloads · last 90 days",[("downloads","Daily downloads")])
 chart("traffic.svg","AppDownload repository views · last 90 days",[("views","Views"),("uniques","Unique visitors")])
 total=sum(counts.values()); last7=sum(int(x.get("downloads",0)) for x in ordered[-7:])
 last30=sum(int(x.get("downloads",0)) for x in ordered[-30:])
