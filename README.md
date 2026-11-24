@@ -8,6 +8,29 @@
 
 **English:** AppDownload is a community-maintained, third-party Android APK download and app update repository for HongguoTV. It provides APK releases, version metadata, and the app's update manifest. It is not affiliated with or endorsed by the official HongguoTV operator.
 
+<!-- HONGGUOTV_STATS_START -->
+## 红果TV数据统计
+
+> 统计范围仅限红果TV正式版 Release 中的 HongGuoTV APK，不包含红果剧场或其他应用。
+
+| 指标 | 数据 |
+| --- | ---: |
+| 红果TV APK 累计下载量 | 自动统计 |
+| 最近 7 天下载量 | 自动统计 |
+| 最近 30 天下载量 | 自动统计 |
+
+### 每日 APK 下载趋势（最近 90 天）
+
+![红果TV每日APK下载趋势](stats/downloads.svg)
+
+### 仓库浏览量与独立访客（最近 90 天）
+
+![仓库访问趋势](stats/traffic.svg)
+
+浏览量和独立访客来自 GitHub Traffic API。GitHub 原始数据仅保留最近 14 天，工作流每天归档；启用前的历史访问数据无法补回。
+
+<!-- HONGGUOTV_STATS_END -->
+
 ## 最新版本
 
 <!-- BEGIN APP: hongguoTV -->
