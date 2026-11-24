@@ -1,0 +1,380 @@
+{
+  "updated_at": "2026-11-24T12:54:40.962261+00:00",
+  "days": [
+    {
+      "date": "2026-11-10",
+      "downloads": 0,
+      "views": 30,
+      "uniques": 17
+    },
+    {
+      "date": "2026-11-11",
+      "downloads": 0,
+      "views": 47,
+      "uniques": 20
+    },
+    {
+      "date": "2026-11-12",
+      "downloads": 0,
+      "views": 10,
+      "uniques": 7
+    },
+    {
+      "date": "2026-11-13",
+      "downloads": 0,
+      "views": 35,
+      "uniques": 18
+    },
+    {
+      "date": "2026-11-14",
+      "downloads": 0,
+      "views": 25,
+      "uniques": 8
+    },
+    {
+      "date": "2026-11-15",
+      "downloads": 0,
+      "views": 26,
+      "uniques": 8
+    },
+    {
+      "date": "2026-11-16",
+      "downloads": 0,
+      "views": 30,
+      "uniques": 13
+    },
+    {
+      "date": "2026-11-17",
+      "downloads": 0,
+      "views": 28,
+      "uniques": 12
+    },
+    {
+      "date": "2026-11-18",
+      "downloads": 0,
+      "views": 16,
+      "uniques": 10
+    },
+    {
+      "date": "2026-11-19",
+      "downloads": 0,
+      "views": 80,
+      "uniques": 13
+    },
+    {
+      "date": "2026-11-20",
+      "downloads": 0,
+      "views": 107,
+      "uniques": 26
+    },
+    {
+      "date": "2026-11-21",
+      "downloads": 0,
+      "views": 55,
+      "uniques": 17
+    },
+    {
+      "date": "2026-11-22",
+      "downloads": 0,
+      "views": 37,
+      "uniques": 12
+    },
+    {
+      "date": "2026-11-23",
+      "downloads": 0,
+      "views": 25,
+      "uniques": 11
+    },
+    {
+      "date": "2026-11-24",
+      "downloads": 0,
+      "views": 0,
+      "uniques": 0,
+      "download_total": 2559
+    }
+  ],
+  "release_downloads": {
+    "hongguotv-v2.0.0": 60,
+    "hongguotv-v1.1.50": 287,
+    "hongguotv-v1.1.49": 804,
+    "hongguotv-v1.1.48": 45,
+    "hongguotv-v1.1.47": 338,
+    "hongguotv-v1.1.46": 234,
+    "hongguotv-v1.1.45": 87,
+    "hongguotv-v1.1.44": 9,
+    "hongguotv-v1.1.43": 41,
+    "hongguotv-v1.1.42": 4,
+    "hongguotv-v1.1.41": 82,
+    "hongguotv-v1.1.40": 5,
+    "hongguotv-v1.1.39": 32,
+    "hongguotv-v1.1.38": 48,
+    "hongguotv-v1.1.37": 35,
+    "hongguotv-v1.1.36": 14,
+    "hongguotv-v1.1.35": 94,
+    "hongguotv-v1.1.34": 3,
+    "hongguotv-v1.1.33": 13,
+    "hongguotv-v1.1.32": 11,
+    "hongguotv-v1.1.31": 8,
+    "hongguotv-v1.1.30": 20,
+    "hongguotv-v1.1.29": 34,
+    "hongguotv-v1.1.28": 37,
+    "hongguotv-v1.1.27": 7,
+    "hongguotv-v1.1.26": 12,
+    "hongguotv-v1.1.25": 9,
+    "hongguotv-v1.1.24": 15,
+    "hongguotv-v1.1.23": 4,
+    "hongguotv-v1.1.22": 2,
+    "hongguotv-v1.1.21": 5,
+    "hongguotv-v1.1.20": 2,
+    "hongguotv-v1.1.19": 19,
+    "hongguotv-v1.1.18": 19,
+    "hongguotv-v1.1.17": 14,
+    "hongguotv-v1.1.16": 11,
+    "hongguotv-v1.1.15": 28,
+    "hongguotv-v1.1.13": 45,
+    "hongguotv-v1.1.11": 18,
+    "hongguotv-v1.1.10": 4
+  },
+  "release_rows": [
+    {
+      "tag": "hongguotv-v2.0.0",
+      "name": "红果TV正式版 2.0.0",
+      "downloads": 60,
+      "published_at": "2026-11-24T11:58:57Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.50",
+      "name": "红果TV正式版 1.1.50",
+      "downloads": 287,
+      "published_at": "2026-11-23T13:32:49Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.49",
+      "name": "红果TV正式版 1.1.49",
+      "downloads": 804,
+      "published_at": "2026-11-20T12:15:41Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.48",
+      "name": "红果TV正式版 1.1.48",
+      "downloads": 45,
+      "published_at": "2026-11-20T11:38:02Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.47",
+      "name": "红果TV正式版 1.1.47",
+      "downloads": 338,
+      "published_at": "2026-11-16T13:51:54Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.46",
+      "name": "红果TV正式版 1.1.46",
+      "downloads": 234,
+      "published_at": "2026-11-13T09:01:56Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.45",
+      "name": "红果TV正式版 1.1.45",
+      "downloads": 87,
+      "published_at": "2026-11-11T11:05:38Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.44",
+      "name": "红果TV正式版 1.1.44",
+      "downloads": 9,
+      "published_at": "2026-11-11T08:41:25Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.43",
+      "name": "红果TV正式版 1.1.43",
+      "downloads": 41,
+      "published_at": "2026-11-10T19:38:18Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.42",
+      "name": "红果TV正式版 1.1.42",
+      "downloads": 4,
+      "published_at": "2026-11-10T17:50:33Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.41",
+      "name": "红果TV正式版 1.1.41",
+      "downloads": 82,
+      "published_at": "2026-11-09T10:15:13Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.40",
+      "name": "红果TV正式版 1.1.40",
+      "downloads": 5,
+      "published_at": "2026-11-09T09:30:41Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.39",
+      "name": "红果TV正式版 1.1.39",
+      "downloads": 32,
+      "published_at": "2026-11-09T00:32:36Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.38",
+      "name": "红果TV正式版 1.1.38",
+      "downloads": 48,
+      "published_at": "2026-11-08T02:31:31Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.37",
+      "name": "红果TV正式版 1.1.37",
+      "downloads": 35,
+      "published_at": "2026-11-07T14:56:04Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.36",
+      "name": "红果TV正式版 1.1.36",
+      "downloads": 14,
+      "published_at": "2026-11-07T14:25:08Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.35",
+      "name": "红果TV正式版 1.1.35",
+      "downloads": 94,
+      "published_at": "2026-11-06T19:30:12Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.34",
+      "name": "红果TV正式版 1.1.34",
+      "downloads": 3,
+      "published_at": "2026-11-06T19:21:27Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.33",
+      "name": "红果TV正式版 1.1.33",
+      "downloads": 13,
+      "published_at": "2026-11-06T18:21:38Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.32",
+      "name": "红果TV正式版 1.1.32",
+      "downloads": 11,
+      "published_at": "2026-11-06T17:32:00Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.31",
+      "name": "红果TV正式版 1.1.31",
+      "downloads": 8,
+      "published_at": "2026-11-06T16:48:08Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.30",
+      "name": "红果TV正式版 1.1.30",
+      "downloads": 20,
+      "published_at": "2026-11-06T14:16:21Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.29",
+      "name": "红果TV正式版 1.1.29",
+      "downloads": 34,
+      "published_at": "2026-11-06T13:30:11Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.28",
+      "name": "红果TV正式版 1.1.28",
+      "downloads": 37,
+      "published_at": "2026-11-06T12:31:35Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.27",
+      "name": "红果TV正式版 1.1.27",
+      "downloads": 7,
+      "published_at": "2026-11-06T11:22:12Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.26",
+      "name": "红果TV正式版 1.1.26",
+      "downloads": 12,
+      "published_at": "2026-11-06T10:03:13Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.25",
+      "name": "红果TV正式版 1.1.25",
+      "downloads": 9,
+      "published_at": "2026-11-06T09:36:25Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.24",
+      "name": "红果TV正式版 1.1.24",
+      "downloads": 15,
+      "published_at": "2026-11-06T09:18:40Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.23",
+      "name": "红果TV正式版 1.1.23",
+      "downloads": 4,
+      "published_at": "2026-11-06T09:11:17Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.22",
+      "name": "红果TV正式版 1.1.22",
+      "downloads": 2,
+      "published_at": "2026-11-06T09:01:59Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.21",
+      "name": "红果TV正式版 1.1.21",
+      "downloads": 5,
+      "published_at": "2026-11-06T08:42:11Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.20",
+      "name": "红果TV正式版 1.1.20",
+      "downloads": 2,
+      "published_at": "2026-11-06T08:33:39Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.19",
+      "name": "红果TV正式版 1.1.19",
+      "downloads": 19,
+      "published_at": "2026-11-06T07:37:06Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.18",
+      "name": "红果TV正式版 1.1.18",
+      "downloads": 19,
+      "published_at": "2026-11-05T13:12:31Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.17",
+      "name": "红果TV正式版 1.1.17",
+      "downloads": 14,
+      "published_at": "2026-11-05T09:29:15Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.16",
+      "name": "红果TV正式版 1.1.16",
+      "downloads": 11,
+      "published_at": "2026-11-05T05:32:34Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.15",
+      "name": "红果 TV 1.1.15",
+      "downloads": 28,
+      "published_at": "2026-11-02T19:11:19Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.13",
+      "name": "红果 TV 1.1.13",
+      "downloads": 45,
+      "published_at": "2026-11-02T07:54:22Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.11",
+      "name": "红果 TV 1.1.11",
+      "downloads": 18,
+      "published_at": "2026-11-02T01:27:51Z"
+    },
+    {
+      "tag": "hongguotv-v1.1.10",
+      "name": "红果 TV 1.1.10",
+      "downloads": 4,
+      "published_at": "2026-11-01T18:48:43Z"
+    }
+  ]
+}

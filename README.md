@@ -11,13 +11,34 @@
 <!-- HONGGUOTV_STATS_START -->
 ## 红果TV数据统计
 
-> 统计范围仅限红果TV正式版 Release 中的 HongGuoTV APK，不包含红果剧场或其他应用。
+> 更新时间：2026-11-24 UTC。仅统计红果TV正式版 Release 中的 HongGuoTV APK，不包含其他应用。
 
 | 指标 | 数据 |
 | --- | ---: |
-| 红果TV APK 累计下载量 | 自动统计 |
-| 最近 7 天下载量 | 自动统计 |
-| 最近 30 天下载量 | 自动统计 |
+| 红果TV APK 累计下载量 | **2,559** |
+| 最近 7 天下载量 | **0** |
+| 最近 30 天下载量 | **0** |
+| 最新正式版 | **红果TV正式版 2.0.0** |
+
+### 历史版本下载量
+
+| 版本 | APK 下载量 |
+| --- | ---: |
+| 红果TV正式版 2.0.0 | 60 |
+| 红果TV正式版 1.1.50 | 287 |
+| 红果TV正式版 1.1.49 | 804 |
+| 红果TV正式版 1.1.48 | 45 |
+| 红果TV正式版 1.1.47 | 338 |
+| 红果TV正式版 1.1.46 | 234 |
+| 红果TV正式版 1.1.45 | 87 |
+| 红果TV正式版 1.1.44 | 9 |
+| 红果TV正式版 1.1.43 | 41 |
+| 红果TV正式版 1.1.42 | 4 |
+| 红果TV正式版 1.1.41 | 82 |
+| 红果TV正式版 1.1.40 | 5 |
+| 红果TV正式版 1.1.39 | 32 |
+| 红果TV正式版 1.1.38 | 48 |
+| 红果TV正式版 1.1.37 | 35 |
 
 ### 每日 APK 下载趋势（最近 90 天）
 
@@ -28,8 +49,7 @@
 ![仓库访问趋势](stats/traffic.svg)
 
 浏览量和独立访客来自 GitHub Traffic API。GitHub 原始数据仅保留最近 14 天，工作流每天归档；启用前的历史访问数据无法补回。
-
-首次启用访问统计前，需要在仓库 Settings → Secrets and variables → Actions 添加名为 TRAFFIC_TOKEN 的 Fine-grained Personal Access Token，并授予本仓库 Administration: Read-only 权限。未配置时，APK 下载统计仍会运行，但访问量曲线不会更新。
+首次启用访问统计前，请在仓库 Settings → Secrets and variables → Actions 中添加 TRAFFIC_TOKEN；该 Fine-grained PAT 需要对本仓库授予 Administration: Read-only 权限。未配置时下载统计仍会运行，但访问曲线不会更新。
 
 <!-- HONGGUOTV_STATS_END -->
 
