@@ -13,15 +13,40 @@
 <!-- BEGIN APP: hongguoTV -->
 ### 红果 TV
 
-当前版本：**2.0.2**
+当前版本：**2.0.3**
 
-- [下载最新版 HongguoTV-2.0.2.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v2.0.2/HongguoTV-2.0.2.apk)
+- [下载最新版 HongguoTV-2.0.3.apk](https://github.com/xycvip/AppDownload/releases/download/hongguotv-v2.0.3/HongguoTV-2.0.3.apk)
 - [应用内更新清单 latest.json](https://raw.githubusercontent.com/xycvip/AppDownload/main/hongguoTV/latest.json)
 - [红果 TV 全部下载文件与说明](https://github.com/xycvip/AppDownload/tree/main/hongguoTV)
 
 **本次更新说明**
 
-优化播放体验
+【播放体验】
+- 替换播放页废弃方向图标
+- 将双播放器内存门槛调整为300
+- 保证视频总长度在预读线程间可见
+- 修复播放流准备期间取消导致的资源泄漏
+- 修复旧 上 响应 解码兼容
+【页面与操作】
+- 替换 页面废弃方向图标
+【搜索与内容】
+- 替换搜索页废弃方向图标
+- 修复分类分页竞态并优化网络与弹幕生命周期
+【网络与稳定性】
+- 修复 与 2.4 元数据版本兼容
+- 修复 接口 编译错误
+- 区分网络超时与请求取消的重试策略
+- 避免预读线程运行时异常导致进程崩溃
+- 允许调用方限制网络重试总次数
+- 限制预读重试并加固热更新脚本网络访问
+- 确保预读异常清理状态后再传播非网络错误
+- 确保 超时立即取消底层网络请求
+- 修复 请求取消与分页计数及预读异常处理
+【其他功能】
+- 兼容新版 内存回调并清理废弃常量
+- 清理旧版系统栏 警告
+- 减少脚本响应复制并补齐特殊地址拦截
+- 统一预读重试预算并清理过期失败记录
 <!-- END APP: hongguoTV -->
 
 <!-- BEGIN APP: redguo -->

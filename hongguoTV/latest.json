@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "packageName": "com.x.hongguotv",
-  "sourceCommit": "05273e314c088c1ebe033711f90ac0a288e2dd1d",
-  "versionCode": 2026112502,
-  "versionName": "2.0.2",
+  "sourceCommit": "e3b2f072e72dcb807ae7d638e3513c7c3aa6e0f0",
+  "versionCode": 2026112503,
+  "versionName": "2.0.3",
   "minSdk": 26,
-  "tag": "hongguotv-v2.0.2",
+  "tag": "hongguotv-v2.0.3",
   "apk": {
-    "name": "HongguoTV-2.0.2.apk",
-    "size": 5706142,
-    "sha256": "ea87f5526b4a191e19e5c7f6a3ba69960e80714b0344c826a9c878b97b1cfb43",
-    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v2.0.2/HongguoTV-2.0.2.apk"
+    "name": "HongguoTV-2.0.3.apk",
+    "size": 5722514,
+    "sha256": "1bc6f4c733059b52043acf387a1384670d84074f13a88504a74f4f5a551e108c",
+    "url": "https://github.com/xycvip/AppDownload/releases/download/hongguotv-v2.0.3/HongguoTV-2.0.3.apk"
   },
-  "notes": "优化播放体验"
+  "notes": "【播放体验】\n- 替换播放页废弃方向图标\n- 将双播放器内存门槛调整为300\n- 保证视频总长度在预读线程间可见\n- 修复播放流准备期间取消导致的资源泄漏\n- 修复旧 上 响应 解码兼容\n【页面与操作】\n- 替换 页面废弃方向图标\n【搜索与内容】\n- 替换搜索页废弃方向图标\n- 修复分类分页竞态并优化网络与弹幕生命周期\n【网络与稳定性】\n- 修复 与 2.4 元数据版本兼容\n- 修复 接口 编译错误\n- 区分网络超时与请求取消的重试策略\n- 避免预读线程运行时异常导致进程崩溃\n- 允许调用方限制网络重试总次数\n- 限制预读重试并加固热更新脚本网络访问\n- 确保预读异常清理状态后再传播非网络错误\n- 确保 超时立即取消底层网络请求\n- 修复 请求取消与分页计数及预读异常处理\n【其他功能】\n- 兼容新版 内存回调并清理废弃常量\n- 清理旧版系统栏 警告\n- 减少脚本响应复制并补齐特殊地址拦截\n- 统一预读重试预算并清理过期失败记录"
 }
