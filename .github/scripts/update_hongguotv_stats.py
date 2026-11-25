@@ -114,5 +114,6 @@ else:
     marker = "## 最新版本"
     pos = readme.find(marker)
     readme = readme[:pos] + section + "\n\n" + readme[pos:] if pos >= 0 else readme.rstrip() + "\n\n" + section + "\n"
+README_FILE.write_text(readme, encoding="utf-8")
 
 print(f"HongGuoTV stats updated: total={total}, daily_delta={delta}, history_days={len(ordered)}")
