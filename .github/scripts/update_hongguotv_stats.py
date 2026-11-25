@@ -84,23 +84,35 @@ chart("traffic.svg","AppDownload repository views · last 90 days",[("views","Vi
 total=sum(counts.values()); last7=sum(int(x.get("downloads",0)) for x in ordered[-7:])
 last30=sum(int(x.get("downloads",0)) for x in ordered[-30:])
 latest=releases[0]["name"] if releases else "暂无"
-section="\\n".join([
-"<!-- HONGGUOTV_STATS_START -->","## 红果TV统计","",
-f"**累计下载：{total:,} 次** · **最新版本：{html.escape(latest)}**","",
-"| 历史版本 | 下载量 |","| --- | ---: |",
-*([f"| {html.escape(x['name'])} | {int(x['downloads']):,} |" for x in history.get("release_rows",[])[:15]] or ["| 暂无历史版本数据 | — |"]),
-"",
-"**每日下载趋势**","",
-"![红果TV每日下载趋势](stats/downloads.svg)","",
-"**仓库访问趋势**","",
-"![仓库访问趋势](stats/traffic.svg)","",
-"<sub>仅统计红果TV正式版 APK。访问数据需配置 TRAFFIC_TOKEN。</sub>",
-"<!-- HONGGUOTV_STATS_END -->"])\nreadme=README_FILE.read_text(encoding="utf-8")
-a,b="<!-- HONGGUOTV_STATS_START -->","<!-- HONGGUOTV_STATS_END -->"
+section = "\n".join([
+    "<!-- HONGGUOTV_STATS_START -->",
+    "## 红果TV统计",
+    "",
+    f"**累计下载：{total:,} 次** · **最新版本：{html.escape(latest)}**",
+    "",
+    "| 历史版本 | 下载量 |",
+    "| --- | ---: |",
+    *([f"| {html.escape(x['name'])} | {int(x['downloads']):,} |" for x in history.get("release_rows", [])[:15]] or ["| 暂无历史版本数据 | — |"]),
+    "",
+    "**每日下载趋势**",
+    "",
+    "![红果TV每日下载趋势](stats/downloads.svg)",
+    "",
+    "**仓库访问趋势**",
+    "",
+    "![仓库访问趋势](stats/traffic.svg)",
+    "",
+    "<sub>仅统计红果TV正式版 APK。访问数据需配置 TRAFFIC_TOKEN。</sub>",
+    "<!-- HONGGUOTV_STATS_END -->"
+])
+readme = README_FILE.read_text(encoding="utf-8")
+a, b = "<!-- HONGGUOTV_STATS_START -->", "<!-- HONGGUOTV_STATS_END -->"
 if a in readme and b in readme:
-    i,j=readme.index(a),readme.index(b)+len(b); readme=readme[:i]+section+readme[j:]
+    i, j = readme.index(a), readme.index(b) + len(b)
+    readme = readme[:i] + section + readme[j:]
 else:
-    marker="## 最新版本"; pos=readme.find(marker)
-    readme=readme[:pos]+section+"\n\n"+readme[pos:] if pos>=0 else readme.rstrip()+"\n\n"+section+"\n"
-README_FILE.write_text(readme,encoding="utf-8")
+    marker = "## 最新版本"
+    pos = readme.find(marker)
+    readme = readme[:pos] + section + "\n\n" + readme[pos:] if pos >= 0 else readme.rstrip() + "\n\n" + section + "\n"
+
 print(f"HongGuoTV stats updated: total={total}, daily_delta={delta}, history_days={len(ordered)}")
