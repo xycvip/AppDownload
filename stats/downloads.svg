@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 900 330"><rect width="100%" height="100%" rx="14" fill="#fff"/>
 <text x="65" y="29" font-size="19" font-weight="700" fill="#111827">HongGuoTV APK downloads · last 90 days</text>
 <line x1="65" y1="52.0" x2="876" y2="52.0" stroke="#e5e7eb"/>
-<text x="55" y="56.0" font-size="11" text-anchor="end" fill="#6b7280">2</text>
+<text x="55" y="56.0" font-size="11" text-anchor="end" fill="#6b7280">80</text>
 <line x1="65" y1="109.5" x2="876" y2="109.5" stroke="#e5e7eb"/>
-<text x="55" y="113.5" font-size="11" text-anchor="end" fill="#6b7280">2</text>
+<text x="55" y="113.5" font-size="11" text-anchor="end" fill="#6b7280">60</text>
 <line x1="65" y1="167.0" x2="876" y2="167.0" stroke="#e5e7eb"/>
-<text x="55" y="171.0" font-size="11" text-anchor="end" fill="#6b7280">1</text>
+<text x="55" y="171.0" font-size="11" text-anchor="end" fill="#6b7280">40</text>
 <line x1="65" y1="224.5" x2="876" y2="224.5" stroke="#e5e7eb"/>
-<text x="55" y="228.5" font-size="11" text-anchor="end" fill="#6b7280">0</text>
+<text x="55" y="228.5" font-size="11" text-anchor="end" fill="#6b7280">20</text>
 <line x1="65" y1="282.0" x2="876" y2="282.0" stroke="#e5e7eb"/>
 <text x="55" y="286.0" font-size="11" text-anchor="end" fill="#6b7280">0</text>
-<polyline fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="65.0,282.0 122.9,282.0 180.9,282.0 238.8,282.0 296.7,282.0 354.6,282.0 412.6,282.0 470.5,282.0 528.4,282.0 586.4,282.0 644.3,282.0 702.2,282.0 760.1,282.0 818.1,282.0 876.0,282.0"/>
+<polyline fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="65.0,282.0 119.1,282.0 173.1,282.0 227.2,282.0 281.3,282.0 335.3,282.0 389.4,282.0 443.5,282.0 497.5,282.0 551.6,282.0 605.7,282.0 659.7,282.0 713.8,282.0 767.9,282.0 821.9,282.0 876.0,100.9"/>
 <line x1="65" y1="315" x2="87" y2="315" stroke="#2563eb" stroke-width="3"/>
 <text x="94" y="319" font-size="12" fill="#374151">Daily downloads</text>
 <text x="65.0" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-10</text>
-<text x="180.9" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-12</text>
-<text x="296.7" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-14</text>
-<text x="412.6" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-16</text>
-<text x="528.4" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-18</text>
-<text x="644.3" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-20</text>
-<text x="760.1" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-22</text>
-<text x="876.0" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-24</text>
+<text x="173.1" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-12</text>
+<text x="281.3" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-14</text>
+<text x="389.4" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-16</text>
+<text x="497.5" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-18</text>
+<text x="605.7" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-20</text>
+<text x="713.8" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-22</text>
+<text x="821.9" y="300" font-size="10" text-anchor="middle" fill="#6b7280">11-24</text>
 </svg>
