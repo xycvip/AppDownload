@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T12:31:27.589474+00:00",
+  "updated_at": "2026-11-25T13:08:26.832267+00:00",
   "days": [
     {
       "date": "2026-11-10",
@@ -94,14 +94,14 @@
     },
     {
       "date": "2026-11-25",
-      "downloads": 63,
+      "downloads": 78,
       "views": 0,
       "uniques": 0,
-      "download_total": 2738
+      "download_total": 2753
     }
   ],
   "release_downloads": {
-    "hongguotv-v2.0.2": 60,
+    "hongguotv-v2.0.2": 75,
     "hongguotv-v2.0.1": 56,
     "hongguotv-v2.0.0": 117,
     "hongguotv-v1.1.50": 289,
@@ -148,7 +148,7 @@
     {
       "tag": "hongguotv-v2.0.2",
       "name": "红果TV正式版 2.0.2",
-      "downloads": 60,
+      "downloads": 75,
       "published_at": "2026-11-25T10:14:52Z"
     },
     {
