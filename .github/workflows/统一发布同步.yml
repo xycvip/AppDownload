@@ -17,7 +17,6 @@ on:
         options:
           - hongguotv
           - redguo
-          - all
       tag:
         description: '目标 Release tag（留空自动选择所选应用的最新正式版）'
         required: false
@@ -32,7 +31,7 @@ concurrency:
 
 jobs:
   sync-redguo:
-    if: ${{ (github.event_name == 'release' && startsWith(github.event.release.tag_name, 'redguo-')) || (github.event_name == 'workflow_dispatch' && (inputs.target == 'redguo' || inputs.target == 'all')) }}
+    if: ${{ (github.event_name == 'release' && startsWith(github.event.release.tag_name, 'redguo-')) || (github.event_name == 'workflow_dispatch' && inputs.target == 'redguo') }}
     name: 同步发布与文档
     runs-on: ubuntu-latest
     timeout-minutes: 40
@@ -497,7 +496,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
   sync-hongguotv:
-    if: ${{ (github.event_name == 'release' && startsWith(github.event.release.tag_name, 'hongguotv-v')) || (github.event_name == 'workflow_dispatch' && (inputs.target == 'hongguotv' || inputs.target == 'all')) }}
+    if: ${{ (github.event_name == 'release' && startsWith(github.event.release.tag_name, 'hongguotv-v')) || (github.event_name == 'workflow_dispatch' && inputs.target == 'hongguotv') }}
     name: 同步红果TV正式版到 GitCode
     runs-on: ubuntu-latest
     timeout-minutes: 30
