@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T12:48:02.521771+00:00",
+  "updated_at": "2026-11-27T12:41:22.122884+00:00",
   "days": [
     {
       "date": "2026-11-10",
@@ -102,21 +102,28 @@
     {
       "date": "2026-11-26",
       "downloads": 14,
+      "views": 49,
+      "uniques": 15,
+      "download_total": 2882
+    },
+    {
+      "date": "2026-11-27",
+      "downloads": 113,
       "views": 0,
       "uniques": 0,
-      "download_total": 2882
+      "download_total": 2995
     }
   ],
   "release_downloads": {
-    "hongguotv-v2.1.0": 22,
-    "hongguotv-v2.0.3": 93,
-    "hongguotv-v2.0.2": 86,
-    "hongguotv-v2.0.1": 57,
-    "hongguotv-v2.0.0": 117,
+    "hongguotv-v2.1.0": 121,
+    "hongguotv-v2.0.3": 97,
+    "hongguotv-v2.0.2": 89,
+    "hongguotv-v2.0.1": 60,
+    "hongguotv-v2.0.0": 120,
     "hongguotv-v1.1.50": 290,
     "hongguotv-v1.1.49": 808,
     "hongguotv-v1.1.48": 45,
-    "hongguotv-v1.1.47": 338,
+    "hongguotv-v1.1.47": 339,
     "hongguotv-v1.1.46": 234,
     "hongguotv-v1.1.45": 87,
     "hongguotv-v1.1.44": 9,
@@ -157,31 +164,31 @@
     {
       "tag": "hongguotv-v2.1.0",
       "name": "红果TV正式版 2.1.0",
-      "downloads": 22,
+      "downloads": 121,
       "published_at": "2026-11-26T11:05:43Z"
     },
     {
       "tag": "hongguotv-v2.0.3",
       "name": "红果TV正式版 2.0.3",
-      "downloads": 93,
+      "downloads": 97,
       "published_at": "2026-11-25T14:10:14Z"
     },
     {
       "tag": "hongguotv-v2.0.2",
       "name": "红果TV正式版 2.0.2",
-      "downloads": 86,
+      "downloads": 89,
       "published_at": "2026-11-25T10:14:52Z"
     },
     {
       "tag": "hongguotv-v2.0.1",
       "name": "红果TV正式版 2.0.1",
-      "downloads": 57,
+      "downloads": 60,
       "published_at": "2026-11-24T19:21:51Z"
     },
     {
       "tag": "hongguotv-v2.0.0",
       "name": "红果TV正式版 2.0.0",
-      "downloads": 117,
+      "downloads": 120,
       "published_at": "2026-11-24T11:58:57Z"
     },
     {
@@ -205,7 +212,7 @@
     {
       "tag": "hongguotv-v1.1.47",
       "name": "红果TV正式版 1.1.47",
-      "downloads": 338,
+      "downloads": 339,
       "published_at": "2026-11-16T13:51:54Z"
     },
     {
